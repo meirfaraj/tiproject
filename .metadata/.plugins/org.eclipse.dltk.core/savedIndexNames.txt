@@ -1,2 +1,0 @@
-C:\tiproject\.metadata\.plugins\org.eclipse.dltk.core\2089348824.index
-C:\tiproject\.metadata\.plugins\org.eclipse.dltk.core\372283917.index
