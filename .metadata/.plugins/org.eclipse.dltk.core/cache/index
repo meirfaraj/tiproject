@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="ASCII"?>
+<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="569" environment="org.eclipse.dltk.core.environment.localEnvironment">
+  <entries path="C:/tiproject/tiprojects/src" timestamp="1481401917018" lastAccessTime="1481401919791">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/202366487/1.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/datastructures" timestamp="1481401836020" lastAccessTime="1482433071930">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2837716330/5.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tables/chi2" timestamp="1481401848408" lastAccessTime="1481445179999">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3214044943/21.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tables/normal" timestamp="1481401848299" lastAccessTime="1481445180079">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3214044943/23.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tables/student" timestamp="1481401848060" lastAccessTime="1481404104098">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3214044943/25.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tables/wilcoxon" timestamp="1481401848591" lastAccessTime="1481404106233">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3214044943/27.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tifunc" timestamp="1481401847887" lastAccessTime="1482690202436">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/1017159083/29.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/std/i18n/en.lua" timestamp="1434894781999" lastAccessTime="1481404105928">
+    <attributes name="indexed" location="2838196607/2756541421/205.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/tidummy" timestamp="1481401836110" lastAccessTime="1482433071930">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2837716330/35.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/about.lua" timestamp="1389828857999" lastAccessTime="1482785602202">
+    <attributes name="indexed" location="2838196607/744049170/119.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui" timestamp="1481401839353" lastAccessTime="1482433074213">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2837716330/37.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/dialog.lua" timestamp="1390753809999" lastAccessTime="1482785602530">
+    <attributes name="indexed" location="2838196607/744049170/275.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/error.lua" timestamp="1391543657999" lastAccessTime="1482785602499">
+    <attributes name="indexed" location="2838196607/744049170/133.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/fullscreen.lua" timestamp="1391046494999" lastAccessTime="1482785602265">
+    <attributes name="indexed" location="2838196607/744049170/245.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/gcutils.lua" timestamp="1389831097999" lastAccessTime="1482785602187">
+    <attributes name="indexed" location="2838196607/744049170/145.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/launch.lua" timestamp="1434566330999" lastAccessTime="1482785602452">
+    <attributes name="indexed" location="2838196607/744049170/303.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/wscreen.lua" timestamp="1390753807999" lastAccessTime="1482785602093">
+    <attributes name="indexed" location="2838196607/744049170/161.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/genref/greekref.lua" timestamp="1389829144999" lastAccessTime="1482785602108">
+    <attributes name="indexed" location="2838196607/1359490948/285.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/genref" timestamp="1481401839271" lastAccessTime="1482433071930">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/744049170/39.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/autosolver.lua" timestamp="1390347802999" lastAccessTime="1482785602405">
+    <attributes name="indexed" location="2838196607/3104151219/111.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math" timestamp="1481401842184" lastAccessTime="1482433073621">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/744049170/41.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/enterFormulas.lua" timestamp="1390164612999" lastAccessTime="1482785602062">
+    <attributes name="indexed" location="2838196607/3104151219/83.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/ippref.lua" timestamp="1390346635999" lastAccessTime="1482785602546">
+    <attributes name="indexed" location="2838196607/3104151219/267.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/manualsolver.lua" timestamp="1390347761999" lastAccessTime="1482785602530">
+    <attributes name="indexed" location="2838196607/3104151219/185.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/spl2param.lua" timestamp="1392117874999" lastAccessTime="1482785602374">
+    <attributes name="indexed" location="2838196607/3104151219/315.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/usedformula.lua" timestamp="1389830166999" lastAccessTime="1482785602218">
+    <attributes name="indexed" location="2838196607/3104151219/121.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/combinatoire" timestamp="1481401840940" lastAccessTime="1482433074303">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3104151219/43.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/combinatoire/combinaisonssrep.lua" timestamp="1390790223999" lastAccessTime="1482785602187">
+    <attributes name="indexed" location="2838196607/349971100/207.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/combinatoire/partitionsord.lua" timestamp="1390794387999" lastAccessTime="1482785602515">
+    <attributes name="indexed" location="2838196607/349971100/195.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/combinatoire/permutationarep.lua" timestamp="1390790966999" lastAccessTime="1482785602452">
+    <attributes name="indexed" location="2838196607/349971100/169.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/combinatoire/permutationsrep.lua" timestamp="1390790807999" lastAccessTime="1482785602530">
+    <attributes name="indexed" location="2838196607/349971100/325.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/continue/continue2param.lua" timestamp="1434880690999" lastAccessTime="1482785602202">
+    <attributes name="indexed" location="2838196607/981172318/273.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/continue" timestamp="1481401842641" lastAccessTime="1482433072008">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3104151219/45.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/continue/chi2" timestamp="1481401842741" lastAccessTime="1481445179992">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/981172318/47.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/continue/normal" timestamp="1481401842423" lastAccessTime="1481445180279">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/981172318/49.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/discrete/discrete1param.lua" timestamp="1391168471999" lastAccessTime="1482785602062">
+    <attributes name="indexed" location="2838196607/2897275028/173.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/discrete" timestamp="1481401841912" lastAccessTime="1482433073990">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3104151219/51.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/discrete/discrete2param.lua" timestamp="1392026493999" lastAccessTime="1482785602108">
+    <attributes name="indexed" location="2838196607/2897275028/175.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/discrete/binomial/binomsplcalc.lua" timestamp="1392025686999" lastAccessTime="1482785602265">
+    <attributes name="indexed" location="2838196607/561144493/141.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/discrete/binomial" timestamp="1481401841576" lastAccessTime="1482433072024">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2897275028/53.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/discrete/hypergeometric/hypergeometricsplcalc.lua" timestamp="1391727860999" lastAccessTime="1482785602062">
+    <attributes name="indexed" location="2838196607/4083958665/281.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/discrete/hypergeometric" timestamp="1481401841373" lastAccessTime="1482433072024">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2897275028/55.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/discrete/poisson/poisson.lua" timestamp="1396299030999" lastAccessTime="1482785602233">
+    <attributes name="indexed" location="2838196607/2538997470/183.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/discrete/poisson" timestamp="1481401841807" lastAccessTime="1482433072024">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2897275028/57.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/testNormalite" timestamp="1481401842036" lastAccessTime="1482433073962">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3104151219/59.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/testNormalite/wilcoxon" timestamp="1481401842085" lastAccessTime="1482433073967">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/1888826544/61.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets" timestamp="1481401839045" lastAccessTime="1482690202380">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/744049170/63.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/sImageLabel.lua" timestamp="1390855977999" lastAccessTime="1482785602499">
+    <attributes name="indexed" location="2838196607/3021280119/321.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/sMathInput.lua" timestamp="1391551231999" lastAccessTime="1482785602046">
+    <attributes name="indexed" location="2838196607/3021280119/123.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/sbuttonwidget.lua" timestamp="1389830792999" lastAccessTime="1482785602233">
+    <attributes name="indexed" location="2838196607/3021280119/213.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/sscreenwidget.lua" timestamp="1390090217999" lastAccessTime="1482785602249">
+    <attributes name="indexed" location="2838196607/3021280119/277.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/datastructures/stack.lua" timestamp="1390148025999" lastAccessTime="1482785602530">
+    <attributes name="indexed" location="2838196607/558463098/271.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/Parser.lua" timestamp="1390543800999" lastAccessTime="1481404104883">
+    <attributes name="indexed" location="2838196607/342339165/139.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/Scanner.lua" timestamp="1396176026999" lastAccessTime="1481404104271">
+    <attributes name="indexed" location="2838196607/342339165/109.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/SyntaxError.lua" timestamp="1394483769999" lastAccessTime="1481404105058">
+    <attributes name="indexed" location="2838196607/342339165/143.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/ASTNode.lua" timestamp="1390420389999" lastAccessTime="1481404105323">
+    <attributes name="indexed" location="2838196607/429772923/167.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/FloatNode.lua" timestamp="1390434035999" lastAccessTime="1481404106261">
+    <attributes name="indexed" location="2838196607/429772923/229.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/FractionNode.lua" timestamp="1390457034999" lastAccessTime="1481404106390">
+    <attributes name="indexed" location="2838196607/429772923/237.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/FunctionNode.lua" timestamp="1390947398999" lastAccessTime="1481404107374">
+    <attributes name="indexed" location="2838196607/429772923/289.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/IConstantOperators.lua" timestamp="1390434253999" lastAccessTime="1481404105923">
+    <attributes name="indexed" location="2838196607/429772923/203.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/IParserFactory.lua" timestamp="1391042005999" lastAccessTime="1481404106427">
+    <attributes name="indexed" location="2838196607/429772923/243.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/NumberNode.lua" timestamp="1391041217999" lastAccessTime="1481404104750">
+    <attributes name="indexed" location="2838196607/429772923/127.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/Pattern2Node.lua" timestamp="1391043187999" lastAccessTime="1481404106781">
+    <attributes name="indexed" location="2838196607/429772923/259.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/Pattern3Node.lua" timestamp="1391043909999" lastAccessTime="1481404105285">
+    <attributes name="indexed" location="2838196607/429772923/157.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/PatternNode.lua" timestamp="1390422722999" lastAccessTime="1481404106758">
+    <attributes name="indexed" location="2838196607/429772923/257.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/StringNode.lua" timestamp="1390422067999" lastAccessTime="1481404106221">
+    <attributes name="indexed" location="2838196607/429772923/219.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/ast/SymbolNode.lua" timestamp="1390422067999" lastAccessTime="1481404104202">
+    <attributes name="indexed" location="2838196607/429772923/101.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/BooleanVariable.lua" timestamp="1390542481999" lastAccessTime="1481404104166">
+    <attributes name="indexed" location="2838196607/4023665714/97.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/ComplexEvalVisitor.lua" timestamp="1394662815999" lastAccessTime="1481404103171">
+    <attributes name="indexed" location="2838196607/4023665714/81.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/ComplexEvaluator.lua" timestamp="1390694360999" lastAccessTime="1481404106419">
+    <attributes name="indexed" location="2838196607/4023665714/241.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/ComplexNode.lua" timestamp="1394488172999" lastAccessTime="1481404106236">
+    <attributes name="indexed" location="2838196607/4023665714/225.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/ComplexVariable.lua" timestamp="1394484329999" lastAccessTime="1481404105350">
+    <attributes name="indexed" location="2838196607/4023665714/171.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/DoubleEvaluator.lua" timestamp="1396197703999" lastAccessTime="1481404104419">
+    <attributes name="indexed" location="2838196607/4023665714/115.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/DoubleNode.lua" timestamp="1394483934999" lastAccessTime="1481404104760">
+    <attributes name="indexed" location="2838196607/4023665714/129.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/DoubleVariable.lua" timestamp="1394483294999" lastAccessTime="1481404106267">
+    <attributes name="indexed" location="2838196607/4023665714/231.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IBooleanBoolean1Function.lua" timestamp="1394483034999" lastAccessTime="1481404105766">
+    <attributes name="indexed" location="2838196607/4023665714/191.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IBooleanBoolean2Function.lua" timestamp="1394483004999" lastAccessTime="1481404106216">
+    <attributes name="indexed" location="2838196607/4023665714/217.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IBooleanComplex2Function.lua" timestamp="1394482949999" lastAccessTime="1481404103788">
+    <attributes name="indexed" location="2838196607/4023665714/87.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IBooleanDouble2Function.lua" timestamp="1394482909999" lastAccessTime="1481404104215">
+    <attributes name="indexed" location="2838196607/4023665714/103.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IComplex0Function.lua" timestamp="1394482868999" lastAccessTime="1481404105238">
+    <attributes name="indexed" location="2838196607/4023665714/153.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IComplex1Function.lua" timestamp="1394482837999" lastAccessTime="1481404105460">
+    <attributes name="indexed" location="2838196607/4023665714/179.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IComplex2Function.lua" timestamp="1394482795999" lastAccessTime="1481404105820">
+    <attributes name="indexed" location="2838196607/4023665714/199.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IDouble0Function.lua" timestamp="1394482713999" lastAccessTime="1481404105160">
+    <attributes name="indexed" location="2838196607/4023665714/147.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IDouble1Function.lua" timestamp="1394482632999" lastAccessTime="1481404105315">
+    <attributes name="indexed" location="2838196607/4023665714/163.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IDouble2Function.lua" timestamp="1394482591999" lastAccessTime="1481404107901">
+    <attributes name="indexed" location="2838196607/4023665714/327.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IDoubleCallbackFunction.lua" timestamp="1394482555999" lastAccessTime="1481404105319">
+    <attributes name="indexed" location="2838196607/4023665714/165.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IDoubleFunction.lua" timestamp="1394482390999" lastAccessTime="1481404104018">
+    <attributes name="indexed" location="2838196607/4023665714/91.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/IDoubleValue.lua" timestamp="1394482380999" lastAccessTime="1481404106809">
+    <attributes name="indexed" location="2838196607/4023665714/261.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/api/AbstractASTVisitor.lua" timestamp="1394481564999" lastAccessTime="1481404107565">
+    <attributes name="indexed" location="2838196607/1929481133/299.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/api/IASTVisitor.lua" timestamp="1394481735999" lastAccessTime="1481404107061">
+    <attributes name="indexed" location="2838196607/1929481133/279.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/api/IEvaluator.lua" timestamp="1394482121999" lastAccessTime="1481404106846">
+    <attributes name="indexed" location="2838196607/1929481133/265.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/eval/api/ObjectEvaluator.lua" timestamp="1394486014999" lastAccessTime="1481404107683">
+    <attributes name="indexed" location="2838196607/1929481133/311.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/math/Complex.lua" timestamp="1396207434999" lastAccessTime="1481404105824">
+    <attributes name="indexed" location="2838196607/64092965/201.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/math/MathException.lua" timestamp="1394488718999" lastAccessTime="1481404104874">
+    <attributes name="indexed" location="2838196607/64092965/135.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/operator/ASTNodeFactory.lua" timestamp="1394570558999" lastAccessTime="1481404105671">
+    <attributes name="indexed" location="2838196607/3813228621/187.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/operator/DivideOperator.lua" timestamp="1394565864999" lastAccessTime="1481404104253">
+    <attributes name="indexed" location="2838196607/3813228621/107.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/operator/InfixOperator.lua" timestamp="1394565618999" lastAccessTime="1481404106411">
+    <attributes name="indexed" location="2838196607/3813228621/239.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/operator/Operator.lua" timestamp="1394488632999" lastAccessTime="1481404104407">
+    <attributes name="indexed" location="2838196607/3813228621/113.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/operator/PostfixOperator.lua" timestamp="1394486719999" lastAccessTime="1481404103085">
+    <attributes name="indexed" location="2838196607/3813228621/75.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/operator/PreMinusOperator.lua" timestamp="1394486642999" lastAccessTime="1481404107699">
+    <attributes name="indexed" location="2838196607/3813228621/313.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/operator/PrePlusOperator.lua" timestamp="1394486919999" lastAccessTime="1481404105813">
+    <attributes name="indexed" location="2838196607/3813228621/197.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/operator/PrefixOperator.lua" timestamp="1394486888999" lastAccessTime="1481404107676">
+    <attributes name="indexed" location="2838196607/3813228621/309.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/operator/SubtractOperator.lua" timestamp="1394486294999" lastAccessTime="1481404107546">
+    <attributes name="indexed" location="2838196607/3813228621/295.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tables/student/table1.lua" timestamp="1434919603999" lastAccessTime="1482785602546">
+    <attributes name="indexed" location="2838196607/165468659/95.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tables/wilcoxon/table1.lua" timestamp="1434921754999" lastAccessTime="1482785602202">
+    <attributes name="indexed" location="2838196607/2519684134/223.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tables/wilcoxon/table2.lua" timestamp="1434921648999" lastAccessTime="1482785602468">
+    <attributes name="indexed" location="2838196607/2519684134/77.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/parser/math/MathUtils.lua" timestamp="1396295795999" lastAccessTime="1481404107821">
+    <attributes name="indexed" location="2838196607/64092965/319.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/discrete/geometrique" timestamp="1392019051999" lastAccessTime="1482433072024"/>
+  <entries path="C:/tiproject/finance/src/math/tables" timestamp="1481401848508" lastAccessTime="1482690200732"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/ASTNode.lua" timestamp="1390420389999" lastAccessTime="1481405014607"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/FloatNode.lua" timestamp="1390434035999" lastAccessTime="1481405014607"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/FractionNode.lua" timestamp="1390457034999" lastAccessTime="1481405014608"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/FunctionNode.lua" timestamp="1390947398999" lastAccessTime="1481405014608"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/IConstantOperators.lua" timestamp="1390434253999" lastAccessTime="1481405014609"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/IParserFactory.lua" timestamp="1391042005999" lastAccessTime="1481405014609"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/NumberNode.lua" timestamp="1391041217999" lastAccessTime="1481405014610"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/Pattern2Node.lua" timestamp="1391043187999" lastAccessTime="1481405014610"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/Pattern3Node.lua" timestamp="1391043909999" lastAccessTime="1481405014610"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/PatternNode.lua" timestamp="1390422722999" lastAccessTime="1481405014611"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/StringNode.lua" timestamp="1390422067999" lastAccessTime="1481405014611"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/ast/SymbolNode.lua" timestamp="1390422067999" lastAccessTime="1481405014612"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/BooleanVariable.lua" timestamp="1390542481999" lastAccessTime="1481405014645"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/ComplexEvalVisitor.lua" timestamp="1394662815999" lastAccessTime="1481405014646"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/ComplexEvaluator.lua" timestamp="1390694360999" lastAccessTime="1481405014646"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/ComplexNode.lua" timestamp="1394488172999" lastAccessTime="1481405014646"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/ComplexVariable.lua" timestamp="1394484329999" lastAccessTime="1481405014647"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/DoubleEvaluator.lua" timestamp="1396197703999" lastAccessTime="1481405014647"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/DoubleNode.lua" timestamp="1394483934999" lastAccessTime="1481405014648"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/DoubleVariable.lua" timestamp="1394483294999" lastAccessTime="1481405014648"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IBooleanBoolean1Function.lua" timestamp="1394483034999" lastAccessTime="1481405014648"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IBooleanBoolean2Function.lua" timestamp="1394483004999" lastAccessTime="1481405014649"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IBooleanComplex2Function.lua" timestamp="1394482949999" lastAccessTime="1481405014649"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IBooleanDouble2Function.lua" timestamp="1394482909999" lastAccessTime="1481405014650"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IComplex0Function.lua" timestamp="1394482868999" lastAccessTime="1481405014650"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IComplex1Function.lua" timestamp="1394482837999" lastAccessTime="1481405014650"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IComplex2Function.lua" timestamp="1394482795999" lastAccessTime="1481405014651"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IDouble0Function.lua" timestamp="1394482713999" lastAccessTime="1481405014651"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IDouble1Function.lua" timestamp="1394482632999" lastAccessTime="1481405014652"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IDouble2Function.lua" timestamp="1394482591999" lastAccessTime="1481405014652"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IDoubleCallbackFunction.lua" timestamp="1394482555999" lastAccessTime="1481405014653"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IDoubleFunction.lua" timestamp="1394482390999" lastAccessTime="1481405014653"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/IDoubleValue.lua" timestamp="1394482380999" lastAccessTime="1481405014654"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/api/AbstractASTVisitor.lua" timestamp="1394481564999" lastAccessTime="1481405014679"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/api/IASTVisitor.lua" timestamp="1394481735999" lastAccessTime="1481405014680"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/api/IEvaluator.lua" timestamp="1394482121999" lastAccessTime="1481405014681"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/eval/api/ObjectEvaluator.lua" timestamp="1394486014999" lastAccessTime="1481405014681"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/math/Complex.lua" timestamp="1396207434999" lastAccessTime="1481405014685"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/math/MathException.lua" timestamp="1394488718999" lastAccessTime="1481405014685"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/math/MathUtils.lua" timestamp="1396295795999" lastAccessTime="1481405014686"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/operator/ASTNodeFactory.lua" timestamp="1394570558999" lastAccessTime="1481405014692"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/operator/DivideOperator.lua" timestamp="1394565864999" lastAccessTime="1481405014692"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/operator/InfixOperator.lua" timestamp="1394565618999" lastAccessTime="1481405014693"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/operator/Operator.lua" timestamp="1394488632999" lastAccessTime="1481405014693"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/operator/PostfixOperator.lua" timestamp="1394486719999" lastAccessTime="1481405014693"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/operator/PreMinusOperator.lua" timestamp="1394486642999" lastAccessTime="1481405014694"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/operator/PrePlusOperator.lua" timestamp="1394486919999" lastAccessTime="1481405014694"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/operator/PrefixOperator.lua" timestamp="1394486888999" lastAccessTime="1481405014694"/>
+  <entries path="C:/tiproject/finance/src/math/parsero/operator/SubtractOperator.lua" timestamp="1394486294999" lastAccessTime="1481405014695"/>
+  <entries path="C:/tiproject/test/src" timestamp="1481405245359" lastAccessTime="1481445180305">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/127512925/345.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src" timestamp="1481405675584" lastAccessTime="1482433073842">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2791121524/349.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/proba/i18n" timestamp="1481401836863" lastAccessTime="1482433071977">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2580507623/353.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/proba/i18n/fr.lua" timestamp="1434889994999" lastAccessTime="1482785602218">
+    <attributes name="indexed" location="2838196607/386007969/383.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/proba" timestamp="1481405982208" lastAccessTime="1482433073400">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2837716330/355.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math" timestamp="1481405076215" lastAccessTime="1482690202708">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2837716330/391.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/continue/normal/normalsplcalc.lua" timestamp="1434887486999" lastAccessTime="1482785602077">
+    <attributes name="indexed" location="2838196607/1209012325/363.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/continue/normal/normalinvcalc.lua" timestamp="1434880704999" lastAccessTime="1482785602093">
+    <attributes name="indexed" location="2838196607/1209012325/387.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tables/normal/table1.lua" timestamp="1434888677999" lastAccessTime="1482785602546">
+    <attributes name="indexed" location="2838196607/3588470934/365.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tables/normal/table2.lua" timestamp="1434876808999" lastAccessTime="1482785602187">
+    <attributes name="indexed" location="2838196607/3588470934/379.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/tidummy/nspire.lua" timestamp="1390345163999" lastAccessTime="1482785602265">
+    <attributes name="indexed" location="2838196607/1565981601/371.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/continue/chi2/chi2.lua" timestamp="1434880661999" lastAccessTime="1482785602515">
+    <attributes name="indexed" location="2838196607/2172359306/375.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tables/chi2/table.lua" timestamp="1481405494134" lastAccessTime="1482785602483">
+    <attributes name="indexed" location="2838196607/3939738302/377.idx"/>
+  </entries>
+  <entries path="C:/tiproject/test/src/probabilities.lua" timestamp="1481405440847" lastAccessTime="1482785604080">
+    <attributes name="indexed" location="2838196607/2232187459/393.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/finance/i18n" timestamp="1481445878745" lastAccessTime="1482822002546">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2954387895/397.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/finance" timestamp="1481446069781" lastAccessTime="1482822336653">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2837716330/399.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/probabilities.lua" timestamp="1481405967763" lastAccessTime="1482785602077">
+    <attributes name="indexed" location="2838196607/2837716330/411.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/proba/i18n.lua" timestamp="1481445831762" lastAccessTime="1482785602265">
+    <attributes name="indexed" location="2838196607/2580507623/409.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/proba/i18n/en.lua" timestamp="1434894781999" lastAccessTime="1482785602452">
+    <attributes name="indexed" location="2838196607/386007969/417.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/listwidget.lua" timestamp="1389829371999" lastAccessTime="1482785602530">
+    <attributes name="indexed" location="2838196607/3021280119/439.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/scrollbarwidget.lua" timestamp="1389831146999" lastAccessTime="1482785602249">
+    <attributes name="indexed" location="2838196607/3021280119/480.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/sdropdownwidget.lua" timestamp="1482071293577" lastAccessTime="1482785602233">
+    <attributes name="indexed" location="2838196607/3021280119/492.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/sinputwidget.lua" timestamp="1391551976999" lastAccessTime="1482785602233">
+    <attributes name="indexed" location="2838196607/3021280119/462.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/slabelwidget.lua" timestamp="1482070048639" lastAccessTime="1482785602530">
+    <attributes name="indexed" location="2838196607/3021280119/508.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/widgetmanager.lua" timestamp="1391543658999" lastAccessTime="1482785602530">
+    <attributes name="indexed" location="2838196607/3021280119/454.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/widgets.lua" timestamp="1391543658999" lastAccessTime="1482785602515">
+    <attributes name="indexed" location="2838196607/3021280119/482.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/std/array.lua" timestamp="1482055783996" lastAccessTime="1482785602249">
+    <attributes name="indexed" location="2838196607/2427023968/442.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/std/benchmark.lua" timestamp="1482026162228" lastAccessTime="1482785602530">
+    <attributes name="indexed" location="2838196607/2427023968/490.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/std/i18n.lua" timestamp="1481586306294" lastAccessTime="1482785602249">
+    <attributes name="indexed" location="2838196607/2427023968/470.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/std/logger.lua" timestamp="1390855546999" lastAccessTime="1482785602249">
+    <attributes name="indexed" location="2838196607/2427023968/500.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/std/num.lua" timestamp="1434888371999" lastAccessTime="1482785602249">
+    <attributes name="indexed" location="2838196607/2427023968/514.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/std/utils.lua" timestamp="1391410295999" lastAccessTime="1482785602265">
+    <attributes name="indexed" location="2838196607/2427023968/444.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/references.lua" timestamp="1482054198813" lastAccessTime="1482785602233">
+    <attributes name="indexed" location="2838196607/744049170/448.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/catutils.lua" timestamp="1391044085999" lastAccessTime="1482785602249">
+    <attributes name="indexed" location="2838196607/744049170/456.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/plateform.lua" timestamp="1481405967789" lastAccessTime="1482785602093">
+    <attributes name="indexed" location="2838196607/2837716330/486.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/combinatoire/arrangementsrep.lua" timestamp="1390790223999" lastAccessTime="1482785602202">
+    <attributes name="indexed" location="2838196607/349971100/464.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/combinatoire/arrangementarep.lua" timestamp="1390790223999" lastAccessTime="1482785602452">
+    <attributes name="indexed" location="2838196607/349971100/494.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/combinatoire/combinaisonsarep.lua" timestamp="1390790223999" lastAccessTime="1482785602046">
+    <attributes name="indexed" location="2838196607/349971100/512.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/combinatoire/combinatoire.lua" timestamp="1391048802999" lastAccessTime="1482785602202">
+    <attributes name="indexed" location="2838196607/349971100/516.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/combinatoire/partitionsnord.lua" timestamp="1390811860999" lastAccessTime="1482785602468">
+    <attributes name="indexed" location="2838196607/349971100/484.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/proba/categories.lua" timestamp="1482021097079" lastAccessTime="1482785602530">
+    <attributes name="indexed" location="2838196607/2580507623/468.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/testechantillons.lua" timestamp="1434893575999" lastAccessTime="1482785602249">
+    <attributes name="indexed" location="2838196607/3104151219/478.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/testNormalite/testNormalite.lua" timestamp="1434897931999" lastAccessTime="1482785602265">
+    <attributes name="indexed" location="2838196607/1888826544/496.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/testNormalite/wilcoxon/testNormaliteWilcoxon.lua" timestamp="1434954606999" lastAccessTime="1482785602187">
+    <attributes name="indexed" location="2838196607/749151765/498.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/math/discrete/discrete3param.lua" timestamp="1391725553999" lastAccessTime="1482785602218">
+    <attributes name="indexed" location="2838196607/2897275028/502.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/std" timestamp="1482436898770" lastAccessTime="1482796067838">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2837716330/518.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/tifunc/tia.lua" timestamp="1482448249594" lastAccessTime="1482785602218">
+    <attributes name="indexed" location="2838196607/3979666121/542.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/finance/tmv/func" timestamp="1482448656847" lastAccessTime="1482785602390">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/1662164474/522.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/std/test.lua" timestamp="1390758660999" lastAccessTime="1482785602265">
+    <attributes name="indexed" location="2838196607/2427023968/534.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/ui/widgets/sRichInput.lua" timestamp="1391543759999" lastAccessTime="1482785602202">
+    <attributes name="indexed" location="2838196607/3021280119/536.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/math/math.lua" timestamp="1390353530999" lastAccessTime="1482785602233">
+    <attributes name="indexed" location="2838196607/1017159083/550.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/std/callendar.lua" timestamp="1482690257273" lastAccessTime="1482785603969">
+    <attributes name="indexed" location="2838196607/2427023968/560.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/finance/tmv/cours/mathfi" timestamp="1482785754694" lastAccessTime="1482801150639">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/1372479090/566.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/finance/tmv" timestamp="1482785627592" lastAccessTime="1482801447369">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2954387895/568.idx"/>
+  </entries>
+  <entries path="C:/tiproject/finance/src/std/symbols.lua" timestamp="1482796067292" lastAccessTime="1482796067832"/>
+  <entries path="C:/tiproject/finance/src/finance/tmv/cours/mathfi/conventionDeBase.lua" timestamp="1482801150125" lastAccessTime="1482801150639"/>
+  <entries path="C:/tiproject/finance/src/finance/tmv/tmv.lua" timestamp="1482801446839" lastAccessTime="1482801447369"/>
+  <entries path="C:/tiproject/finance/src/finance/categories.lua" timestamp="1482822303833" lastAccessTime="1482822304344"/>
+  <entries path="C:/tiproject/finance/src/finance/i18n.lua" timestamp="1482822336141" lastAccessTime="1482822336653"/>
+</cache:CacheIndex>

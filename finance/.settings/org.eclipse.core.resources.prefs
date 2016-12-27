@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/math/tables/normal/table1.lua=UTF-8
+encoding//src/math/tables/student/table1.lua=UTF-8
+encoding//src/math/tifunc/tia.lua=UTF-8
+encoding//src/proba/i18n.lua=UTF-8
+encoding//src/proba/i18n/en.lua=UTF-8
+encoding//src/proba/i18n/fr.lua=UTF-8
+encoding//src/std/num.lua=UTF-8
+encoding//src/ui/math/combinatoire/partitionsnord.lua=UTF-8
+encoding//src/ui/math/continue/normal/normalsplcalc.lua=UTF-8
+encoding//src/ui/math/discrete/binomial/binomsplcalc.lua=UTF-8
+encoding//src/ui/math/discrete/hypergeometric/hypergeometricsplcalc.lua=UTF-8

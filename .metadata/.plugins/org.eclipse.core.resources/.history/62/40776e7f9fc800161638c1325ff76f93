@@ -1,0 +1,24 @@
+
+----------------------------------------------
+-- Categories && Sub-Categories && Formulas --
+----------------------------------------------
+
+require("ui/screen")
+
+require("finance/tmv/tmv")
+
+require("ui/genref/greekref")
+require("ui/genref/utf8ref")
+
+References  = {
+  {title=ASTxt(GREEK_TITLE_ID), screen=Greek   },
+  {title=ASTxt(UTF8_TITLE_ID), screen=UTF8Ref  },
+}
+
+
+----------------------Combinatoire---------------------------------------
+addCat(1, ASTxt(CATEGORY_TIME_MONEY_VALUE_ID), ASTxt(CATEGORY_TIME_MONEY_VALUE_DESC_ID))
+
+addSubCatScreen(1,1,ASTxt(TAUX_SIMPLE_TITLE_ID),ASTxt(TAUX_SIMPLE_TITLE_HEADER_ID),TauxSimple)
+
+

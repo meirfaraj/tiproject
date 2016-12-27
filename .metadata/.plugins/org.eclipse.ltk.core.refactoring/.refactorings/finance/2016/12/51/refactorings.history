@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename source module &apos;finance/tmv/func.tauxComposé.lua&apos; to &apos;tauxCompose.lua&apos;&#x0D;&#x0A;- Original element: &apos;tauxComposé.lua&apos;&#x0D;&#x0A;- Renamed element: &apos;tauxCompose.lua&apos;" description="Rename source module &apos;tauxComposé.lua&apos;" flags="589830" id="org.eclipse.dltk.ui.rename.sourcemodule" input="/src&lt;finance\/tmv\/func{tauxComposé.lua" name="tauxCompose.lua" stamp="1482448656863" version="1.0"/>
+</session>

@@ -1,0 +1,31 @@
+
+require("std/str")
+
+
+--MM.JJAA (format communément utilisé aux EtatsUnis)
+--JJMM.AA (format communément utilisé en Europe)
+function cal.parse(date)
+   local res = {}
+   local mmjjaa="(%d%d)\\.(%d%d)(%d%d)"
+   if string.find(date,mmjjaa)~=nil then
+      return string.gsub(date, mmjjaa, function(m,j,a) return {j,m,a} end ) 
+   else 
+   end
+   return {}
+end
+
+function cal.nbmois(date1,date2)
+
+      local c = string.sub(s, pos, pos + charbytes - 1)
+        var d1=date1.split('/'); 
+        var jour_1  = parseInt(d1[0]);
+        var mois_1 =  parseInt(d1[1]);
+        var annee_1 =  parseInt(d1[2]);
+ 
+        var d2=date_2.split('/'); 
+        var jour_2 = parseInt(d2_p[0]);
+        var mois_2 =  parseInt(d2_p[1]);
+        var annee_2 =  parseInt(d2_p[2]);   
+ 
+        alert((annee_2-annee_1)*12 + (mois_2-mois_1));
+end
