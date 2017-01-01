@@ -1,0 +1,28 @@
+  
+--------------------------------------------------------------------------
+--                            Obligation                               --
+--------------------------------------------------------------------------
+require("ui/wscreen")
+require("finance/oblig/func/obligation")
+
+
+-- obligation in fine
+Ex1 = Tmv(EX_OBLIGATION_1_TITLE_ID,EX_OBLIGATION_1_TITLE_HEADER_ID)
+ 
+
+function Ex1:widgetsInit()
+   self:add(0,"Emission oblig in fine au terme de ","T")
+   self:add(1,"Taux nominal r:","r")
+   self:add(1,"valeur d'emis. Ve:","Ve")
+   self:add(2,"Valuer nominal Vn=Vr:","Vn")  
+end
+
+function Ex1:performCalc()
+   local T = varValue["T"]
+   local r = varValue["r"]
+   local Ve = varValue["Ve"]
+   local Vn = varValue["Vn"]
+   Obligation.FluxInFine(self,T,r,Ve,Vn )
+   Obligation.TABInFine(self,T,r,Ve,Vn )
+end
+

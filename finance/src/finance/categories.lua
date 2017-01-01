@@ -9,9 +9,10 @@ require("finance/tmv/tmv")
 require("ui/genref/greekref")
 require("ui/genref/utf8ref")
 require("finance/tmv/cours/mathfi/conventionDeBase")
-require("finance/tmv/cours/mathfi/gen/marcheObligataire.lua")
-require("finance/tmv/cours/mathfi/gen/SwapDeTaux.lua")
-require("finance/tmv/cours/mathfi/gen/TATIFEtGammesDesTauxZC.lua")
+require("finance/tmv/cours/mathfi/gen/marcheObligataire")
+require("finance/tmv/cours/mathfi/gen/SwapDeTaux")
+require("finance/tmv/cours/mathfi/gen/TATIFEtGammesDesTauxZC")
+require("finance/oblig/ex1")
 
 References  = {
   {title=ASTxt(CONVENTION_DE_BASE_TITLE_ID), screen=ConventionDeBaseCours  },
@@ -38,3 +39,9 @@ addSubCatScreen(2,1,ASTxt(TAUX_SIMPLE_TITLE_ID),ASTxt(TAUX_SIMPLE_TITLE_HEADER_I
 ----------------------FIXED INCOME---------------------------------------
 addCat(3, ASTxt(CATEGORY_FIXED_INCOME_ID), ASTxt(CATEGORY_FIXED_INCOME_DESC_ID))
 addSubCatScreen(3,1,ASTxt(TAUX_SIMPLE_TITLE_ID),ASTxt(TAUX_SIMPLE_TITLE_HEADER_ID),TauxSimple)
+
+
+----------------------Exercice FIXED INCOME---------------------------------------
+addCat(4, ASTxt(EXERCICES_TITLE_ID)..ASTxt(CATEGORY_FIXED_INCOME_ID), ASTxt(CATEGORY_FIXED_INCOME_DESC_ID))
+addSubCatScreen(4,1,ASTxt(EX_OBLIGATION_1_TITLE_ID),ASTxt(EX_OBLIGATION_1_TITLE_HEADER_ID),Ex1)
+

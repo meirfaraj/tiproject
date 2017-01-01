@@ -203,3 +203,6 @@ addTextLocale(SWAP_DE_TAUX_TITLE_HEADER_ID,EN,"Swap vanille")
 addTextLocale(T_A_T_I_F_ET_GAMMES_DES_TAUX_Z_C_TITLE_ID,EN,"TATIF Gamme des taux...")
 addTextLocale(T_A_T_I_F_ET_GAMMES_DES_TAUX_Z_C_TITLE_HEADER_ID,EN,"TATIF Gamme des taux...")
  
+addTextLocale(EX_OBLIGATION_1_TITLE_ID,EN,"Exemple 1 : Obligation In fine TAB")
+addTextLocale(EX_OBLIGATION_1_TITLE_HEADER_ID,EN,"taux actuariel brut "..a_acute.." l'"..e_acute.."mission")
+addTextLocale(EXERCICES_TITLE_ID,EN,"Exercices ")

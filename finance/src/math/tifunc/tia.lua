@@ -7,7 +7,7 @@ function tiNspire.execute(expression)
          print("execute : "..expression.." returned "..res)
          return res,err
        end
-       print("Error : "..err)
+       print("execute : "..expression.." returned "..tostring(res).." Error : "..err)
        return res,err
    else
      print("execute failure")
@@ -34,6 +34,25 @@ end
 function tiNspire.approx(expression)
     return tiNspire.execute("approx("..tostring(expression)..")")
 end
+
+
+
+function tiNspire.nSolve(expression,var)
+    return tiNspire.execute("nSolve("..tostring(expression)..","..tostring(var)..")")
+end
+
+function tiNspire.solve(expression,var)
+    return tiNspire.execute("solve("..tostring(expression)..","..tostring(var)..")")
+end
+
+function tiNspire.nSolveCond(expression,var,cond)
+    return tiNspire.execute("nSolve("..tostring(expression)..","..tostring(var)..")|"..tostring(cond))
+end
+
+function tiNspire.solveCond(expression,var,cond)
+    return tiNspire.execute("solve("..tostring(expression)..","..tostring(var)..")|"..tostring(cond))
+end
+
 
 --amortTbl(NPmt,N,I,PV, [Pmt], [FV], [PpY], [CpY],
 --[PmtAt], [valArrondi])Þmatrice
