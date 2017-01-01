@@ -1,0 +1,22 @@
+TATIF Gamme des taux...
+Déterminer les taux ZC à partir des TATIF
+Un calcul de proche en proche de la gamme (rn)n=1...n
+
+Exemple : Eur-1an = 5%, TATIF 2 ans 5.5%, TATIF 3 ans 6%
+Pour déterminer ZC compatibles avec ces 3 taux
+Euribor doit être converti en taux exact : 5%*365/360=5.07%
+les opérations moins d'un an étant ZC, le taux ZC-1 : r1=5.07%  
+considéron maintenant un titre 2 ans, in fine , au pair; son taux facial se confond
+avec son taux actuariel.Sa valeur, égale à 1, est aussi égale à la valeur présente des flux auxquels il donne droit,
+actualisés avce la gamme des taux ZC(r1=5.07% et r2 inconnue recherchée), soit:
+<math>1=0.055/1.057+1.055/(1+r2)^2</math>
+de la même façon aprè avoir trouvé r2 on calcule r3
+<math>1=0.06/1.06 + 0.06/(1+r2)^2 + 1.06/(1+r3)^3</math>
+
+Les taux d'intérêt à terme implicites
+<math>(1+f(n,d))^d = (1+r(n+d))^(n+d)/(1+r(n))^(n)</math>
+f(n,d) est appelé le taux forward du d périodes dans n périodes taux relatif à la période (n, n+d)
+
+Exemple: Les taux ZC r(t) s'établissent comme suit
+3mois: 5%, 6mois: 5.3%, 9mois: 5.4%, 12mois: 5.5%, 15mois: 5.6%
+taux 6mois dans 9mois <math>(1+f(9,6))^0.5=(1+r(15))^1.25/(1+r(9))^0.75</math>
