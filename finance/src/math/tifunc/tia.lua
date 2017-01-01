@@ -3,6 +3,7 @@ tiNspire={}
 function tiNspire.execute(expression)
     if expression then       
        local res,err = math.evalStr(expression)
+       math.setEvalSettings({{'Calculation Mode','Exact'}})
        if res then
          print("execute : "..expression.." returned "..res)
          return res,err
@@ -38,19 +39,23 @@ end
 
 
 function tiNspire.nSolve(expression,var)
+    math.setEvalSettings({{'Calculation Mode','Auto'}})
     return tiNspire.execute("nSolve("..tostring(expression)..","..tostring(var)..")")
 end
 
 function tiNspire.solve(expression,var)
-    return tiNspire.execute("solve("..tostring(expression)..","..tostring(var)..")")
+    math.setEvalSettings({{'Calculation Mode','Auto'}})
+    return tiNspire.execute("Solve("..tostring(expression)..","..tostring(var)..")")
 end
 
 function tiNspire.nSolveCond(expression,var,cond)
+    math.setEvalSettings({{'Calculation Mode','Auto'}})
     return tiNspire.execute("nSolve("..tostring(expression)..","..tostring(var)..")|"..tostring(cond))
 end
 
 function tiNspire.solveCond(expression,var,cond)
-    return tiNspire.execute("solve("..tostring(expression)..","..tostring(var)..")|"..tostring(cond))
+    math.setEvalSettings({{'Calculation Mode','Auto'}})
+    return tiNspire.execute("Solve("..tostring(expression)..","..tostring(var)..")|"..tostring(cond))
 end
 
 

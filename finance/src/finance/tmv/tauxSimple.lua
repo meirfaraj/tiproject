@@ -57,7 +57,7 @@ function TauxSimple:performCalc()
    if varValue["%type"] == "%" then
       local calc = tostring(r).."/100"
       self:appendToResult(tostring(r).."%="..calc)
-      r=tostring(math.evalStr(calc))
+      r=tostring(tiNspire.approx(calc))
       self:appendToResult("="..tostring(r).."\n")
    end   
    if varValue["ptype"] == "n" then

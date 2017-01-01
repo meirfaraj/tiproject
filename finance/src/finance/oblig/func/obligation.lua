@@ -38,8 +38,10 @@ function Obligation.TABInFine(self,T,r,Ve,Vn)
         eq=eq..calc
    end
    self:appendMathToResult(eq)
-   self:appendMathToResult(tostring(tiNspire.solve(eq,"rx")))
-   
+   self:appendMathToResult(tostring(tiNspire.solve(tiNspire.solve(eq,"rx"),"rx")))
+   self:appendToResult("\n since rx>0 : ")
+   self:appendMathToResult(tostring(tiNspire.solveCond(tiNspire.solveCond(eq,"rx","rx>0"),"rx","rx>0")))
+   self:appendToResult("\n rx=1+r* => r*=rx-1 : ")
    self:appendToResult("\n=> TAB "..a_acute.." l'"..e_acute.."mission : r*=")
    local res = tostring(tiNspire.nSolveCond(eq,"rx","rx>0"));
    self:appendMathToResult(res.."-1="..tostring(tiNspire.approx("("..res.."-1)*100")).."%")
