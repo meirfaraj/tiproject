@@ -9,9 +9,15 @@ require("finance/tmv/tmv")
 require("ui/genref/greekref")
 require("ui/genref/utf8ref")
 require("finance/tmv/cours/mathfi/conventionDeBase")
+require("finance/tmv/cours/mathfi/gen/marcheObligataire.lua")
+require("finance/tmv/cours/mathfi/gen/SwapDeTaux.lua")
+require("finance/tmv/cours/mathfi/gen/TATIFEtGammesDesTauxZC.lua")
 
 References  = {
   {title=ASTxt(CONVENTION_DE_BASE_TITLE_ID), screen=ConventionDeBaseCours  },
+  {title=ASTxt(MARCHE_OBLIGATAIRE_TITLE_ID), screen=MarcheObligataire  },
+  {title=ASTxt(SWAP_DE_TAUX_TITLE_ID), screen=SwapDeTaux  },
+  {title=ASTxt(T_A_T_I_F_ET_GAMMES_DES_TAUX_Z_C_TITLE_ID), screen=TATIFEtGammesDesTauxZC  },
 
   {title=ASTxt(GREEK_TITLE_ID), screen=Greek   },
   {title=ASTxt(UTF8_TITLE_ID), screen=UTF8Ref  },

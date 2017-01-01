@@ -196,3 +196,10 @@ addTextLocale(CATEGORY_MONEY_MARKET_DESC_ID,EN,"March"..e_acute.."s Mon"..e_acut
 addTextLocale(CATEGORY_FIXED_INCOME_ID,EN,"March"..e_acute.."s Obligataire")
 addTextLocale(CATEGORY_FIXED_INCOME_DESC_ID,EN,"March"..e_acute.."s Obligataire")
  
+addTextLocale(MARCHE_OBLIGATAIRE_TITLE_ID,EN,"march"..e_acute.." obligataire")
+addTextLocale(MARCHE_OBLIGATAIRE_TITLE_HEADER_ID,EN,"march"..e_acute.." obligataire")
+addTextLocale(SWAP_DE_TAUX_TITLE_ID,EN,"Swap vanille")
+addTextLocale(SWAP_DE_TAUX_TITLE_HEADER_ID,EN,"Swap vanille")
+addTextLocale(T_A_T_I_F_ET_GAMMES_DES_TAUX_Z_C_TITLE_ID,EN,"TATIF Gamme des taux...")
+addTextLocale(T_A_T_I_F_ET_GAMMES_DES_TAUX_Z_C_TITLE_HEADER_ID,EN,"TATIF Gamme des taux...")
+ 
