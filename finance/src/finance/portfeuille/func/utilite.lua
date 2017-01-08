@@ -1,3 +1,6 @@
 require("math/math")
 
-TauxSimplef={}
+FonctionUtilitef={}
+
+function FonctionUtilitef.displayExerciceInf()
+end
