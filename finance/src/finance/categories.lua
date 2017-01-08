@@ -12,6 +12,7 @@ require("finance/tmv/cours/mathfi/conventionDeBase")
 require("finance/tmv/cours/mathfi/gen/marcheObligataire")
 require("finance/tmv/cours/mathfi/gen/SwapDeTaux")
 require("finance/tmv/cours/mathfi/gen/TATIFEtGammesDesTauxZC")
+require("finance/tmv/cours/mathfi/gen/InstrumentsVanillesTauxFlottant")
 require("finance/oblig/ex1")
 require("finance/portfeuille/utilite")
 require("finance/portfeuille/equivCertain")
@@ -22,6 +23,7 @@ References  = {
   {title=ASTxt(MARCHE_OBLIGATAIRE_TITLE_ID), screen=MarcheObligataire  },
   {title=ASTxt(SWAP_DE_TAUX_TITLE_ID), screen=SwapDeTaux  },
   {title=ASTxt(T_A_T_I_F_ET_GAMMES_DES_TAUX_Z_C_TITLE_ID), screen=TATIFEtGammesDesTauxZC  },
+  {title="Instruments Vanilles Taux Flottant", screen=InstrumentsVanillesTauxFlottant },
 
   {title=ASTxt(GREEK_TITLE_ID), screen=Greek   },
   {title=ASTxt(UTF8_TITLE_ID), screen=UTF8Ref  },

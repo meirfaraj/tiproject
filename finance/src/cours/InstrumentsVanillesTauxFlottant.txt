@@ -1,0 +1,38 @@
+<h1>Instrument Vanille à taux flottant<h1/>
+Cn connu en début de période n, donc à l'instant t(n-1):instrument taux révisable
+Cn connu en fin de période n, donc à l'instant t(n):instrument taux variable 
+Les Euribor capitalisé sont utilisés pour référencer des taux variables
+<math>1+E3C(n-1,n)=Produit(1+E3(k-1,k)D(k))</math> avec <math>D(k)=Nj(t(k-1),t(k))/360</math>
+E3R ou bien E6R, Euribor révisable.
+b(t) = 1/(1+r(t))^d ou bien si r proportionnel b(t) = 1/(1+d*r(t)) avec d=Nj/Na 
+b(t) représente le facteur d'actualisation qui permet de calculer par simple multiplication la valeur 
+actualisée en t d'un flux disponible en t+d.
+Un instrument à taux révisable, V=1 en t+ et V=1+Cn en t-
+à t V(t)=(1+Cn)/(1+d*r(t))=(1+Cn)*b(t) avec Cn=N * Dn * r(t-1) et d=Nj/Na et t entre tn-1 et tn
+<u>Exemple: évaluation et sensibilité d'un actif à taux révisable<u>
+actif à taux révisable, de 4 ans, distribue coupon semestriel le 1/4 et 1/10
+et référencé sur L6-mois,N=100K, L6(1/10/n-1)=4%
+C(s)=L(s-1) * N * Nj/360
+i- V(31/3/n) = 100K+Cn=100K + 100K*0.04*182/360=102022
+ V(1/4/n) = 100K titre au pair
+ à 3 mois du règlement 30/12/n-1 L3-mois=5%, V(30/12/n-1)=102022/(1+L*D)=102022/(1 + 0.05*90/360)=100762
+ii-variation du titre et la perte de valeur induite par la hausse L3de 0.2% le 30/12/n-1
+V(r)=F/(1+rD), dV/dr=-FD/(1+rD)^2; le 30/12/n-1 r=E3=5%, D=0.25, V(r)=100762
+donc dV/dr=-102762*0.25/(1+0.05*0.25)^2=-24880 donc 0.2% de hausse taux court entraine baisse de 
+V=0.002*24880=49.8  
+<u>Exemple: évaluation et risque de taux d'un actif à taux variable<u>
+titre à taux variable N=50M, ref sur E3-mois (reset trimestriel); coupon annuel (donc capitalisé)
+Cn=Produit(1+D*E3) - 1 avec D=Nj/360, coupon versé le 1/10
+1/10/n-1: E3=4%, 1/1/n: E3=3.6%(92j depuis dernier reset), 1/4/n: E3=4%(90j), 1/7/n: E3=3.8%(91j), 1/10/n: E3=3.9%(92j)
+et le 1/2/n donc à 59j du prochain reset E2=4%
+V(t)=F/(1+D*r(t)), dV/dr=-F*D/(1+r*D)^2
+i- 1/10/n-1: après le coupon et instrument au pair V=50000
+1/1/n: V=50000(1+0.04*92/360)=50511.111
+1/4/n: il faut capitalisé V=50511.111(1+0.036*90/360)=50965.711
+1/2/n: V=50965.711/(1+59/360*0.04)=50633.778
+ii- variations pour hausse des taux de 0.1%
+2/1/n: dV=-dr*50965.711*(89/360)/(1+(89/360)*0.036)^2=-dr*12378
+31/3/n: dV=-dr*50965.711*(1/360)/(1+(1/360)*0.036)^2=-dr*141
+1/2/n: dV=-dr*50965.711*(59/360)/(1+(59/360)*0.04)^2=-dr*8244
+pour dr=0.001 : dv=12378 Euros le 2/1 etc...
+

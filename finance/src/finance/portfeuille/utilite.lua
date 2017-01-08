@@ -17,5 +17,12 @@ function FonctionUtilite:widgetsInit()
 end
 
 function FonctionUtilite:performCalc()
+   local w0 = varValue["W0"]
+   local gpv = varValue["gpv"]
+   local u = varValue["U(W)"]
+   
+   if w0~=nil and gpv~=nil then
+      FonctionUtilitef.gainAttendu(self,w0,gpv)
+   end
 end
 
