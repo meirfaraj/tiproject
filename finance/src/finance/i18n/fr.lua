@@ -159,6 +159,15 @@ addTextLocale(CATEGORY_MONEY_MARKET_ID,FR,"March"..e_acute.."s Mon"..e_acute.."t
 addTextLocale(CATEGORY_MONEY_MARKET_DESC_ID,FR,"March"..e_acute.."s Mon"..e_acute.."taire")
 addTextLocale(CATEGORY_FIXED_INCOME_ID,FR,"March"..e_acute.."s Obligataire")
 addTextLocale(CATEGORY_FIXED_INCOME_DESC_ID,FR,"March"..e_acute.."s Obligataire")
+addTextLocale(CATEGORY_GESTION_DE_PORTEFEUILLE_ID,FR,"Gestion de portefeuille")
+addTextLocale(CATEGORY_GESTION_DE_PORTEFEUILLE_DESC_ID,FR,"Gestion de portefeuille")
+addTextLocale(FONCTION_UTILITE_ID,FR,"Fonction d'utilit"..e_acute)
+addTextLocale(FONCTION_UTILITE_ID_HEADER_ID,FR,"Fonction d'utilit"..e_acute.." aversion au risque")
+addTextLocale(EQUIVALENT_CERTAIN_ID,FR,e_acute.."quivalent certain")
+addTextLocale(EQUIVALENT_CERTAIN_HEADER_ID,FR,e_acute.."quivalent certain")
+addTextLocale(PRIME_DE_RISQUE_ID,FR,"Prime de risque")
+addTextLocale(PRIME_DE_RISQUE_HEADER_ID,FR,"Prime de risque")
+
 
 addTextLocale(MARCHE_OBLIGATAIRE_TITLE_ID,FR,"march"..e_acute.." obligataire")
 addTextLocale(MARCHE_OBLIGATAIRE_TITLE_HEADER_ID,FR,"march"..e_acute.." obligataire")

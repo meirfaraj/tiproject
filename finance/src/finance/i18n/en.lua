@@ -182,10 +182,18 @@ addTextLocale(CATEGORY_TIME_MONEY_VALUE_DESC_ID,EN,"Time Money Value")
 addTextLocale(TAUX_SIMPLE_TITLE_ID,EN,"simple interest")
  
 addTextLocale(TAUX_SIMPLE_TITLE_HEADER_ID,EN,"\\0el {I=C*r*T} avec T=Nj/Na (exact/exact,exact/360 et 30/360)")
+addTextLocale(CATEGORY_GESTION_DE_PORTEFEUILLE_ID,EN,"Gestion de portefeuille")
+addTextLocale(CATEGORY_GESTION_DE_PORTEFEUILLE_DESC_ID,EN,"Gestion de portefeuille")
 
 
 addTextLocale(CONVENTION_DE_BASE_TITLE_ID,EN,"convention de base") 
 addTextLocale(CONVENTION_DE_BASE_TITLE_HEADER_ID,EN,"exact/exact,exact/365,exact/360 et 30/360")
+addTextLocale(FONCTION_UTILITE_ID,EN,"Fonction d'utilit"..e_acute)
+addTextLocale(FONCTION_UTILITE_ID_HEADER_ID,EN,"Fonction d'utilit"..e_acute.." aversion au risque")
+addTextLocale(EQUIVALENT_CERTAIN_ID,EN,e_acute.."quivalent certain")
+addTextLocale(EQUIVALENT_CERTAIN_HEADER_ID,EN,e_acute.."quivalent certain")
+addTextLocale(PRIME_DE_RISQUE_ID,EN,"Prime de risque")
+addTextLocale(PRIME_DE_RISQUE_HEADER_ID,EN,"Prime de risque")
 
 
  

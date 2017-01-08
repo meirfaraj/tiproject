@@ -7,10 +7,10 @@ require("finance/oblig/func/obligation")
 
 
 -- obligation in fine
-Ex1 = Tmv(EX_OBLIGATION_1_TITLE_ID,EX_OBLIGATION_1_TITLE_HEADER_ID)
+Oblig_Ex1 = Tmv(EX_OBLIGATION_1_TITLE_ID,EX_OBLIGATION_1_TITLE_HEADER_ID)
  
 
-function Ex1:widgetsInit()
+function Oblig_Ex1:widgetsInit()
    self:add(-1,{"%","value"},"%type")
    self:add(0,"Emission oblig in fine au terme de ","T")
    self:add(1,"Taux nominal r:","r")
@@ -18,7 +18,7 @@ function Ex1:widgetsInit()
    self:add(2,"Valuer nominal Vn=Vr:","Vn")  
 end
 
-function Ex1:performCalc()
+function Oblig_Ex1:performCalc()
    local T = varValue["T"]
    local r = varValue["r"]
    local Ve = varValue["Ve"]

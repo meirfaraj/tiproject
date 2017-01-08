@@ -33,10 +33,11 @@ function TauxCompose:onChangeUpd()
 end
 
 function TauxCompose:widgetsInit()
-   self:add(-1,{"n","nb jour/jour","exact/exact","exact/360","30/360"},"ptype",true)
+   self:add(-1,{"n","nombre d'annee","nb jour/jour","exact/exact","exact/360","30/360"},"ptype",true)
    self:add(-1,{"%","value"},"%type")
    self:add(0,"Capital C:","C")
    self:add(0,"Taux d'interet r:","r")
+   self:add(1,"periode:","p")
    self:add(1,"nb de periodes n:","n")
    self:add(1,"date fin:","de")
 end
