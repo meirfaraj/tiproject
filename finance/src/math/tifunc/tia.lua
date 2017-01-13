@@ -1,3 +1,5 @@
+require("std/symbols")
+
 tiNspire={}
 
 function tiNspire.execute(expression)
@@ -135,3 +137,22 @@ function tiNspire.dbd(date1,date2)
 end
 
 
+function tiNspire.deriv(funct,param,order,value)
+   local calc
+   if order~=nil then
+      calc = "derivative("..tostring(funct)..","..tostring(param)..","..order..")"
+   else
+      calc = "derivative("..tostring(funct)..","..tostring(param)..")"
+   end
+   if value~=nil then
+     calc = calc.."|"..tostring(param).."="..tostring(value)
+   end
+   local res,err = tiNspire.execute(calc)
+   return res,err,calc
+end
+
+
+function tiNspire.toNumber(val)
+  local valstr = string.gsub(tostring(val),neg_sym,"-")
+  return tonumber(valstr)
+end
