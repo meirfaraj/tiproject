@@ -36,7 +36,7 @@ function FonctionUtilitef.gainAttendu(self,w0,gp)
    return res
 end
 
-function FonctionUtilitef.fonctionUtilite(self,u,w0)
+function FonctionUtilitef.fonctionUtilite(self,u,w0,gp)
   self:appendMathToResult("U(W)="..tostring(u))
   local firstDeriv,err,firstDerivStr = tiNspire.deriv(u,"W")
   local firstDerivValue = tiNspire.deriv(u,"W",1,w0)
@@ -67,5 +67,32 @@ function FonctionUtilitef.fonctionUtilite(self,u,w0)
        self:appendToResult("la premiere derive doit etre positive\n")
     end
   end
-    
+-- Fonction d'utilite applique au differents cas :
+  self:appendToResult("\n utilite dans chaque cas : dans le cas d'un refus : ")
+  self:appendMathToResult(tostring(u).." | W = "..tostring(w0))
+  self:appendToResult("=")
+  self:appendMathToResult(tostring(tiNspire.execute(tostring(u).." | W = "..tostring(w0))))
+  self:appendToResult("=")
+  self:appendMathToResult(tostring(tiNspire.approx(tostring(u).." | W = "..tostring(w0))))
+  if gp~=nil then
+   local count=1
+   string.gsub(gp,  "([^,]*),([^;]*);*", function(p,v) 
+      if v~=nil then
+        self:appendToResult("\n utilite dans cas "..tostring(count).." ou v="..tostring(v).." :")
+        local wval=tostring(w0).."+("..tostring(v)..")"
+        local wvalRes=tiNspire.execute(wval)
+        self:appendMathToResult("W="..wval.."="..tostring(wvalRes))
+        self:appendToResult("utilit"..e_acute.."=")
+        local tocalc=tostring(u).." | W ="..wvalRes
+        self:appendMathToResult(tocalc)
+        self:appendToResult("=")
+        self:appendMathToResult(tostring(tiNspire.execute(tocalc)))
+        self:appendToResult("=")
+        self:appendMathToResult(tostring(tiNspire.approx(tocalc)))
+        self:appendToResult("\n")
+        count=count+1  
+      end
+      return ""
+   end)
+  end
 end

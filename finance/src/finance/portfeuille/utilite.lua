@@ -27,7 +27,7 @@ function FonctionUtilite:performCalc()
    end
    self:appendToResult("\n")
    if u~=nil and w0~=nil then
-      FonctionUtilitef.fonctionUtilite(self,u,w0)
+      FonctionUtilitef.fonctionUtilite(self,u,w0,gpv)
    end
 end
 
