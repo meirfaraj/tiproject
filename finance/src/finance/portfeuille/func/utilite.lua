@@ -7,7 +7,7 @@ function FonctionUtilitef.equivCertain(self,w0,gp,u)
    local calcd1=""  
    local calc2=""  
    local calc3=""  
-   self:appendToResult("calculons E(U(W0+L)) : \n")
+   self:appendToResult("\ncalculons E(U(W0+L)) : \n")
 
    string.gsub(gp,  "([^,]*),([^;]*);*", function(p,v) 
       if p~=nil and v~=nil then
@@ -49,18 +49,91 @@ function FonctionUtilitef.equivCertain(self,w0,gp,u)
    res=tiNspire.solve(tostring(u).."="..tostring(res),"W")
    self:appendMathToResult(tostring(res))
    self:appendToResult("=")
-   self:appendMathToResult(tiNspire.approx(res))
+   res=tiNspire.approx(res)
+   self:appendMathToResult(tostring(res))
+   res=string.gsub(tostring(res),"w=","")
    return res
 end
 
 function FonctionUtilitef.approxArrowPratt(self,w0,gp,u)
-    
+   self:appendToResult("\n l'approximation d'Arrow-Pratt :")
+   self:appendMathToResult(c_pi.."=(1/2)*"..c_sigma.."L^2*(-(U''(W0)/U'(W0)))")
+   self:appendToResult("\n")
+   self:appendToResult("1 calculons "..c_sigma.."L^2 qui caracterise l'intensit"..e_acute.." du risque L :\n")
+   local sigma=FonctionUtilitef.variance(self,w0,gp)
+   self:appendMathToResult(c_sigma.."L^2="..tostring(sigma))
+   self:appendToResult("\n")
+   self:appendToResult("calculons le coefficient d'aversion absolue : A(W0)=")
+   self:appendMathToResult("-(U''(W0)/U'(W0))")
+   self:appendToResult("\n")
+   
+   local firstDeriv,firstDerivStr,firstDerivValue,secDeriv,secDerivStr,secDerivValue = FonctionUtilitef.derivFonctionUtilite(self,u,w0)
+   local aVal ="-(("..tostring(secDerivValue)..")/("..tostring(firstDerivValue).."))"
+   self:appendMathToResult("A(W0)="..tostring(aVal))   
+   aVal=tiNspire.approx(aVal)
+   self:appendMathToResult("="..tostring(aVal))
+   self:appendToResult("\n")
+   self:appendToResult("Note le coefficient d'aversion relatif : R(W0)=W0*A(W0)=")
+   local rval=tostring(w0).."*"..tostring(aVal)
+   self:appendMathToResult("="..rval)
+   rval=tiNspire.approx(rVal)
+   self:appendMathToResult("="..tostring(rVal))
+   self:appendToResult("\n")
+   
+   local piRes = "(1/2)*("..tostring(sigma)..")*("..tostring(aVal)..")"
+   self:appendMathToResult(c_pi.."="..tostring(piRes))
+   piRes =tiNspire.approx(tostring(piRes))
+   self:appendMathToResult("="..tostring(piRes)) 
+   return piRes
 end
 
 function FonctionUtilitef.primeDeRisque(self,w0,gp,u)
-    local G=FonctionUtilitef.gainAttendu(self,w0,gp)
-       
+   local G=FonctionUtilitef.gainAttendu(self,w0,gp)
+   local equivalentCertain=FonctionUtilitef.equivCertain(self,w0,gp,u)
+   self:appendToResult("\nLa prime de risque s'eleve donc "..a_acute..":")
+   local primeExact = tostring(w0).."-"..tostring(equivalentCertain)    
+   self:appendMathToResult("W0-EquivCertain="..tostring(primeExact))
+   self:appendMathToResult("="..tostring(tiNspire.execute(tostring(primeExact))))
+   self:appendToResult("\nprime("..c_pi..")=")
+   local res=tiNspire.approx(tostring(primeExact))
+   self:appendMathToResult(tostring(res))
+   self:appendToResult("\n")
+   FonctionUtilitef.approxArrowPratt(self,w0,gp,u)
+   return res
 end
+
+function FonctionUtilitef.variance(self,w0,gp)
+   local esp=FonctionUtilitef.gainAttendu(self,w0,gp)
+   local count=1
+   local calc=""  
+   string.gsub(gp,  "([^,]*),([^;]*);*", function(p,v) 
+      if p~=nil and v~=nil then
+        print("p="..tostring(p).." v="..tostring(v))
+        if varValue["%type"] == "%" then
+           local pc = tostring(p).."/100"
+           self:appendMathToResult(tostring(p).."%="..pc)
+           p=tostring(tiNspire.approx(pc))
+           self:appendMathToResult("="..tostring(p))
+           self:appendToResult("\n")
+        end   
+        if count~=1 then
+           calc=calc.."+"
+        end
+        calc=calc..tostring(p).."*("..tostring(v).."-"..tostring(esp)..")^2"
+        count=count+1
+      end
+      return ""
+   end)
+   
+   self:appendMathToResult(calc)
+   self:appendToResult("=")
+   local res=tiNspire.execute(calc)
+   self:appendMathToResult(tostring(res))
+   self:appendToResult("=")
+   self:appendMathToResult(tostring(tiNspire.approx(calc)))
+   return res
+end
+
 
 function FonctionUtilitef.gainAttendu(self,w0,gp)
    local gpv={}
@@ -71,7 +144,7 @@ function FonctionUtilitef.gainAttendu(self,w0,gp)
         print("p="..tostring(p).." v="..tostring(v))
         if varValue["%type"] == "%" then
            local pc = tostring(p).."/100"
-           self:appendMathToResult(tostring(p).."%="..pc)
+           self:appendMathToResult(tostring(p).."%="..tostring(pc))
            p=tostring(tiNspire.approx(pc))
            self:appendMathToResult("="..tostring(p))
            self:appendToResult("\n")
@@ -86,7 +159,7 @@ function FonctionUtilitef.gainAttendu(self,w0,gp)
       return ""
    end)
    
-   self:appendToResult("gain attendu=")
+   self:appendToResult("(Esperance)gain attendu=")
    self:appendMathToResult(calc)
    self:appendToResult("=")
    local res=tiNspire.execute(calc)
@@ -96,7 +169,8 @@ function FonctionUtilitef.gainAttendu(self,w0,gp)
    return res
 end
 
-function FonctionUtilitef.fonctionUtilite(self,u,w0,gp)
+
+function FonctionUtilitef.derivFonctionUtilite(self,u,w0)
   self:appendMathToResult("U(W)="..tostring(u))
   local firstDeriv,err,firstDerivStr = tiNspire.deriv(u,"W")
   local firstDerivValue = tiNspire.deriv(u,"W",1,w0)
@@ -105,7 +179,12 @@ function FonctionUtilitef.fonctionUtilite(self,u,w0,gp)
   local secDerivValue = tiNspire.deriv(u,"W",2,w0)
   self:appendToResult("\nU\"(W)=")
   self:appendMathToResult(tostring(secDerivStr).."="..tostring(secDeriv).."="..tostring(secDerivValue).."="..tostring(tiNspire.approx(secDerivValue)))
-  
+  return firstDeriv,firstDerivStr,firstDerivValue,secDeriv,secDerivStr,secDerivValue
+end
+
+function FonctionUtilitef.fonctionUtilite(self,u,w0,gp)
+  local firstDeriv,firstDerivStr,firstDerivValue,secDeriv,secDerivStr,secDerivValue = FonctionUtilitef.derivFonctionUtilite(self,u,w0)
+    
   firstDerivValue = tiNspire.approx(firstDerivValue)
   secDerivValue = tiNspire.approx(secDerivValue)
   
@@ -140,11 +219,11 @@ function FonctionUtilitef.fonctionUtilite(self,u,w0,gp)
       if v~=nil then
         self:appendToResult("\n utilite dans cas "..tostring(count).." ou v="..tostring(v).." :")
         local wval=tostring(w0).."+("..tostring(v)..")"
-        local wvalRes=tiNspire.execute(wval)
-        self:appendMathToResult("W="..wval.."="..tostring(wvalRes))
+        local wvalRes=tostring(tiNspire.execute(wval))
+        self:appendMathToResult("W="..tostring(wval).."="..tostring(wvalRes))
         self:appendToResult("utilit"..e_acute.."=")
-        local tocalc=tostring(u).." | W ="..wvalRes
-        self:appendMathToResult(tocalc)
+        local tocalc=tostring(u).." | W ="..tostring(wvalRes)
+        self:appendMathToResult(tostring(tocalc))
         self:appendToResult("=")
         self:appendMathToResult(tostring(tiNspire.execute(tocalc)))
         self:appendToResult("=")

@@ -141,6 +141,9 @@ end
 
 function Screen:paint(gc) end
 
+function Screen:timer() end
+
+
 function Screen:invalidate()
 	platform.window:invalidate(self.x ,self.y , self.w, self.h)
 end

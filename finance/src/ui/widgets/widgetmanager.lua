@@ -127,6 +127,8 @@ function WidgetManager:enterKey()
     self:invalidate()
 end
 
+function WidgetManager:timer()
+end
 
 function WidgetManager:onErrorDispStart() 
   if self.focus~=0 then

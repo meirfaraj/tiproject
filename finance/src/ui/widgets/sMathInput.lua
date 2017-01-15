@@ -59,6 +59,29 @@ function sMathInput:init(w,h)
       self:fixContent()
 end
 
+function sMathInput:move(x,y)
+   self.x = x
+   self.y = y
+   self.editor:move(x,y)
+end
+
+function sMathInput:resize(w,h)
+   self.dw = w
+   self.dh = h
+   self.ww = w
+   self.hh = h
+   self.editor:resize(w,h)
+end
+
+function sMathInput:setText(txt)
+   self.editor:setText(txt)
+end
+
+function sMathInput:registerFilter(filter)
+   self.editor:registerFilter(filter)
+end
+
+
 function sMathInput:fixContent()
                                             currentText = self.editor:getExpressionSelection()
                                             if currentText=="" or currentText==nil then

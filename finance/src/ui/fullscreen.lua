@@ -49,7 +49,9 @@ else
 end
 
 function on.timer()
-    --current_screen():timer()
+    if current_screen().timer then
+       current_screen():timer()
+    end
     local j = 1
     while j <= #timer.tasks do -- for each task
         if timer.tasks[j][2]() then -- delete it if has ended

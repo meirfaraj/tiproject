@@ -17,12 +17,12 @@ function sRichInput:init(w,h)
   self.value  = ""  
   self.bgcolor  = {255,255,255}
   self.disabledcolor  = {128,128,128}
-  self.font = {"sansserif", "r", 7}
+  self.font = {"sansserif", "r", 6}
   self.disabled = false
   
   self.editor = D2Editor.newRichText()
     self.editor:setFocus(false)
-    self.editor:setFontSize(8)
+    self.editor:setFontSize(6)
      
     self.editor:registerFilter({    mouseDown = function(x,y)
                                             on.mouseDown(x,y)

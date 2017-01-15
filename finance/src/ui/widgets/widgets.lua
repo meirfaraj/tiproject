@@ -2,7 +2,11 @@
 ------------------------------------------------------------------
 --                        Widget  Class                         --
 ------------------------------------------------------------------
+require("ui/screen")
 require("ui/widgets/widgetmanager")
+
+require("ui/wscreen")
+
 
 Widget	=	class(Screen)
 

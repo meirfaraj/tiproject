@@ -4,10 +4,12 @@
 --------------------------------------------------------------------------
 require("std/utils")
 require("std/array")
+
 require("ui/widgets/widgets")
 require("ui/widgets/sinputwidget")
 require("ui/widgets/slabelwidget")
 require("ui/widgets/sdropdownwidget")
+require("ui/widgets/sMathInput")
 require("std/benchmark")
 
 varValue = {}
@@ -66,32 +68,33 @@ end
 
 function Tmv:CreateBox()
   if not self.Box then
-     self.Box = D2Editor.newRichText()
-     self.Box:setFontSize(6)
-     self.Box:createMathBox()
+     --self.Box = D2Editor.newRichText()
+     self.Box = sMathInput(self.boxW,self.boxH)
+     self.Box.editor:setFontSize(6)
+     --self.Box:createMathBox()
      self.lastInput=""
-     self.Box:registerFilter {
-            tabKey = function()
-                 if not self.Box:hasFocus() then
-                      Tmv:tabKey() 
-                 end
-              return true end,
-            charIn = function(ch)
-                   if not self.Box:hasFocus() then
-                      Tmv:charIn(ch) 
-                   end
-                   if self.boxOnly  then
-                      Tmv:charIn(ch) 
-                   end
-                   return self.Box:hasFocus() 
-                end,
-            arrowKey = function(key) 
-                   if not self.Box:hasFocus() then
-                      Tmv:arrowKey(key) 
-                   end
-                   return self.Box:hasFocus()
-                end
-     }
+--self.Box:registerFilter {
+--            tabKey = function()
+--                 if not self.Box:hasFocus() then
+--                      Tmv:tabKey() 
+--                 end
+--              return true end,
+--            charIn = function(ch)
+--                   if not self.Box:hasFocus() then
+--                     Tmv:charIn(ch) 
+--                   end
+--                   if self.boxOnly  then
+--                      Tmv:charIn(ch) 
+--                   end
+--                   return self.Box:hasFocus() 
+--              end,
+--            arrowKey = function(key) 
+--                   if not self.Box:hasFocus() then
+--                      Tmv:arrowKey(key) 
+--                   end
+--                   return self.Box:hasFocus()
+--                end
+--     }
   end
 end
  
@@ -164,10 +167,6 @@ function Tmv:add(row,text,varname,onchange)
    if type(text) == "string" then
      curInput=sInput()
      curInput.extraChange=onchange
-       function curInput:enterKey()
-          self:perform()
-          self.Box:setFocus(true)
-       end
        function curInput:onChange()
           if self.extraChange == true then
              self.parent:onChangeUpd()
@@ -281,6 +280,8 @@ function  Tmv:pushed()
         self.widgets  = {}
         table.foreach(self.inputs, function(k,v) self:addWidget(v) end)
         print("appendWidget enterP num of widget="..tostring(table.getn(self.widgets)))
+        self:refreshBox()
+        self:appendWidget(self.Box, self.boxX,self.boxY)
     end
     
     self:refreshBox()
@@ -344,11 +345,7 @@ function Tmv:paint(gc)
      if not self.viewTitle then
         form=tostring(self.operation)
      end
-     if self.Box.setExpression then
-        self.Box:setExpression(form, 1)
-     else
-         self.Box:setText(form, 1)
-     end
+     self.Box:setExpression(form)
   end
 end
 
@@ -385,10 +382,12 @@ end
 
 function Tmv:enterKey()
     self:perform()
+    WidgetManager.enterKey(self)
 end
 
-function Tmv:arrowKey()
-   self:enterKey()
+function Tmv:arrowKey(arrow)
+   WidgetManager.arrowKey(self,arrow)
+   self:perform()
 end
 
 function Tmv:escapeKey()
