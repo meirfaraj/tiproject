@@ -22,7 +22,7 @@ function FonctionUtilite:performCalc()
    local gpv = varValue["gpv"]
    local u = varValue["U(W)"]
    
-   if w0~=nil and gpv~=nil then
+   if w0~=nil and gpv~=nil  then
       FonctionUtilitef.gainAttendu(self,w0,gpv)
    end
    self:appendToResult("\n")

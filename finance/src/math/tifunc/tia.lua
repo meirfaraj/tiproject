@@ -7,10 +7,10 @@ function tiNspire.execute(expression)
        local res,err = math.evalStr(expression)
        math.setEvalSettings({{'Calculation Mode','Exact'}})
        if res then
-         print("execute : "..expression.." returned "..res)
+         print("execute : "..tostring(expression).." returned "..tostring(res))
          return res,err
        end
-       print("execute : "..expression.." returned "..tostring(res).." Error : "..err)
+       print("execute : "..tostring(expression).." returned "..tostring(res).." Error : "..tostring(err))
        return res,err
    else
      print("execute failure")
@@ -29,7 +29,7 @@ end
 --Remarque : toutes les variables non affectées sont
 --considérées comme réelles.
 function tiNspire.abs(expression)
-    return tiNspire.execute("abs("..expression..")")
+    return tiNspire.execute("abs("..tostring(expression)..")")
 end
 
 
@@ -91,7 +91,7 @@ end
 --GInt() et GPrn(), page 211 et bal(), page 20.
 function tiNspire.amortTbl(NPmt,N,I,PV, Pmt, FV, PpY, CpY,PmtAt, valArrondi)
 -- TODO : amortTbl
-    return tiNspire.execute("amortTbl("..expression..")")
+    return tiNspire.execute("amortTbl("..tostring(NPmt)..")")
 end
 
 
@@ -109,7 +109,7 @@ end
 --représentant un point de coordonnée rectangulaire à
 --deux dimensions.
 function tiNspire.angle(expression)
-    return tiNspire.execute("angle("..expression..")")
+    return tiNspire.execute("angle("..tostring(expression)..")")
 end
 
 
@@ -151,6 +151,9 @@ function tiNspire.deriv(funct,param,order,value)
    return res,err,calc
 end
 
+function tiNspire.sign(val)
+   return tiNspire.execute("sign("..tostring(val)..")")
+end
 
 function tiNspire.toNumber(val)
   local valstr = string.gsub(tostring(val),neg_sym,"-")
