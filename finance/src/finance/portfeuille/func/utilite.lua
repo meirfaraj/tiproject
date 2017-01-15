@@ -55,6 +55,19 @@ function FonctionUtilitef.equivCertain(self,w0,gp,u)
    return res
 end
 
+function FonctionUtilitef.checkAversionFromARA(self,ara)
+   if ara~=nil then
+      local nara = tiNspire.toNumber(tiNspire.sign(ara))
+      if nara>0 then
+         self:appendToResult("\naversion absolue au risque (ARA)>0 => averse vis a vis du risque\n")
+      elseif nara<0 then
+         self:appendToResult("\naversion absolue au risque (ARA)<0 => risquophile\n")
+      elseif  nara==0 then
+         self:appendToResult("\naversion absolue au risque (ARA)=0 => neutre au risque\n")
+      end
+   end
+end
+
 function FonctionUtilitef.approxArrowPratt(self,w0,gp,u)
    self:appendToResult("\n l'approximation d'Arrow-Pratt :")
    self:appendMathToResult(c_pi.."=(1/2)*"..c_sigma.."L^2*(-(U''(W0)/U'(W0)))")
@@ -72,11 +85,13 @@ function FonctionUtilitef.approxArrowPratt(self,w0,gp,u)
    self:appendMathToResult("A(W0)="..tostring(aVal))   
    aVal=tiNspire.approx(aVal)
    self:appendMathToResult("="..tostring(aVal))
+   FonctionUtilitef.checkAversionFromARA(self,aVal)
+      
    self:appendToResult("\n")
    self:appendToResult("Note le coefficient d'aversion relatif : R(W0)=W0*A(W0)=")
-   local rval=tostring(w0).."*"..tostring(aVal)
-   self:appendMathToResult("="..rval)
-   rval=tiNspire.approx(rVal)
+   local rval=tostring(w0).."*("..tostring(aVal)..")"
+   self:appendMathToResult("="..tostring(rval))
+   rval=tiNspire.approx(tostring(rVal))
    self:appendMathToResult("="..tostring(rVal))
    self:appendToResult("\n")
    
