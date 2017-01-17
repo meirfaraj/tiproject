@@ -181,6 +181,9 @@ addTextLocale(EX_OBLIGATION_1_TITLE_HEADER_ID,FR,"taux actuariel brut "..a_acute
 
 addTextLocale(EXERCICES_TITLE_ID,FR,"Exercices ")
 
+addTextLocale(MATRICE_VAR_COVAR_ID,FR,"Matrice variance-covariance")
+addTextLocale(MATRICE_VAR_COVAR_HEADER_ID,FR,"Determiner la Matrice variance-covariance du portefeuille")
+
  
  
  

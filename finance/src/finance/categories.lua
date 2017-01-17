@@ -17,6 +17,8 @@ require("finance/oblig/ex1")
 require("finance/portfeuille/utilite")
 require("finance/portfeuille/equivCertain")
 require("finance/portfeuille/primeDeRisque")
+require("finance/portfeuille/matriceVarianceCovariance")
+
 
 References  = {
   {title=ASTxt(CONVENTION_DE_BASE_TITLE_ID), screen=ConventionDeBaseCours  },
@@ -50,6 +52,7 @@ addCat(4, ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_ID), ASTxt(CATEGORY_GESTION_DE_
 addSubCatScreen(4,1,ASTxt(FONCTION_UTILITE_ID),ASTxt(FONCTION_UTILITE_ID_HEADER_ID),FonctionUtilite)
 addSubCatScreen(4,2,ASTxt(EQUIVALENT_CERTAIN_ID),ASTxt(EQUIVALENT_CERTAIN_HEADER_ID),EquivCertain)
 addSubCatScreen(4,3,ASTxt(PRIME_DE_RISQUE_ID),ASTxt(PRIME_DE_RISQUE_HEADER_ID),PrimeDeRisque)
+addSubCatScreen(4,4,ASTxt(MATRICE_VAR_COVAR_ID),ASTxt(MATRICE_VAR_COVAR_HEADER_ID),MatriceVarianceCovariance)
 
 
 ----------------------Exercice FIXED INCOME---------------------------------------

@@ -6,46 +6,58 @@ Ivi on a fait une capitalisationde la valeur de l'obligation à l'instant t
 
 <h2>cotation des obligations</h2>
 <math>Cc=100kT</math> avec <math>T=Nj/Na</math>
-Le cours plein coupon C'(t) à <math>t=Nj/Na</math> <math>V(t)=C'(t)*V(n)/100</math>
+Le cours plein coupon C'(t) à <math>t=Nj/Na</math> <math>V(t)=C'(t)*V(n)/100</math><br>
 
-<math>C'(t) = 100 * ((1+r(t))^t) * (k/(1+r)+k/(1+r)^2+...+(1+k)/(1+r)^T)</math>
+<math>C'(t) = 100 * ((1+r(t))^t) * (k/(1+r)+k/(1+r)^2+...+(1+k)/(1+r)^T)</math><br>
 
-Le cours pied coupon : <math>C(t) = C'(t) - 100 * k * t</math> avec <math>t = Nj/Na</math>
+Le cours pied coupon : <math>C(t) = C'(t) - 100 * k * t</math> avec <math>t = Nj/Na</math><br>
 
 <h2>Variation, sensibilité et Duration d'un titre à revenus fixes</h2>
 
-<b>Sensibilité : </b>
-<math>S=-dV/Vdr = (1/(1+r)) * (1/V * Somme(t*F(t)/(1+r)^t))</math><math>=D/(1+r)</math> donc c'est la duration diviser par 1+r
-<math>DELTA V/V = -S DELTA r</math>
-<math>D=S*(1+r)</math>
+<b>Sensibilité : </b> <br>
+<math>S=-dV/Vdr = (1/(1+r)) * (1/V * Somme(t*F(t)/(1+r)^t))</math><math>=D/(1+r)</math> donc c'est la duration diviser par 1+r <br>
+<math>DELTA V/V = -S DELTA r</math> <br>
+<math>D=S*(1+r)</math> <br>
 
-Pour un <b> zéro coupon </b> <math>D=T*F(T)/V*(1+r)^T</math> or <math>V=F(T)/(1+r)^T</math> donc <math>D=T</math>
+Pour un <b> zéro coupon </b> <math>D=T*F(T)/V*(1+r)^T</math> or <math>V=F(T)/(1+r)^T</math> donc <math>D=T</math> <br>
 
-Pour une <b> rente perpétuelle </b> qui verse x <math>V=Somme{t=1->infinity}(x/(1+r)^t)</math> donc <math>V=x/r</math>
-<math>S=-dLnV/dr=1/r</math> et <math>D = S * (1+r)=(1+r)/r</math>
+<u>Exemple: valorisation et risue rente perpétuelle </u><br>
+1) Pour une <b> rente perpétuelle </b> qui verse x <math>V= Somme (x/(1+r)^t)</math> de <math>t=1</math> jusqu'à l'infini donc <math>V=x/r</math><br>
+<math>S=-dLnV/dr=1/r</math> et <math>D = S * (1+r)=(1+r)/r</math> <br>
+2)Considérons une rente perpétuelle de valeur nominale égale à 1, dont le taux de rentabilité (taux
+actuariel continu) est r et de le taux de coupon est k (elle distribue un coupon annuel k à l’infini) <br>
+On se situe à une date quelconque entre deux coupons, t années après le précédent détachement et (où t est compris entre 0 et 1) <br>
+Le taux discret est <math>r = exp(rc) - 1</math> <br>
+<math>V = (1+r)^t * ( Somme{t=1 -> infini}(k/(1+r)^t))= (k/r) * (1+r)^t</math> <br>
+
+<u>Exemple: taux continus montrer que S=D </u> <br>
+<math>V = Somme{t=t1 -> tN}(Ft * exp(-rt))</math>
+<math>S=-dV/Vdr = Somme{t=t1 -> tN}(Ft/V * exp(-rt) * t) = D</math> <br>
+<br>
 
 La <b>convexité</b> pour une appréciation plus fine
-<math>DELTA V/V=-S DELTA r = 1/V * dV/dr * DELTA r</math>
-développement à l'ordre 2 donne
+<math>DELTA V/V=-S DELTA r = 1/V * dV/dr * DELTA r</math> <br>
+développement à l'ordre 2 donne <br>
 <math>DELTA V/V=-S DELTA r + 1/2 * C (DELTA r)^2</math>
 avec <math>C = 1/V d^2V/dr^2 = 1/V * 1/(1+r)^2</math> Somme <math>(t*(t+1)*F(t)/(1+r)^t)</math>
+<br><br>
+Exemple : 
+obligation 10 ans à courir, de 100€, k=6%,r=5% <br>
+<math>V=Somme[t=1->9](6/1.05^t)+106/(1.05)^10=107.72</math>€ <br>
+Sa sensibilité <math>S=-dV/Vdr=1/(1.05*107.72) * [1 * 6/1.05 + 2 * 6/1.05^2 +...+ 10 * 106/1.05^10]=7.52</math> <br>
+Duration <math>D=1.05*S = 7.89</math> ans <br>
+hausse de taux de 1% traduit approximativement, par une baisse de valeur de titre de 7.52% <br>
 
-Exemple : obligation 10 ans à courir, de 100€, k=6%,r=5%
-<math>V=Somme[t=1->9](6/1.05^t)+106/(1.05)^10=107.72€</math>
-Sa sensibilité <math>S=-dV/Vdr=1/(1.05*107.72) * [1 * 6/1.05 + 2 * 6/1.05^2 +...+ 10 * 106/1.05^10]=7.52</math>
-Duration <math>D=1.05*S = 7.89</math> ans
-
-hausse de taux de 1% traduit approximativement, par une baisse de valeur de titre de 7.52%
-
-Exemple : obligation 10 ans, venant de détacher un coupon 5%, 
-<math>r=5%</math> donc obligation actuellement au pair
-<math>V(5%)=Somme[t=1->10](5/1.05^t)+100/(1.05)^10=100€</math>
-pour <math>r=5.1%</math> <math>V(5,1%)=Somme[t=1->10](5/1.051^t)+100/(1.051)^10=99.23€</math>
-Sa sensibilité <math>S=-DeltaV/VDr=0.77/100*0.001=7.7</math>
-d'où Duration <math>D=1.05*7.7 = 8.09</math> ans
-
-Exemple: rente perpétuelle avec r et k
-<math>V=k/r, S=-dV/Vdr=1/r, C=1/V * d^2V/dr^2=2k/Vr^3=2/r^2</math>
+<u>Exemple </u>: <br>
+obligation 10 ans, venant de détacher un coupon 5%,
+<math>r=5% </math>donc obligation actuellement au pair <br>
+<math>V(5%)=Somme[t=1->10](5/1.05^t)+100/(1.05)^10=100</math>€ <br>
+pour <math>r=5.1% V(5,1%)=Somme[t=1->10](5/1.051^t)+100/(1.051)^10=99.23</math>€ <br>
+Sa sensibilité <math>S=-DeltaV/VDr=0.77/100*0.001=7.7</math> <br>
+d'où <math>Duration D=1.05*7.7 = 8.09</math> ans
+<br>
+<u>Exemple<u>: rente perpétuelle avec r et k
+<math>V=k/r</math>, <math>S=-dV/Vdr=1/r</math>, <math>C=1/V * d^2V/dr^2=2k/Vr^3=2/r^2</math>
 <math>r=10%</math> donc <math>S=10</math> et <math>C=200</math>
 Lors de la hausse de taux de 2% implique une baisse de la valeur calculable
 <math>-Delta(V)/V=SDelta(r)-1/2*C*Delta(r)^2=10*0.02-100*(0.02)^2=16%</math>

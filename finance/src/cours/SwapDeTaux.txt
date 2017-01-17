@@ -1,4 +1,4 @@
-<h1>Swap vanille<h1/>
+<h1>Swap vanille</h1>
 Swap taux fixe contre taux variable ou taux fixe donneur:swap emprunteur <math>M * Di*[TV-TF]</math>.
 Swap taux variable contre taux fixe ou taux fixe receveur:swap preteur <math>M * Di*[TF-TV]</math>.
 Swap taux fixe k donneur: <math>S(r-k)</math> s'analyse comme un emprunt à taux fixe k combiné à 
@@ -6,43 +6,78 @@ un pret à taux variable r, long actif Ar et court actik Ak: <math>S(r-k)=Ar-Ak</
 <math>S(k-r)=ak-ar</math>: jambe fixe -jambe variable ou bien <math>S(k-r)=Ak-Ar</math>: composante fixe - composante variable 
 Deux méthodes de valorisation des swap: démantèlement et équivalence.
 pour démentèlement on actualise en utilisant les taux ZC extrait des gamme des taux swap k(t)
-<u>Exemple: valorisation de swap<u>
+<br><br>
+<u>Exemple: valorisation et risue swap vanille</u>
+swap preteur(tx fixe receveur)  de 4 ans de durée le 01/10/n-1, N=100M,
+jambe variable E6R(coupon semestriel 01-04 et 01-10) et jambe fixe coupon annuel k=5% versé le 01/10/n,n+1,n+2,n+3
+dates reset et les gammes de tx plates de la <b>Jv</b> ainse que Nj(t-1,t):<br>
+01/10/n-1 tx plat: 5,5%, 01/4/n: 5%(182), 01/10/n=5.5%(183), 01/04/n+1: 5.5%(182), 01/10/n+1: 5%(183) <br>
+1)01/10/n+1 (après versement de coupon): gamme des taux plate 5% (taux fixe BTAN 4 ans et tx fixe swap 4 ans)<br>
+valeur marché du swap V=0 car composantes fixes et variables au pair<br>
+2)31/3/n:gamme plate et tous les tx égaux à 6%, donc juste avant versement de coupon V(S(k-r):<br>
+le coupon variable du 01/04/n = <math> Cn=100000*5.5%*182/360=2780.5K </math> donc V(Ar) = 100000+Cn=102780.5K <br>
+<math> V(Ak)=100000 * (1.06)^1/2 * ( Somme{t=1 ->4}(0.05/1.06^t)+100*1/1.06^4) = 99388.8 K </math> <br>
+Donc V(S(k-r))=-3391.7K <br> 
+3) 01/10/n : (après coupons) tous les ts sont 5.5% calcul de la valeur des swaps par 2 méthodes: <br>
+Méthode démantèlement: V(Ar)=100000K<br>
+<math> V(Ak)=100000 * ( Somme{t=1 ->3}(0.05/1.055^t)+100*1/1.055^3) = 98651.033 K </math> <br> 
+Donc V(S(k-r))=-1348.966K <br> 
+Méthode équivalence: <math> V(S(k-r))=100000 (5%-5.5%) * ( Somme{t=1 ->3}(1/1.055^t)) = -1348.966K </math> <br> 
+4) le 30/12/n-1, E(3mois)=5% aainsi que tous les autres tx. Calculons incidence d'une hausse des tx de 0.2% le 30/12/n-1 <br>
+On la formule <math>dV(S(k-r))/dr=dV(A(k))/dr - dV(A(r))/dr </math> et <math>A(r)=F * D/(1+rD)^2</math> donc <math>dV(A(r))/dr= -FD/(1+rD)^2</math> <br>
+Le 30/12/n-1, les tx sont tous égaux à 5%, dès lors une variation DELTA(r)=0.2% implique au premier ordre :<br>
+<math> DELTA(V(Ar))=-DELTA(r) * F * D/(1+rD)^2 = -0.002 * 102780.5 * 0.25 / (1+0.25*0.05)^2 = -50.129K </math> <br>
+<math> V(Ak)=Somme{t=1 ->4}(Fi/(1+r)^t-0.25) </math> donc <math>dV(A(k))/dr= - Somme{t=1 ->4}((t-0.25)Fi/(1+r)^t+0.75) </math> au premier ordre :<br>
+<math> DELTA(V(Ak))= DELTA(r) * dV(A(k))/dr = -0.002 * 334845.004 = -669.69K </math> <br>
+Donc DELTA(r) = 0.2% implique DELTA(V(S))=-669.69+50.129=-619.56K 
+<br><br>
+<u>Exemple: valorisation de swap</u>
 Le 1/1/n date(0), courbe des swap plate à 4%(quelque soit la matu, k=4%)
 swap preteur X de 100M, 4 années à courir, taux fixe receveur/L-3mois révisable donneur, contracté
 à une date antérieure au taux fixe 5%, coupons révisable payés trimestriellement(31/3,30/6,30/9,31/12)
 et le coupon fixe le 31/12. L3-mois(30/9/n-1)=4%(dernère date de reset)
 On calcule valeur du swap le 1/1/n selon 2 méthodes, puis sa valeur le 30/12/n-1:
+<br>
 a)1/1/n(0+, juste après le règlement)
-Méthode démantèlement:<math>V0(S(k-r))=V0+(A(k)) - V0+(A(r))</math>
-A(r) étant au pair <math>V0+(A(r))=100</math>
+<br>
+Méthode démantèlement:V0(S(k-r))=V0+(A(k)) - V0+(A(r))
+A(r) étant au pair V0+(A(r))=100
 Courbe des taux plate donc taux ZC utilisés pour actualisé A(k) sont égaux aux taux fixe swap(courbe plate)
 <math>V0+(A(k))=5*Somme{t=1 ->4}(1/1.04^t)+100*1/1.04^4=103.63</math>
 donc <math>V0(S(k-r))=3.63M</math> Euro
-Méthode équivalence:<math>V0+(S(k-r))=(5-4)Somme{t=1 ->4}(1/1.04^t)=3.63M</math> Euro
+<br>
+Méthode équivalence:<math>V0+(S(k-r))=(5-4)Somme{t=1 ->4}(1/1.04^t)=3.63</math>M Euro
+<br>
 b) valeur le 30/12/n-1 en 0-, juste avant règlement:
+<br>
 rajouter pour chaque composante le coupon(annuel pour le fixe et semestriel pour le variable(<math>D = Nj/Na = 0.25</math>)
-<math>V0-(A(k))=103.63+5=108.63</math>, <math>V0-(A(r))=100 + 4 * 0.25=101</math> donc <math>V0-(S(k-r))=7.63M</math> Euro
+<math>V0-(A(k))=103.63+5=108.63</math>, <math>V0-(A(r))=100 + 4 * 0.25=101</math> donc <math>V0-(S(k-r))=7.63</math>M Euro
+<br>
 <b>B.</b> Un an plus tard 1/1/n+1(donc le Swap lui reste 3 ans), la gamme des taux fixe swap(k(theta)) évolue
 1an: 6%, 2ans: 6.5%, 3ans=7%, 4ans: 7.2%
+<br>
 on commence par calciler la gamme ZC 1,2 et 3 ans implicite puis on calcule la valeur du swap(L-3mois contre 5%)
+<br>
 a)calcul des prix b(theta) et des ZC à partier de k(theta)
-r1=k1=6%donc b1=1/1.06=0.9434; En écrivant q'un titre à 2 ans de coupon k2 est au pair, il vient:
+<br>
+<math>r1=k1=6%</math>donc <math>b1=1/1.06=0.9434</math>; En écrivant q'un titre à 2 ans de coupon k2 est au pair, il vient:
 <math>1=k2b1+(1+k2)b2=0.065*0.9434+1.065b2</math>, soit <math>b2=0.8814</math> donc <math>r2=6.516%</math> (<math>b2 = 1/(1+r2)^2</math>)
 de même pour 3 ans k3:1=k(3)b(1)+k(3)b(2)+(1+k(3))b(3) donc b(3)=0.8152 et r3=7.048%
-b)valeur du swap le 1/1:n+1: par démantèlement=<math>V0+(A(r))=100M</math>,<math>V0+(A(k))=5*(b(1)+b(2))+105*b(3)=94.72M</math>
-<math>V0+(S(k-r))=-5.28M</math>; Par équivalence: <math>V0+(S(k-r))=(5-7)*[b1+b2+b3]=-5.28M</math>
-<u>Exemple: swap avec taux forward<u>
+b)valeur du swap le 1/1:n+1: par démantèlement=<math>V0+(A(r))=100M</math>,<math>V0+(A(k))=5*(b(1)+b(2))+105*b(3)=94.72</math>M
+<math>V0+(S(k-r))=-5.28M</math>; Par équivalence: <math>V0+(S(k-r))=(5-7)*(b1+b2+b3)=-5.28<math>M
+<br>
+<u>Exemple: swap avec taux forward</u>
 taux actuariels ZC r(theta) exrait des courbes taux fixes des swaps vanille le 1/4/n
 3mois: 5%, 6mois: 5.3%, 9mois=5.4%, 12mois: 5.5%, 15mois: 5.6%
 On se situe le 1/4/n, swap L-6mois contre taux fixe 6%, 15mois de vie à courir avec 3 echeances semestrielles
 situés les 1/7/n, 1/1/n+1 et 1/7/n+1 et jambe fixe 1/7/n et 1/7/n+1; N=100M et le 1/1/n L-6mois=4%
 On raisonne avec semestre = 0.5 et trimestre 0.25
 Méthode des taux forward:
-<math>(1+f(3,6))^0.5= (1+r(9))^0.75/(1+r(3))^0.25</math> soit <math>f(3,6)=5.6%</math> ; <math>(1+f(9,6))^0.5=(1+r(15))^1.25/(1+r(9))^0.75</math> soit <math>f(9,6)=5.91%</math>
-Jambe fixe =:  <math>V(a(k))=6*(1/1.05^0.25+1/1.056^1.25)=11.89M</math>
-Jambe variable: on actualise le premier coupon connu(0.5*4%*100=2) et les équivalents certains des suivants(tx forward*100)
-<math>V(a(r))=2*1/1.05^0.25+(5.6/1.054^0.75+5.91/1.056^1.25)=</math>
-donc valeur du swap=V(a(k))-V(a(r))
-Méthode démantèlement:
-<math>V(A(k))=6*(1/1.05^0.25+1/1.056^1.25)+100/1.056^1.25=105.3</math> et <math>V(A(r))=102/1.05^0.25=100.76</math>
+<math>(1+f(3,6))^0.5= (1+r(9))^0.75/(1+r(3))^0.25 </math> soit <math>f(3,6)=5.6%</math> ; <math>(1+f(9,6))^0.5=(1+r(15))^1.25/(1+r(9))^0.75</math> soit <math>f(9,6)=5.91%</math> <br>
+<b>Jambe fixe</b> =:  <math>V(a(k))=6*(1/1.05^0.25+1/1.056^1.25)=11.89</math>M
+<b>Jambe variable</b>: on actualise le premier coupon connu(0.5*4%*100=2) et les équivalents certains des suivants(tx forward*100)
+<math>V(a(r))=2*1/1.05^0.25+(5.6/1.054^0.75+5.91/1.056^1.25)=</math> <br>
+donc valeur du <math>swap=V(a(k))-V(a(r))</math><br>
+Méthode démantèlement:<br>
+<math>V(A(k))=6*(1/1.05^0.25+1/1.056^1.25)+100/1.056^1.25=105.3</math> et <math>V(A(r))=102/1.05^0.25=100.76</math> <br>
 <math>Vswap=V(A(k))-V(A(r))</math>
