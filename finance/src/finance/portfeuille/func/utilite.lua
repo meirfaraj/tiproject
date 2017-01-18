@@ -204,7 +204,7 @@ function FonctionUtilitef.fonctionUtilite(self,u,w0,gp)
   secDerivValue = tiNspire.approx(secDerivValue)
   
   
-  if tonumber(firstDerivValue)~=nil then 
+  if tiNspire.toNumber(firstDerivValue)~=nil then 
     if tiNspire.toNumber(tiNspire.sign(firstDerivValue))>=0 then
       self:appendToResult("U'(W)>0\n")
       local secVal = tiNspire.toNumber(tiNspire.sign(secDerivValue))

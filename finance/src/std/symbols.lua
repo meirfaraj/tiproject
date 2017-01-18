@@ -54,5 +54,6 @@ sum_sym     = string.uchar(8721)
 neg_sym     = string.uchar(8722)
 exp_sym     = string.uchar(61503)
 infinit_sym = string.uchar(8734)
+c_transpose = string.uchar(61442)
 derive_sym  = string.uchar(61448)
 

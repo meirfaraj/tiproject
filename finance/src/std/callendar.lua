@@ -8,9 +8,9 @@ function cal.parse(date)
    local mmjjaa="(%d%d)\\.(%d%d)(%d%d)"
    local jjmmaa="(%d%d)(%d%d)\\.(%d%d)"
    if string.find(date,mmjjaa)~=nil then
-      return string.gsub(date, mmjjaa, function(m,j,a) return {tonumber(j),tonumber(m),tonumber(a)} end ) 
+      return string.gsub(date, mmjjaa, function(m,j,a) return {tiNspire.toNumber(j),tiNspire.toNumber(m),tiNspire.toNumber(a)} end ) 
    elseif string.find(date,jjmmaa)~=nil then 
-      return string.gsub(date, jjmmaa, function(j,m,a) return {tonumber(j),tonumber(m),tonumber(a)} end ) 
+      return string.gsub(date, jjmmaa, function(j,m,a) return {tiNspire.toNumber(j),tiNspire.toNumber(m),tiNspire.toNumber(a)} end ) 
    end
    return {}
 end

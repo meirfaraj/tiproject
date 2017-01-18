@@ -156,6 +156,12 @@ function tiNspire.sign(val)
 end
 
 function tiNspire.toNumber(val)
+  if val==nil then
+    return nil
+  end
+  if string.find(tostring(val), "/") then
+    val = tiNspire.approx(tostring(val))
+  end
   local valstr = string.gsub(tostring(val),neg_sym,"-")
   return tonumber(valstr)
 end

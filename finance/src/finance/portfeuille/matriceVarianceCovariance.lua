@@ -29,8 +29,20 @@ function MatriceVarianceCovariance:performCalc()
 -- correlation
    local rhoVect   =  varValue[c_rho.."vect"]
    
+   local XTiVect,sigmaTiVect,rhoTiVect,matriceResult
    if defMatriceKind == "ponder+rend+ecart+corel" then
-      varValue["matriceVarCovar"] = Portefeuillef.matriceVarianceCovarianceUsingPondEcartTypeCorrelation(self,X,sigmaVect,rhoVect)
+      XTiVect,sigmaTiVect,rhoTiVect,matriceResult=Portefeuillef.matriceVarianceCovarianceUsingPondEcartTypeCorrelation(self,X,sigmaVect,rhoVect)
+      varValue["matriceVarCovar"] = matriceResult
    end
+   self:appendToResult("\nRisque specific/systemique=")
+   self:appendMathToResult( tostring(XTiVect).."*"..matriceResult.."*".. tostring(XTiVect)..c_transpose)
+   self:appendToResult("=")
+   self:appendMathToResult( tostring(tiNspire.execute(tostring(XTiVect).."*"..matriceResult)).."*".. tostring(XTiVect)..c_transpose)
+   self:appendToResult("=")
+   self:appendMathToResult( tostring(tiNspire.approx(tostring(XTiVect).."*"..matriceResult)).."*".. tostring(XTiVect)..c_transpose)
+   self:appendToResult("=")
+   self:appendMathToResult( tostring(tiNspire.execute(tostring(XTiVect).."*"..matriceResult.."*".. tostring(XTiVect)..c_transpose)))
+   self:appendToResult("=")
+   self:appendMathToResult( tostring(tiNspire.approx(tostring(XTiVect).."*"..matriceResult.."*".. tostring(XTiVect)..c_transpose)))
 end
 
