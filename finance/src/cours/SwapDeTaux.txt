@@ -31,7 +31,7 @@ Le 30/12/n-1, les tx sont tous égaux à 5%, dès lors une variation DELTA(r)=0.2% 
 <math> DELTA(V(Ak))= DELTA(r) * dV(A(k))/dr = -0.002 * 334845.004 = -669.69K </math> <br>
 Donc DELTA(r) = 0.2% implique DELTA(V(S))=-669.69+50.129=-619.56K 
 <br><br>
-<u>Exemple: valorisation de swap</u>
+<p>Exemple: valorisation de swap</p>
 Le 1/1/n date(0), courbe des swap plate à 4%(quelque soit la matu, k=4%)
 swap preteur X de 100M, 4 années à courir, taux fixe receveur/L-3mois révisable donneur, contracté
 à une date antérieure au taux fixe 5%, coupons révisable payés trimestriellement(31/3,30/6,30/9,31/12)

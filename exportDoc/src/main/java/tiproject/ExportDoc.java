@@ -11,6 +11,9 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import com.google.common.base.CaseFormat;
 
@@ -19,6 +22,14 @@ public class ExportDoc {
 	public static void main(String[]args) throws IOException{
 		Files.list(Paths.get(relativeDir+"/finance/src/cours/"))
 		     .forEach(p->ExportDoc.luatize(p));
+	}
+	
+	static class Subject {
+		public Subject(String subject) {
+			this.subject=subject;
+		}
+		final String subject;
+		List<String> lines = new LinkedList<>();
 	}
 	
 	public static void luatize(Path p){
@@ -33,9 +44,20 @@ public class ExportDoc {
 		   String baseId = CaseFormat.UPPER_CAMEL.to(CaseFormat.UPPER_UNDERSCORE, name);
 		   bw.write(name+" = Tmv("+baseId+"_TITLE_ID,"+baseId+"_TITLE_HEADER_ID)\n\n");
 
-		   bw.write("function "+name+":performCalc()\n");
+
+		   //result
+		   LinkedList<Subject> subjects = new LinkedList<>();
+		   subjects.add(new Subject("cours"));
+		   
 		   
 		   Files.lines(p,Charset.forName("ISO-8859-1"))
+		        .map(s->{
+		            if(s.matches("\\s*<[pP]>.*</[pP]>\\s*")){
+		            	subjects.add(new Subject(s.replaceAll("(\\s*<[pP]>)(.*)(</[pP]>\\s*)","$2")));
+		            	return "<u>"+subjects.getLast().subject+"</u>";
+		            }
+		            return s;
+		        })
 		        .map(s->s.replaceAll("é","\"..e_acute..\""))
 		        .map(s->s.replaceAll("ê","\"..e_circ ..\""))
 		        .map(s->s.replaceAll("è","\"..e_grave..\""))
@@ -56,7 +78,26 @@ public class ExportDoc {
 		        .map(s->s.replaceAll("<h1>","\n  self:appendTitleToResult(\""))
 		        .map(s->s.replaceAll("<h2>","\n  self:appendTitleToResult(\""))
 		        .map(s->s.replaceAll("<b>" ,"\n  self:appendBoldToResult(\""))
-	            .forEach(s->new BufferedReader(new StringReader(s)).lines().forEach(s2->writeLuaLine(bw,s2)));	        
+		        .forEach(s->new BufferedReader(new StringReader(s)).lines().forEach(s2->subjects.getLast().lines.add(getLuaLine(s2))));
+		        
+		   if(subjects.size()>1){
+			   bw.write("function "+name+":widgetsInit()\n");
+			   String res=subjects.stream().map(s->"\""+s.subject+"\"").collect(Collectors.joining(",", "     self:add(-1,{", "},\"curTtl\",true)"));
+			   bw.write(res);
+               bw.write("\nend\n\n");
+		   }
+		        //.forEach(s->);	        
+		   bw.write("function "+name+":performCalc()\n");
+		   if(subjects.size()>1){
+			   for(Subject s:subjects){
+				   write(bw,"     if varValue[\"curTtl\"] == \""+s.subject+"\" then\n");
+  	 	  		       s.lines.forEach(s2->write(bw,s2));
+  	 	  		  write(bw,"        return\n     end\n\n");
+			   }
+		   }
+		   else{
+			   subjects.getLast().lines.forEach(s->write(bw,s));
+		   }
 		   bw.write("\nend\n\n");
 
 
@@ -67,12 +108,19 @@ public class ExportDoc {
 		}
 	}
 
-	private static void writeLuaLine(BufferedWriter bw, String s) throws UncheckedIOException{
+	private static String getLuaLine(String s) {
+		if(!s.trim().startsWith("self:")){
+			s = "  self:appendToResult(\""+s;
+		}
+		return s+"\")\n";
+	}
+	
+	private static void write(BufferedWriter bw, String s) throws UncheckedIOException{
 		try {
-			if(!s.trim().startsWith("self:")){
-				s = "  self:appendToResult(\""+s;
+			if(!s.endsWith("\n")){
+				s=s+"\n";
 			}
-			bw.write(s+"\")\n");
+			bw.write(s);
 		} catch (IOException e) {
 			throw new UncheckedIOException(e);
 		}

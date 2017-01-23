@@ -5,7 +5,12 @@
 
 SwapDeTaux = Tmv(SWAP_DE_TAUX_TITLE_ID,SWAP_DE_TAUX_TITLE_HEADER_ID)
 
+function SwapDeTaux:widgetsInit()
+     self:add(-1,{"cours","Exemple: valorisation de swap"},"curTtl",true)
+end
+
 function SwapDeTaux:performCalc()
+     if varValue["curTtl"] == "cours" then
   self:appendToResult("")
   self:appendTitleToResult("Swap vanille")
   self:appendToResult("Swap taux fixe contre taux variable ou taux fixe donneur:swap emprunteur ")
@@ -47,7 +52,9 @@ function SwapDeTaux:performCalc()
   self:appendToResult("")
   self:appendMathToResult(" V(Ak)=100000 * (1.06)^1/2 * ( "..sum_sym.."((0.05/1.06^t)+100*1/1.06^4) = 99388.8 K ,t,1,4)")
   self:appendToResult(" n")
-  self:appendToResult("Donc V(S(k-r))=-3391.7K n ")
+  self:appendToResult("Donc ")
+  self:appendMathToResult("V(S(k-r))=-3391.7K")
+  self:appendToResult(" n ")
   self:appendToResult("3) 01/10/n : (apr"..e_grave.."s coupons) tous les ts sont 5.5% calcul de la valeur des swaps par 2 m"..e_acute.."thodes: n")
   self:appendToResult("M"..e_acute.."thode d"..e_acute.."mant"..e_grave.."lement: V(Ar)=100000Kn")
   self:appendToResult("")
@@ -79,6 +86,10 @@ function SwapDeTaux:performCalc()
   self:appendToResult(" n")
   self:appendToResult("Donc DELTA(r) = 0.2% implique DELTA(V(S))=-669.69+50.129=-619.56K ")
   self:appendToResult("nn")
+        return
+     end
+
+     if varValue["curTtl"] == "Exemple: valorisation de swap" then
   self:appendToResult("")
   self:appendTitleToResult("Exemple: valorisation de swap")
   self:appendToResult("Le 1/1/n date(0), courbe des swap plate "..a_grave.." 4%(quelque soit la matu, k=4%)")
@@ -189,6 +200,9 @@ function SwapDeTaux:performCalc()
   self:appendToResult(" n")
   self:appendToResult("")
   self:appendMathToResult("Vswap=V(A(k))-V(A(r))")
+        return
+     end
+
 
 end
 
