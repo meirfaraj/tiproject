@@ -89,8 +89,10 @@ public class ExportDoc {
 		        //.forEach(s->);	        
 		   bw.write("function "+name+":performCalc()\n");
 		   if(subjects.size()>1){
+
+			   write(bw,"self.operation = \"\"\n");
 			   for(Subject s:subjects){
-				   write(bw,"     if varValue[\"curTtl\"] == \""+s.subject+"\" then\n");
+				   write(bw,"  if varValue[\"curTtl\"] == \""+s.subject+"\" then\n");
   	 	  		       s.lines.forEach(s2->write(bw,s2));
   	 	  		  write(bw,"        return\n     end\n\n");
 			   }

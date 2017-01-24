@@ -6,11 +6,12 @@
 SwapDeTaux = Tmv(SWAP_DE_TAUX_TITLE_ID,SWAP_DE_TAUX_TITLE_HEADER_ID)
 
 function SwapDeTaux:widgetsInit()
-     self:add(-1,{"cours","Exemple: valorisation de swap"},"curTtl",true)
+     self:add(-1,{"cours","Exemple: valorisation et risue swap vanille","Exemple: valorisation de swap","Exemple: swap avec taux forward"},"curTtl",true)
 end
 
 function SwapDeTaux:performCalc()
-     if varValue["curTtl"] == "cours" then
+self.operation = ""
+  if varValue["curTtl"] == "cours" then
   self:appendToResult("")
   self:appendTitleToResult("Swap vanille")
   self:appendToResult("Swap taux fixe contre taux variable ou taux fixe donneur:swap emprunteur ")
@@ -35,6 +36,10 @@ function SwapDeTaux:performCalc()
   self:appendToResult("Deux m"..e_acute.."thodes de valorisation des swap: d"..e_acute.."mant"..e_grave.."lement et "..e_acute.."quivalence.")
   self:appendToResult("pour d"..e_acute.."ment"..e_grave.."lement on actualise en utilisant les taux ZC extrait des gamme des taux swap k(t)")
   self:appendToResult("nn")
+        return
+     end
+
+  if varValue["curTtl"] == "Exemple: valorisation et risue swap vanille" then
   self:appendToResult("")
   self:appendTitleToResult("Exemple: valorisation et risue swap vanille")
   self:appendToResult("swap preteur(tx fixe receveur)  de 4 ans de dur"..e_acute.."e le 01/10/n-1, N=100M,")
@@ -89,7 +94,7 @@ function SwapDeTaux:performCalc()
         return
      end
 
-     if varValue["curTtl"] == "Exemple: valorisation de swap" then
+  if varValue["curTtl"] == "Exemple: valorisation de swap" then
   self:appendToResult("")
   self:appendTitleToResult("Exemple: valorisation de swap")
   self:appendToResult("Le 1/1/n date(0), courbe des swap plate "..a_grave.." 4%(quelque soit la matu, k=4%)")
@@ -161,6 +166,10 @@ function SwapDeTaux:performCalc()
   self:appendMathToResult("V0+(S(k-r))=(5-7)*(b1+b2+b3)=-5.28")
   self:appendMathToResult("M")
   self:appendToResult("n")
+        return
+     end
+
+  if varValue["curTtl"] == "Exemple: swap avec taux forward" then
   self:appendToResult("")
   self:appendTitleToResult("Exemple: swap avec taux forward")
   self:appendToResult("taux actuariels ZC r(theta) exrait des courbes taux fixes des swaps vanille le 1/4/n")

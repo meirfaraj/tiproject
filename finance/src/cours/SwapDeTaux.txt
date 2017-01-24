@@ -7,7 +7,7 @@ un pret à taux variable r, long actif Ar et court actik Ak: <math>S(r-k)=Ar-Ak</
 Deux méthodes de valorisation des swap: démantèlement et équivalence.
 pour démentèlement on actualise en utilisant les taux ZC extrait des gamme des taux swap k(t)
 <br><br>
-<u>Exemple: valorisation et risue swap vanille</u>
+<p>Exemple: valorisation et risue swap vanille</p>
 swap preteur(tx fixe receveur)  de 4 ans de durée le 01/10/n-1, N=100M,
 jambe variable E6R(coupon semestriel 01-04 et 01-10) et jambe fixe coupon annuel k=5% versé le 01/10/n,n+1,n+2,n+3
 dates reset et les gammes de tx plates de la <b>Jv</b> ainse que Nj(t-1,t):<br>
@@ -66,7 +66,7 @@ de même pour 3 ans k3:1=k(3)b(1)+k(3)b(2)+(1+k(3))b(3) donc b(3)=0.8152 et r3=7.
 b)valeur du swap le 1/1:n+1: par démantèlement=<math>V0+(A(r))=100M</math>,<math>V0+(A(k))=5*(b(1)+b(2))+105*b(3)=94.72</math>M
 <math>V0+(S(k-r))=-5.28M</math>; Par équivalence: <math>V0+(S(k-r))=(5-7)*(b1+b2+b3)=-5.28<math>M
 <br>
-<u>Exemple: swap avec taux forward</u>
+<p>Exemple: swap avec taux forward</p>
 taux actuariels ZC r(theta) exrait des courbes taux fixes des swaps vanille le 1/4/n
 3mois: 5%, 6mois: 5.3%, 9mois=5.4%, 12mois: 5.5%, 15mois: 5.6%
 On se situe le 1/4/n, swap L-6mois contre taux fixe 6%, 15mois de vie à courir avec 3 echeances semestrielles
