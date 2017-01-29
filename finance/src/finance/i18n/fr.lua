@@ -184,6 +184,14 @@ addTextLocale(EXERCICES_TITLE_ID,FR,"Exercices ")
 addTextLocale(MATRICE_VAR_COVAR_ID,FR,"Matrice variance-covariance")
 addTextLocale(MATRICE_VAR_COVAR_HEADER_ID,FR,"Determiner la Matrice variance-covariance du portefeuille")
 
- 
- 
+addTextLocale(DET_COMPOSITION_PORTEFEUILLE_ID,FR,"Composition Portefeuille&OA")
+addTextLocale(DET_COMPOSITION_PORTEFEUILLE_HEADER_ID,FR,"Composition Portefeuille&OA")
+
+addTextLocale(SWAP_ID,FR,"Swap")
+addTextLocale(SWAP_HEADER_ID,FR,"Swap")
+
+addTextLocale(SWAP_PRETEUR_ID,FR,"Swap Preteur")
+addTextLocale(SWAP_PRETEUR_HEADER_ID,FR,"Swap Preteur (Taux fixe receveur)")
+addTextLocale(SWAP_EMPREINTEUR_ID,FR,"Swap Empreinteur")
+addTextLocale(SWAP_EMPREINTEUR_HEADER_ID,FR,"Swap Empreinteur (Taux fixe donneur (paye))")
  

@@ -18,6 +18,8 @@ require("finance/portfeuille/utilite")
 require("finance/portfeuille/equivCertain")
 require("finance/portfeuille/primeDeRisque")
 require("finance/portfeuille/matriceVarianceCovariance")
+require("finance/portfeuille/detCompositionPortefeuille")
+require("finance/swap/swapPreteur")
 
 
 References  = {
@@ -47,15 +49,21 @@ addSubCatScreen(2,1,ASTxt(TAUX_SIMPLE_TITLE_ID),ASTxt(TAUX_SIMPLE_TITLE_HEADER_I
 addCat(3, ASTxt(CATEGORY_FIXED_INCOME_ID), ASTxt(CATEGORY_FIXED_INCOME_DESC_ID))
 addSubCatScreen(3,1,ASTxt(TAUX_SIMPLE_TITLE_ID),ASTxt(TAUX_SIMPLE_TITLE_HEADER_ID),TauxSimple)
 
+
+----------------------Swap---------------------------------------
+addCat(4, ASTxt(SWAP_ID), ASTxt(SWAP_HEADER_ID))
+addSubCatScreen(4,1, ASTxt(SWAP_PRETEUR_ID), ASTxt(SWAP_PRETEUR_HEADER_ID),SwapPreteur)
+
 ----------------------Portfolio management---------------------------------------
-addCat(4, ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_ID), ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_DESC_ID))
-addSubCatScreen(4,1,ASTxt(FONCTION_UTILITE_ID),ASTxt(FONCTION_UTILITE_ID_HEADER_ID),FonctionUtilite)
-addSubCatScreen(4,2,ASTxt(EQUIVALENT_CERTAIN_ID),ASTxt(EQUIVALENT_CERTAIN_HEADER_ID),EquivCertain)
-addSubCatScreen(4,3,ASTxt(PRIME_DE_RISQUE_ID),ASTxt(PRIME_DE_RISQUE_HEADER_ID),PrimeDeRisque)
-addSubCatScreen(4,4,ASTxt(MATRICE_VAR_COVAR_ID),ASTxt(MATRICE_VAR_COVAR_HEADER_ID),MatriceVarianceCovariance)
+addCat(5, ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_ID), ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_DESC_ID))
+addSubCatScreen(5,1,ASTxt(FONCTION_UTILITE_ID),ASTxt(FONCTION_UTILITE_ID_HEADER_ID),FonctionUtilite)
+addSubCatScreen(5,2,ASTxt(EQUIVALENT_CERTAIN_ID),ASTxt(EQUIVALENT_CERTAIN_HEADER_ID),EquivCertain)
+addSubCatScreen(5,3,ASTxt(PRIME_DE_RISQUE_ID),ASTxt(PRIME_DE_RISQUE_HEADER_ID),PrimeDeRisque)
+addSubCatScreen(5,4,ASTxt(MATRICE_VAR_COVAR_ID),ASTxt(MATRICE_VAR_COVAR_HEADER_ID),MatriceVarianceCovariance)
+addSubCatScreen(5,5,ASTxt(DET_COMPOSITION_PORTEFEUILLE_ID),ASTxt(DET_COMPOSITION_PORTEFEUILLE_HEADER_ID),CompositionPortefeuille)
 
 
 ----------------------Exercice FIXED INCOME---------------------------------------
-addCat(5, ASTxt(EXERCICES_TITLE_ID)..ASTxt(CATEGORY_FIXED_INCOME_ID), ASTxt(CATEGORY_FIXED_INCOME_DESC_ID))
-addSubCatScreen(5,1,ASTxt(EX_OBLIGATION_1_TITLE_ID),ASTxt(EX_OBLIGATION_1_TITLE_HEADER_ID),Oblig_Ex1)
+addCat(6, ASTxt(EXERCICES_TITLE_ID)..ASTxt(CATEGORY_FIXED_INCOME_ID), ASTxt(CATEGORY_FIXED_INCOME_DESC_ID))
+addSubCatScreen(6,1,ASTxt(EX_OBLIGATION_1_TITLE_ID),ASTxt(EX_OBLIGATION_1_TITLE_HEADER_ID),Oblig_Ex1)
 

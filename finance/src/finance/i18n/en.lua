@@ -2,11 +2,11 @@
 EN = 1
 addLocale(EN,"en", "english")
 
-addTextLocale(ABOUT_TITLE_ID,EN,"About Probabilities :")
+addTextLocale(ABOUT_TITLE_ID,EN,"About Finance :")
 
-addTextLocale(ABOUT_ID,EN,[[Probabilities v1.0
+addTextLocale(ABOUT_ID,EN,[[Finance v1.0
 --------------------
-Faraj Meir
+XXX XXX
 Thanks also to :
 Jim Bauwens, Adrien "Adriweb" Bertrand
 (inspired from FormulaPro).
@@ -17,15 +17,15 @@ Tip : Press [Tab] for Reference !]])
 
 addTextLocale(ERROR_TITLE_ID,EN,"Oops... Error handled !")
  
-addTextLocale(ERROR_ID,EN,[[Probabilities has encountered an error
+addTextLocale(ERROR_ID,EN,[[Finance has encountered an error
 -----------------------------
 Sorry for the inconvenience.
-Please report this bug to meirfaraj@gmail.com
+Please report this bug to xxxx@gmail.com
 How/where/when it happened etc.
  (bug at line ]])
 
  
-addTextLocale(BY_ID,EN,"by Faraj Meir")
+addTextLocale(BY_ID,EN,"by XXX")
  
 addTextLocale(BACK_ID,EN," Back")
 
@@ -218,4 +218,14 @@ addTextLocale(EXERCICES_TITLE_ID,EN,"Exercices ")
 addTextLocale(MATRICE_VAR_COVAR_ID,EN,"Matrice variance-covariance")
 addTextLocale(MATRICE_VAR_COVAR_HEADER_ID,EN,"Determiner la Matrice variance-covariance du portefeuille")
 
+addTextLocale(DET_COMPOSITION_PORTEFEUILLE_ID,EN,"Composition Portefeuille&OA")
+addTextLocale(DET_COMPOSITION_PORTEFEUILLE_HEADER_ID,EN,"Composition Portefeuille&OA")
+
+addTextLocale(SWAP_ID,EN,"Swap")
+addTextLocale(SWAP_HEADER_ID,EN,"Swap")
+
+addTextLocale(SWAP_PRETEUR_ID,EN,"Swap Preteur")
+addTextLocale(SWAP_PRETEUR_HEADER_ID,EN,"Swap Preteur (Taux fixe receveur)")
+addTextLocale(SWAP_EMPREINTEUR_ID,EN,"Swap Empreinteur")
+addTextLocale(SWAP_EMPREINTEUR_HEADER_ID,EN,"Swap Empreinteur (Taux fixe donneur (paye))")
 
