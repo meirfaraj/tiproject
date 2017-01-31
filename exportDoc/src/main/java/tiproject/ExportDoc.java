@@ -71,7 +71,7 @@ public class ExportDoc {
 		        .map(s->s.replaceAll("</h2>","\n"))
 		        .map(s->s.replaceAll("</b>","\n"))
 		        .map(s->s.replaceAll("</u>","\n"))
-		        .map(s->s.replaceAll("<br>","\\n"))
+		        .map(s->s.replaceAll("<br>","\\\\n"))
 		        .map(s->s.replaceAll("[Ss]omme[\\[{]([a-zA-Z]+)[= ]+([0-9]+)[ ]*->[ ]*([0-9\".inft_sym]+)[\\]}][ ]*(.*)","\"..sum_sym..\"($4,$1,$2,$3)"))
 		        .map(s->s.replaceAll("<math>","\n  self:appendMathToResult(\""))
 		        .map(s->s.replaceAll("<u>","\n  self:appendTitleToResult(\""))
