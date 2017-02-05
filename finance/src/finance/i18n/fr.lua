@@ -195,3 +195,5 @@ addTextLocale(SWAP_PRETEUR_HEADER_ID,FR,"Swap Preteur (Taux fixe receveur)")
 addTextLocale(SWAP_EMPREINTEUR_ID,FR,"Swap Empreinteur")
 addTextLocale(SWAP_EMPREINTEUR_HEADER_ID,FR,"Swap Empreinteur (Taux fixe donneur (paye))")
  
+ 
+ 

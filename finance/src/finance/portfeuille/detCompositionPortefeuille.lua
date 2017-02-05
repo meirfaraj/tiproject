@@ -12,9 +12,9 @@ CompositionPortefeuille = Tmv(DET_COMPOSITION_PORTEFEUILLE_ID,DET_COMPOSITION_PO
 
 function CompositionPortefeuille:widgetsInit()
  self:add(-1,{"%","value"},"%type")
- self:add(0,"rendement R : R1,R2","Rvect")
- self:add(0,"ecart type "..c_sigma.." : "..c_sigma.."1,"..c_sigma.."2",c_sigma.."vect")
- self:add(1,"correlation "..c_rho.." : "..c_rho.."12,"..c_rho.."13,"..c_rho.."23",c_rho.."vect") 
+ self:add(0,"R : R1,R2","Rvect")
+ self:add(0, c_sigma.." : "..c_sigma.."1,"..c_sigma.."2",c_sigma.."vect")
+ self:add(1, c_rho.." : "..c_rho.."12,"..c_rho.."13,"..c_rho.."23",c_rho.."vect") 
  self:add(1,"rf : ","rf")
 end
 

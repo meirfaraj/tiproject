@@ -50,6 +50,8 @@ function Portefeuillef.matriceVarianceCovarianceUsingPondEcartTypeCorrelation(se
   if countsigma~= countX then
     self:appendToResult("Attention : countsigma="..tostring(countsigma).." != countX="..tostring(countX))
   end
+  
+  
   self:appendToResult("\nIl y a "..tostring(countX).." actifs dans le portefeuille\n")
   self:appendMathToResult("X="..tostring(XTiVect))
   self:appendMathToResult(c_sigma.."="..tostring(sigmaTiVect))
@@ -109,6 +111,7 @@ function Portefeuillef.matriceVarianceCovarianceUsingPondEcartTypeCorrelation(se
 end
 
 
+
 function Portefeuillef.toVectLet(count)
   local res=""
   if tonumber(count) ~= nil then
@@ -128,21 +131,125 @@ function Portefeuillef.compositionPortefeuille(self,Rvect,sigmaVect,rhoVect,rf)
   local rhoLuaVect,rhoTiVect,countRho=Portefeuillef.GetVect(self,rhoVect)
   local sigmaLuaVect,sigmaTiVect,countsigma=Portefeuillef.GetVect(self,sigmaVect)
   local RLuaVect,RTiVect,countR=Portefeuillef.GetVect(self,Rvect)
-  local expected=tiNspire.approx("nPr("..tostring(countX)..",2)/2")
+  local expected=tiNspire.approx("nPr("..tostring(countsigma)..",2)/2")
+  -- check coherence
   if countRho~=tiNspire.toNumber(expected) then
-    self:appendToResult("Attention : Il devrait y avoir "..tostring(expected).." correlation != "..tostring(countRho))
+    self:appendToResult("Attention : Il devrait y avoir "..tostring(expected).." correlation != "..tostring(countRho).."\n")
   else
-    self:appendToResult("number of correlation found "..tostring(countRho).." as expected "..tostring(expected))
+    self:appendToResult("number of correlation found "..tostring(countRho).." as expected "..tostring(expected).."\n")
   end
-  if countsigma~= countX then
-    self:appendToResult("Attention : countsigma="..tostring(countsigma).." != countX="..tostring(countX))
+  if countsigma~= countR then
+    self:appendToResult("Attention : countsigma="..tostring(countsigma).." != countR="..tostring(countR).."\n")
   end
-  self:appendToResult("\nIl y a "..tostring(countX).." actifs dans le portefeuille\n")
+  
+  self:appendToResult("Il y a "..tostring(countsigma).." actifs dans le portefeuille\n")
+  
   self:appendToResult("Existe-t-il une oportunit"..e_acute.." d'arbitrage, si oui comment?\n")
-  self:appendToResult("Le portefeuille Z={"..Portefeuillef.toVectLet(countX).."} \n")   
+  self:appendToResult("Le portefeuille Z={"..Portefeuillef.toVectLet(countsigma).."} \n")   
+
+  if countsigma==2 then 
+    Portefeuillef.compositionPortefeuille2(self,Rvect,sigmaVect,rhoVect,rf,sigmaLuaVect,RLuaVect,rhoLuaVect[1]) 
+  end
+
+end
 
 
 
+function Portefeuillef.compositionPortefeuille2(self,Rvect,sigmaVect,rhoVect,rf,sigmaLuaVect,RLuaVect,rho)
+  Portefeuillef.courscompositionPortefeuille2(self,rho)
+  if sigmaLuaVect~=nil then
+     local rhoN=tiNspire.toNumber(rho)
+     local XLuaVect={}
+     if rhoN==-1 then
+        self:appendMathToResult("XA=("..c_sigma.."B/("..c_sigma.."A+"..c_sigma.."B)="..tostring(sigmaLuaVect[2]).."/("..tostring(sigmaLuaVect[1]).."+"..tostring(sigmaLuaVect[2])..")")
+        self:appendToResult("\n")
+        local res = tiNspire.execute(tostring(sigmaLuaVect[2]).."/("..tostring(sigmaLuaVect[1]).."+"..tostring(sigmaLuaVect[2])..")")
+        self:appendMathToResult("="..tostring(res))
+        self:appendMathToResult("="..tostring(tiNspire.approx(res)))
+        self:appendToResult("\n")
+        local resB = tiNspire.execute("1-("..tostring(res)..")")
+        self:appendMathToResult("XB=1-XA=1-"..tostring(res).."="..tostring(resB).."="..tostring(tiNspire.approx(resB)))
+        self:appendToResult("\n")
+        self:appendToResult("Donc : ")
+        XLuaVect[1]=res
+        XLuaVect[2]=resB
+     elseif rhoN==1 then 
+        self:appendToResult("cas non trait"..e_acute.."\n")
+        return
+     elseif rhoN==0 then 
+        self:appendToResult("cas non trait"..e_acute.."\n")
+        return
+     else
+        --cas general 
+        
+     end          
+    
+     self:appendMathToResult("=Z={"..tostring(XLuaVect[1]).."*A;"..tostring(XLuaVect[2]).."*B}")
+     self:appendToResult("\n")
+     -- save result 
+     varValue["X"]=tostring(res)..","..tostring(resB)
+     local rendement = Portefeuillef.rendementPortefeuille(self,XLuaVect,RLuaVect,2)
+     self:appendToResult("\n")
+     Portefeuillef.OAPortefeuille(self,rendement,rf,XLuaVect)
+  end
+end
+
+function Portefeuillef.OAPortefeuille(self,rendement,rf,XLuaVect)
+  --
+  local deltaEq = 0.1
+  local count = table.getn(XLuaVect)
+  local rendAp = tiNspire.approx(rendement)
+  local res=""
+  if tonumber(count) ~= nil then
+     for i=1,count,1 
+     do
+       if i>1 then 
+          res=res..","
+       end
+       local c=string.char(65+i-1)
+        res=res..tostring(XLuaVect[i]).."*"..c
+     end
+  end
+
+  if tiNspire.toNumber(tiNspire.abs(tostring(rendement).."-"..tostring(rf)))<deltaEq then
+     self:appendToResult("pas d'OA car "..tostring(rendAp).." et "..tostring(rf).." sont proche(=)")
+  elseif tiNspire.toNumber(tostring(rendement))<tiNspire.toNumber(tostring(rf)) then
+     self:appendToResult("ici OA car "..tostring(rendAp).."% < "..tostring(rf).."%\n")
+     self:appendToResult("Donc vente "..a_acute.." decouvert du portefeuille z et achat de rf :\n")
+     self:appendToResult("ici VAD :")
+     self:appendMathToResult(tostring(res))
+     self:appendToResult("et position longue rf \n")
+  else
+     self:appendToResult("ici OA car "..tostring(rendAp).."% > "..tostring(rf).."%\n")
+     self:appendToResult("Donc achat du portefeuille z et position courte sur rf :\n")
+     self:appendToResult("ici achat :")
+     self:appendMathToResult(tostring(res))
+     self:appendToResult("\n et position courte rf \n")
+  end
+end
+
+function Portefeuillef.rendementPortefeuille(self,XLuaVect,RLuaVect,count)
+  local res=""
+  local resCalc=""
+  
+  if tonumber(count) ~= nil then
+    for i=1,count,1 
+    do
+      if i>1 then 
+        res=res.."+"
+        resCalc=resCalc.."+"
+      end
+      local c=string.char(65+i-1)
+      res=res.."X"..c.."*R"..c
+      resCalc=resCalc..tostring(XLuaVect[i]).."*"..tostring(RLuaVect[i])
+    end
+  end
+
+  self:appendMathToResult("R="..tostring(res).."="..tostring(resCalc));
+  local resFromCalc = tiNspire.execute(tostring(resCalc))
+  self:appendMathToResult("="..tostring(resFromCalc))
+  self:appendMathToResult("="..tostring(tiNspire.approx(resFromCalc)))
+  return resFromCalc
 end
 
 
@@ -183,3 +290,36 @@ end
 --    end
 --  end
 
+function Portefeuillef.courscompositionPortefeuille2(self,rho)
+   self:appendMathToResult("Rp=X1*R1+X2+R2")
+   self:appendToResult(" avec ");
+   self:appendMathToResult("X2=1-X1")
+   self:appendToResult("\n")
+   self:appendMathToResult(c_sigma.."p^2=X1*"..c_sigma.."1^2+(1-X1)^2*"..c_sigma.."2^2+2*"..c_rho.."1_2*"..c_sigma.."1*"..c_sigma.."2*X1*(1-X1)")
+   self:appendToResult("\n")
+   self:appendMathToResult("Rp="..sum_sym.."(xi*Ri,i,1,N)")
+   self:appendToResult("\n")
+   self:appendMathToResult(c_sigma.."p^2="..sum_sym.."("..sum_sym.."(xi*xj*"..c_sigma.."ij,j,1,N),i,1,N)")
+   self:appendToResult("\n")
+   local rhoN=tiNspire.toNumber(rho)
+   if rhoN==-1 then
+      self:appendMathToResult(c_rho.."1_2=-1")
+      self:appendToResult("\n")
+      self:appendMathToResult("X1=("..c_sigma.."2/("..c_sigma.."1+"..c_sigma.."2))")
+   elseif rhoN==1 then 
+      self:appendMathToResult(c_rho.."1_2=1")
+      self:appendToResult("\n")
+      self:appendMathToResult(c_sigma.."p=X1*"..c_sigma.."1+(1-X1)*"..c_sigma.."2")
+      self:appendToResult("\n")
+      self:appendMathToResult("X1=("..c_sigma.."p-"..c_sigma.."2)/("..c_sigma.."1-"..c_sigma.."2)")
+      self:appendToResult("\n")
+      self:appendMathToResult("Rp=(R2-((R1-R2)/("..c_sigma.."1-"..c_sigma.."2))+((R1-R2)/("..c_sigma.."1-"..c_sigma.."2))*"..c_sigma.."p")
+   else 
+      self:appendMathToResult(c_rho.."1_2="..tostring(rhoN))
+      self:appendToResult("\n")
+      
+   end 
+   self:appendToResult("\n")
+   self:appendMathToResult("X2=1-X1")
+   self:appendToResult("\n")
+end

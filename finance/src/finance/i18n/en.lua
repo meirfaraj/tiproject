@@ -182,6 +182,7 @@ addTextLocale(CATEGORY_TIME_MONEY_VALUE_DESC_ID,EN,"Time Money Value")
 addTextLocale(TAUX_SIMPLE_TITLE_ID,EN,"simple interest")
  
 addTextLocale(TAUX_SIMPLE_TITLE_HEADER_ID,EN,"\\0el {I=C*r*T} avec T=Nj/Na (exact/exact,exact/360 et 30/360)")
+
 addTextLocale(CATEGORY_GESTION_DE_PORTEFEUILLE_ID,EN,"Gestion de portefeuille")
 addTextLocale(CATEGORY_GESTION_DE_PORTEFEUILLE_DESC_ID,EN,"Gestion de portefeuille")
 
@@ -229,3 +230,5 @@ addTextLocale(SWAP_PRETEUR_HEADER_ID,EN,"Swap Preteur (Taux fixe receveur)")
 addTextLocale(SWAP_EMPREINTEUR_ID,EN,"Swap Empreinteur")
 addTextLocale(SWAP_EMPREINTEUR_HEADER_ID,EN,"Swap Empreinteur (Taux fixe donneur (paye))")
 
+addTextLocale(TAUX_COMPOSE_TITLE_ID,EN,"Taux compose")
+addTextLocale(TAUX_COMPOSE_TITLE_HEADER_ID,EN,"Taux compose")
