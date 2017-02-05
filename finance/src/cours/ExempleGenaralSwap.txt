@@ -1,0 +1,36 @@
+<h1>Exemple: valorisation de swap</h1>
+Le 1/1/n date(0), courbe des swap plate à 4%(quelque soit la matu, k=4%) <br>
+swap preteur X de 100M, 4 années à courir, taux fixe receveur/L-3mois révisable donneur, contracté <br>
+à une date antérieure au taux fixe 5%, coupons révisable payés trimestriellement(31/3,30/6,30/9,31/12) <br>
+et le coupon fixe le 31/12. L3-mois(30/9/n-1)=4%(dernère date de reset) <br>
+<br>
+On calcule valeur du swap le 1/1/n selon 2 méthodes, puis sa valeur le 30/12/n-1:
+<br>
+a)1/1/n(0+, juste après le règlement)
+<br>
+Méthode démantèlement:V0(S(k-r))=V0+(A(k)) - V0+(A(r))
+A(r) étant au pair V0+(A(r))=100<br>
+Courbe des taux plate donc taux ZC utilisés pour actualisé A(k) sont égaux aux taux fixe swap(courbe plate)<br>
+<math>V0+(A(k))=5*Somme{t=1 ->4}(1/1.04^t)+100*1/1.04^4=103.63</math><br>
+donc <math>V0(S(k-r))=3.63M</math> Euro<br>
+<br>
+Méthode équivalence:<math>V0+(S(k-r))=(5-4)Somme{t=1 ->4}(1/1.04^t)=3.63</math>M Euro
+<br>
+b) valeur le 30/12/n-1 en 0-, juste avant règlement:
+<br>
+rajouter pour chaque composante le coupon(annuel pour le fixe et semestriel pour le variable(<math>D = Nj/Na = 0.25</math>) <br>
+<math>V0-(A(k))=103.63+5=108.63</math>, <math>V0-(A(r))=100 + 4 * 0.25=101</math> donc <math>V0-(S(k-r))=7.63</math>M Euro <br>
+<br>
+<b>B.</b> Un an plus tard 1/1/n+1(donc le Swap lui reste 3 ans), la gamme des taux fixe swap(k(theta)) évolue<br>
+1an: 6%, 2ans: 6.5%, 3ans=7%, 4ans: 7.2%<br>
+<br>
+commencer calcul gamme ZC 1,2 et 3 ans implicite puis on calcule la valeur du swap(L-3mois contre 5%)
+<br>
+a)calcul des prix b(theta) et des ZC à partier de k(theta)
+<br>
+<math>r1=k1=6%</math>donc <math>b1=1/1.06=0.9434</math>; En écrivant q'un titre à 2 ans de coupon k2 est au pair, il vient: <br>
+<math>1=k2b1+(1+k2)b2=0.065*0.9434+1.065b2</math>, soit <math>b2=0.8814</math> donc <math>r2=6.516%</math> (<math>b2 = 1/(1+r2)^2</math>) <br>
+de même pour 3 ans k3:1=k(3)b(1)+k(3)b(2)+(1+k(3))b(3) donc b(3)=0.8152 et r3=7.048% <br><br>
+b)valeur du swap le 1/1:n+1: par démantèlement=<math>V0+(A(r))=100M</math>,<math>V0+(A(k))=5*(b(1)+b(2))+105*b(3)=94.72</math>M <br>
+<math>V0+(S(k-r))=-5.28M</math>; Par équivalence: <math>V0+(S(k-r))=(5-7)*(b1+b2+b3)=-5.28<math>M
+<br>

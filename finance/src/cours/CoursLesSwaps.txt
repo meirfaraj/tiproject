@@ -1,0 +1,8 @@
+<h1>Les Swaps Cours</h1>
+Swap taux fixe contre taux variable ou taux fixe donneur:swap emprunteur <math>M * Di*[TV-TF]</math>.<br>
+Swap taux variable contre taux fixe ou taux fixe receveur:swap preteur <math>M * Di*[TF-TV]</math>.<br>
+Swap taux fixe k donneur: <math>S(r-k)</math> s'analyse comme un emprunt à taux fixe k combiné à <br>
+un pret à taux variable r, long actif Ar et court actik Ak: <math>S(r-k)=Ar-Ak</math> et vis versa pour <math>S(k-r)</math>.<br>
+<math>S(k-r)=ak-ar</math>: jambe fixe -jambe variable ou bien <math>S(k-r)=Ak-Ar</math>: composante fixe - composante variable <br>
+Deux méthodes de valorisation des swap: démantèlement et équivalence.<br>
+pour démentèlement on actualise en utilisant les taux ZC extrait des gamme des taux swap k(t)
