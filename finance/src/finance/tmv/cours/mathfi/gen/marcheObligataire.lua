@@ -160,6 +160,7 @@ function MarcheObligataire:performCalc()
   self:appendToResult("Lors de la hausse de taux de 2% implique une baisse de la valeur calculable")
   self:appendToResult("")
   self:appendMathToResult("-Delta(V)/V=SDelta(r)-1/2*C*Delta(r)^2=10*0.02-100*(0.02)^2=16%")
+  self:appendToResult("\n")
 
 end
 

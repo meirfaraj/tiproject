@@ -37,4 +37,4 @@ ii- variations pour hausse des taux de 0.1% <br>
 31/3/n: <math>dV=-dr*50965.711*(1/360)/(1+(1/360)*0.036)^2=-dr*141 </math> <br>
 1/2/n: <math>dV=-dr*50965.711*(59/360)/(1+(59/360)*0.04)^2=-dr*8244 </math> <br>
 pour dr=0.001 : dv=12378 Euros le 2/1 etc...
-
+<br>

@@ -22,6 +22,8 @@ require("finance/portfeuille/utilite")
 require("finance/portfeuille/equivCertain")
 require("finance/portfeuille/primeDeRisque")
 require("finance/portfeuille/matriceVarianceCovariance")
+require("finance/portfeuille/matriceFonctionDutilite")
+require("finance/portfeuille/matriceLagrangien")
 require("finance/portfeuille/detCompositionPortefeuilleZ")
 require("finance/portfeuille/detCompositionPortefeuilleAversionRisque")
 require("finance/swap/swapPreteur")
@@ -71,6 +73,10 @@ addSubCatScreen(5,3,ASTxt(PRIME_DE_RISQUE_ID),ASTxt(PRIME_DE_RISQUE_HEADER_ID),P
 addSubCatScreen(5,4,ASTxt(MATRICE_VAR_COVAR_ID),ASTxt(MATRICE_VAR_COVAR_HEADER_ID),MatriceVarianceCovariance)
 addSubCatScreen(5,5,ASTxt(DET_COMPOSITION_PORTEFEUILLE_ID),ASTxt(DET_COMPOSITION_PORTEFEUILLE_HEADER_ID),CompositionPortefeuilleZ)
 addSubCatScreen(5,6,ASTxt(DET_COMPOSITION_PORTEFEUILLE_AR_ID),ASTxt(DET_COMPOSITION_PORTEFEUILLE_AR_HEADER_ID),CompositionPortefeuilleAversionRisque)
+addSubCatScreen(5,7,ASTxt(MATRICE_FUNC_UTIL_ID),ASTxt(MATRICE_FUNC_UTIL_HEADER_ID),MatriceFunctionDutilite)
+
+
+
 
 
 ----------------------Exercice FIXED INCOME---------------------------------------

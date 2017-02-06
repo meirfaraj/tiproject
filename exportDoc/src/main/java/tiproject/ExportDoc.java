@@ -42,6 +42,8 @@ public class ExportDoc {
 		   String name=p.getFileName().toString().replaceAll(".txt", "").replaceAll("é", "e");
 		   name = CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_CAMEL, name);
 		   String baseId = CaseFormat.UPPER_CAMEL.to(CaseFormat.UPPER_UNDERSCORE, name);
+           System.out.println(baseId+"_TITLE_ID");
+           System.out.println(baseId+"_TITLE_HEADER_ID");
 		   bw.write(name+" = Tmv("+baseId+"_TITLE_ID,"+baseId+"_TITLE_HEADER_ID)\n\n");
 
 
@@ -78,6 +80,10 @@ public class ExportDoc {
 		        .map(s->s.replaceAll("<h1>","\n  self:appendTitleToResult(\""))
 		        .map(s->s.replaceAll("<h2>","\n  self:appendTitleToResult(\""))
 		        .map(s->s.replaceAll("<b>" ,"\n  self:appendBoldToResult(\""))
+		        .map(s->s.replaceAll("[tT]heta", "\"..c_theta..\""))
+		        .map(s->s.replaceAll("[Ss]igma", "\"..c_sigma..\""))
+		        .map(s->s.replaceAll("[Rr]ho", "\"..c_rho..\""))
+		        .map(s->s.replaceAll("[bB]eta", "\"..c_beta..\""))
 		        .forEach(s->new BufferedReader(new StringReader(s)).lines().forEach(s2->subjects.getLast().lines.add(getLuaLine(s2))));
 		        
 		   if(subjects.size()>1){

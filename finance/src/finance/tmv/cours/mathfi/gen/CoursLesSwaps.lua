@@ -29,6 +29,7 @@ function CoursLesSwaps:performCalc()
   self:appendToResult(": composante fixe - composante variable \n")
   self:appendToResult("Deux méthodes de valorisation des swap: démantèlement et équivalence.\n")
   self:appendToResult("pour démentèlement on actualise en utilisant les taux ZC extrait des gamme des taux swap k(t)")
+  self:appendToResult("\n")
 
 end
 

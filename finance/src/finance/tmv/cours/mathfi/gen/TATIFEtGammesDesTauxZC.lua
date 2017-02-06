@@ -6,7 +6,8 @@
 TATIFEtGammesDesTauxZC = Tmv(T_A_T_I_F_ET_GAMMES_DES_TAUX_Z_C_TITLE_ID,T_A_T_I_F_ET_GAMMES_DES_TAUX_Z_C_TITLE_HEADER_ID)
 
 function TATIFEtGammesDesTauxZC:performCalc()
-  self:appendToResult("TATIF Gamme des taux...")
+  self:appendToResult("")
+  self:appendTitleToResult("TATIF Gamme des taux...")
   self:appendToResult("D"..e_acute.."terminer les taux ZC "..a_grave.." partir des TATIF")
   self:appendToResult("Un calcul de proche en proche de la gamme (rn)n=1...n")
   self:appendToResult("Exemple : Eur-1an = 5%, TATIF 2 ans 5.5%, TATIF 3 ans 6%")
@@ -29,6 +30,7 @@ function TATIFEtGammesDesTauxZC:performCalc()
   self:appendToResult("3mois: 5%, 6mois: 5.3%, 9mois: 5.4%, 12mois: 5.5%, 15mois: 5.6%")
   self:appendToResult("taux 6mois dans 9mois ")
   self:appendMathToResult("(1+f(9,6))^0.5=(1+r(15))^1.25/(1+r(9))^0.75")
+  self:appendToResult("\n")
 
 end
 

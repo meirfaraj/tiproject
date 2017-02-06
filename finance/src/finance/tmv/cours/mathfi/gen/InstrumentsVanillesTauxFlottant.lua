@@ -75,6 +75,7 @@ function InstrumentsVanillesTauxFlottant:performCalc()
   self:appendMathToResult("dV=-dr*50965.711*(59/360)/(1+(59/360)*0.04)^2=-dr*8244 ")
   self:appendToResult(" \n")
   self:appendToResult("pour dr=0.001 : dv=12378 Euros le 2/1 etc...")
+  self:appendToResult("\n")
 
 end
 

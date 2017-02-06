@@ -6,3 +6,4 @@ un pret à taux variable r, long actif Ar et court actik Ak: <math>S(r-k)=Ar-Ak<
 <math>S(k-r)=ak-ar</math>: jambe fixe -jambe variable ou bien <math>S(k-r)=Ak-Ar</math>: composante fixe - composante variable <br>
 Deux méthodes de valorisation des swap: démantèlement et équivalence.<br>
 pour démentèlement on actualise en utilisant les taux ZC extrait des gamme des taux swap k(t)
+<br>

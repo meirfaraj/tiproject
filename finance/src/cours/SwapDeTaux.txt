@@ -81,3 +81,4 @@ donc valeur du <math>swap=V(a(k))-V(a(r))</math><br>
 Méthode démantèlement:<br>
 <math>V(A(k))=6*(1/1.05^0.25+1/1.056^1.25)+100/1.056^1.25=105.3</math> et <math>V(A(r))=102/1.05^0.25=100.76</math> <br>
 <math>Vswap=V(A(k))-V(A(r))</math>
+<br>

@@ -112,6 +112,13 @@ end
 
 
 
+
+function matriceFunctionDutilite(self,X,sigmaVect,rhoVect)
+
+end
+
+
+
 function Portefeuillef.toVectLet(count)
   local res=""
   if tonumber(count) ~= nil then

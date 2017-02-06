@@ -61,3 +61,4 @@ d'où <math>Duration D=1.05*7.7 = 8.09</math> ans
 <math>r=10%</math> donc <math>S=10</math> et <math>C=200</math>
 Lors de la hausse de taux de 2% implique une baisse de la valeur calculable
 <math>-Delta(V)/V=SDelta(r)-1/2*C*Delta(r)^2=10*0.02-100*(0.02)^2=16%</math>
+<br>

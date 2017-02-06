@@ -9,7 +9,7 @@ function ExempleSwapAvecTauxForward:performCalc()
   self:appendToResult("")
   self:appendTitleToResult("Exemple: swap avec taux forward")
   self:appendToResult("\n")
-  self:appendToResult("taux actuariels ZC r(theta) exrait des courbes taux fixes des swaps vanille le 1/4/n \n")
+  self:appendToResult("taux actuariels ZC r("..c_theta..") exrait des courbes taux fixes des swaps vanille le 1/4/n \n")
   self:appendToResult("3mois: 5%, 6mois: 5.3%, 9mois=5.4%, 12mois: 5.5%, 15mois: 5.6% \n")
   self:appendToResult("On se situe le 1/4/n, swap L-6mois contre taux fixe 6%, 15mois de vie à courir avec 3 echeances semestrielles \n")
   self:appendToResult("situés les 1/7/n, 1/1/n+1 et 1/7/n+1 et jambe fixe 1/7/n et 1/7/n+1; N=100M et le 1/1/n L-6mois=4% \n")
@@ -50,6 +50,7 @@ function ExempleSwapAvecTauxForward:performCalc()
   self:appendToResult(" \n")
   self:appendToResult("")
   self:appendMathToResult("Vswap=V(A(k))-V(A(r))")
+  self:appendToResult("\n")
 
 end
 

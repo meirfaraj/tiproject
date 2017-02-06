@@ -133,12 +133,12 @@ self.operation = ""
   self:appendToResult("\n")
   self:appendToResult("")
   self:appendBoldToResult("B.")
-  self:appendToResult(" Un an plus tard 1/1/n+1(donc le Swap lui reste 3 ans), la gamme des taux fixe swap(k(theta)) "..e_acute.."volue")
+  self:appendToResult(" Un an plus tard 1/1/n+1(donc le Swap lui reste 3 ans), la gamme des taux fixe swap(k("..c_theta..")) "..e_acute.."volue")
   self:appendToResult("1an: 6%, 2ans: 6.5%, 3ans=7%, 4ans: 7.2%")
   self:appendToResult("\n")
   self:appendToResult("on commence par calciler la gamme ZC 1,2 et 3 ans implicite puis on calcule la valeur du swap(L-3mois contre 5%)")
   self:appendToResult("\n")
-  self:appendToResult("a)calcul des prix b(theta) et des ZC "..a_grave.." partier de k(theta)")
+  self:appendToResult("a)calcul des prix b("..c_theta..") et des ZC "..a_grave.." partier de k("..c_theta..")")
   self:appendToResult("\n")
   self:appendToResult("")
   self:appendMathToResult("r1=k1=6%")
@@ -172,7 +172,7 @@ self.operation = ""
   if varValue["curTtl"] == "Exemple: swap avec taux forward" then
   self:appendToResult("")
   self:appendTitleToResult("Exemple: swap avec taux forward")
-  self:appendToResult("taux actuariels ZC r(theta) exrait des courbes taux fixes des swaps vanille le 1/4/n")
+  self:appendToResult("taux actuariels ZC r("..c_theta..") exrait des courbes taux fixes des swaps vanille le 1/4/n")
   self:appendToResult("3mois: 5%, 6mois: 5.3%, 9mois=5.4%, 12mois: 5.5%, 15mois: 5.6%")
   self:appendToResult("On se situe le 1/4/n, swap L-6mois contre taux fixe 6%, 15mois de vie "..a_grave.." courir avec 3 echeances semestrielles")
   self:appendToResult("situ"..e_acute.."s les 1/7/n, 1/1/n+1 et 1/7/n+1 et jambe fixe 1/7/n et 1/7/n+1; N=100M et le 1/1/n L-6mois=4%")
@@ -209,6 +209,7 @@ self.operation = ""
   self:appendToResult(" \n")
   self:appendToResult("")
   self:appendMathToResult("Vswap=V(A(k))-V(A(r))")
+  self:appendToResult("\n")
         return
      end
 

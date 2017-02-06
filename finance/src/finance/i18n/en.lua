@@ -235,3 +235,22 @@ addTextLocale(SWAP_EMPREINTEUR_HEADER_ID,EN,"Swap Empreinteur (Taux fixe donneur
 
 addTextLocale(TAUX_COMPOSE_TITLE_ID,EN,"Taux compose")
 addTextLocale(TAUX_COMPOSE_TITLE_HEADER_ID,EN,"Taux compose")
+
+addTextLocale(MATRICE_FUNC_UTIL_ID,EN,"Resolution matrice en fct d'utilite")
+addTextLocale(MATRICE_FUNC_UTIL_HEADER_ID,EN,"Resolution matrice en fct d'utilite")
+
+addTextLocale(COURS_LES_SWAPS_TITLE_ID,EN,"Swap - Cours")
+addTextLocale(COURS_LES_SWAPS_TITLE_HEADER_ID,EN,"Swap - Cours")
+addTextLocale(EXEMPLE_GENARAL_SWAP_TITLE_ID,EN,"Swap - Exemple gen")
+addTextLocale(EXEMPLE_GENARAL_SWAP_TITLE_HEADER_ID,EN,"Swap - Exemple gen")
+addTextLocale(EXEMPLE_SWAP_AVEC_TAUX_FORWARD_TITLE_ID,EN,"Swap - Exemple Taux forward")
+addTextLocale(EXEMPLE_SWAP_AVEC_TAUX_FORWARD_TITLE_HEADER_ID,EN,"Swap - Exemple Taux forward")
+addTextLocale(EXEMPLE_VALO_ET_RISQUE_SWAP_TITLE_ID,EN,"Swap - Exemple Valo+risque")
+addTextLocale(EXEMPLE_VALO_ET_RISQUE_SWAP_TITLE_HEADER_ID,EN,"Swap - Exemple Valo+risque")
+addTextLocale(GESTION_DE_PORTEFEUILLES_TITLE_ID,EN,"Gestion de portefeuille")
+addTextLocale(GESTION_DE_PORTEFEUILLES_TITLE_HEADER_ID,EN,"Gestion de portefeuille")
+addTextLocale(INSTRUMENTS_VANILLES_TAUX_FLOTTANT_TITLE_ID,EN,"instrument vanilles taux flottant")
+addTextLocale(INSTRUMENTS_VANILLES_TAUX_FLOTTANT_TITLE_HEADER_ID,EN,"instrument vanilles taux flottant")
+
+
+
