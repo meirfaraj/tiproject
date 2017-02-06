@@ -174,16 +174,38 @@ function Portefeuillef.compositionPortefeuille2(self,Rvect,sigmaVect,rhoVect,rf,
         XLuaVect[1]=res
         XLuaVect[2]=resB
      elseif rhoN==1 then 
-        self:appendToResult("cas non trait"..e_acute.."\n")
+        self:appendToResult("cas non trait"..e_acute.." pas de portefeuille Z\n")
         return
      elseif rhoN==0 then 
-        self:appendToResult("cas non trait"..e_acute.."\n")
-        return
+        self:appendMathToResult("XA=(("..c_sigma.."B^2)/("..c_sigma.."A^2+"..c_sigma.."B^2))=("..tostring(sigmaLuaVect[2]).."^2/("..tostring(sigmaLuaVect[1]).."^2+"..tostring(sigmaLuaVect[2]).."^2)")
+        self:appendToResult("\n")
+        local res = tiNspire.execute(tostring(sigmaLuaVect[2]).."^2/("..tostring(sigmaLuaVect[1]).."^2+"..tostring(sigmaLuaVect[2]).."^2)")
+        self:appendMathToResult("="..tostring(res))
+        self:appendMathToResult("="..tostring(tiNspire.approx(res)))
+        self:appendToResult("\n")
+        local resB = tiNspire.execute("1-("..tostring(res)..")")
+        self:appendMathToResult("XB=1-XA=1-"..tostring(res).."="..tostring(resB).."="..tostring(tiNspire.approx(resB)))
+        self:appendToResult("\n")
+        self:appendToResult("Donc : ")
+        XLuaVect[1]=res
+        XLuaVect[2]=resB        
      else
         --cas general 
-        
+        self:appendMathToResult("XA=("..c_sigma.."B^2-"..c_sigma.."A*"..c_sigma.."B*"..c_rho.."AB)/("..c_sigma.."A^2+"..c_sigma.."B^2-2*"..c_sigma.."A*"..c_sigma.."B*"..c_rho.."AB))")
+        self:appendToResult("\n")
+        local calcRes = "(("..tostring(sigmaLuaVect[2]).."^2-"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."*"..tostring(rho)..")/("..tostring(sigmaLuaVect[1]).."^2+"..tostring(sigmaLuaVect[2]).."^2-2*"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."*"..tostring(rho).."))"
+        self:appendMathToResult("="..tostring(calcRes))
+        local res = tiNspire.execute(tostring(calcRes))
+        self:appendMathToResult("="..tostring(res))
+        self:appendMathToResult("="..tostring(tiNspire.approx(res)))
+        self:appendToResult("\n")
+        local resB = tiNspire.execute("1-("..tostring(res)..")")
+        self:appendMathToResult("XB=1-XA=1-"..tostring(res).."="..tostring(resB).."="..tostring(tiNspire.approx(resB)))
+        self:appendToResult("\n")
+        self:appendToResult("Donc : ")
+        XLuaVect[1]=res
+        XLuaVect[2]=resB                
      end          
-    
      self:appendMathToResult("=Z={"..tostring(XLuaVect[1]).."*A;"..tostring(XLuaVect[2]).."*B}")
      self:appendToResult("\n")
      -- save result 
@@ -211,20 +233,28 @@ function Portefeuillef.OAPortefeuille(self,rendement,rf,XLuaVect)
      end
   end
 
-  if tiNspire.toNumber(tiNspire.abs(tostring(rendement).."-"..tostring(rf)))<deltaEq then
+
+  local rendNum = tiNspire.toNumber(tostring(rendement))
+  local rfNum = tiNspire.toNumber(tostring(rf))
+  local delta = tiNspire.toNumber(tiNspire.abs(tostring(rendement).."-"..tostring(rf)))
+  if rendNum ~=nil and delta~=nil and rfNum~=nil then
+    if delta<deltaEq then
      self:appendToResult("pas d'OA car "..tostring(rendAp).." et "..tostring(rf).." sont proche(=)")
-  elseif tiNspire.toNumber(tostring(rendement))<tiNspire.toNumber(tostring(rf)) then
-     self:appendToResult("ici OA car "..tostring(rendAp).."% < "..tostring(rf).."%\n")
-     self:appendToResult("Donc vente "..a_acute.." decouvert du portefeuille z et achat de rf :\n")
-     self:appendToResult("ici VAD :")
-     self:appendMathToResult(tostring(res))
-     self:appendToResult("et position longue rf \n")
+    elseif rendNum <rfNum then
+       self:appendToResult("ici OA car "..tostring(rendAp).."% < "..tostring(rf).."%\n")
+       self:appendToResult("Donc vente "..a_acute.." decouvert du portefeuille z et achat de rf :\n")
+       self:appendToResult("ici VAD :")
+       self:appendMathToResult(tostring(res))
+       self:appendToResult("et position longue rf \n")
+    else
+       self:appendToResult("ici OA car "..tostring(rendAp).."% > "..tostring(rf).."%\n")
+       self:appendToResult("Donc achat du portefeuille z et position courte sur rf :\n")
+       self:appendToResult("ici achat :")
+       self:appendMathToResult(tostring(res))
+       self:appendToResult("\n et position courte rf \n")
+    end
   else
-     self:appendToResult("ici OA car "..tostring(rendAp).."% > "..tostring(rf).."%\n")
-     self:appendToResult("Donc achat du portefeuille z et position courte sur rf :\n")
-     self:appendToResult("ici achat :")
-     self:appendMathToResult(tostring(res))
-     self:appendToResult("\n et position courte rf \n")
+    self:appendToResult("rf or rendement is null!\n")
   end
 end
 
@@ -313,12 +343,18 @@ function Portefeuillef.courscompositionPortefeuille2(self,rho)
       self:appendToResult("\n")
       self:appendMathToResult("X1=("..c_sigma.."p-"..c_sigma.."2)/("..c_sigma.."1-"..c_sigma.."2)")
       self:appendToResult("\n")
-      self:appendMathToResult("Rp=(R2-((R1-R2)/("..c_sigma.."1-"..c_sigma.."2))+((R1-R2)/("..c_sigma.."1-"..c_sigma.."2))*"..c_sigma.."p")
+      self:appendMathToResult("Rp=((R2-((R1-R2)/("..c_sigma.."1-"..c_sigma.."2))*"..c_sigma.."2)+((R1-R2)/("..c_sigma.."1-"..c_sigma.."2))*"..c_sigma.."p")
+   elseif rhoN==0 then 
+      self:appendMathToResult(c_rho.."1_2=0")
+      self:appendToResult("\n")
+      self:appendMathToResult("X1min=(("..c_sigma.."2^2)/("..c_sigma.."1^2+"..c_sigma.."2^2))")
    else 
       self:appendMathToResult(c_rho.."1_2="..tostring(rhoN))
       self:appendToResult("\n")
-      
-   end 
+      self:appendMathToResult(c_sigma.."p=(X1^2)/("..c_sigma.."1^2+(1-X1)^2*"..c_sigma.."2^2+2*X1*(1-X1)*"..c_sigma.."1*"..c_sigma.."2*"..c_rho.."1_2)^(1/2)")
+      self:appendToResult("\n")
+      self:appendMathToResult("X1min=("..c_sigma.."2^2-"..c_sigma.."1*"..c_sigma.."2*"..c_rho.."1_2)/("..c_sigma.."1^2+"..c_sigma.."2^2-2*"..c_sigma.."1*"..c_sigma.."2*"..c_rho.."1_2))")
+   end
    self:appendToResult("\n")
    self:appendMathToResult("X2=1-X1")
    self:appendToResult("\n")
