@@ -23,7 +23,7 @@ require("finance/portfeuille/equivCertain")
 require("finance/portfeuille/primeDeRisque")
 require("finance/portfeuille/matriceVarianceCovariance")
 require("finance/portfeuille/matriceFonctionDutilite")
-require("finance/portfeuille/matriceLagrangien")
+require("finance/portfeuille/sansActifSansRisqueMinimisationRisque")
 require("finance/portfeuille/detCompositionPortefeuilleZ")
 require("finance/portfeuille/detCompositionPortefeuilleAversionRisque")
 require("finance/swap/swapPreteur")
@@ -74,6 +74,12 @@ addSubCatScreen(5,4,ASTxt(MATRICE_VAR_COVAR_ID),ASTxt(MATRICE_VAR_COVAR_HEADER_I
 addSubCatScreen(5,5,ASTxt(DET_COMPOSITION_PORTEFEUILLE_ID),ASTxt(DET_COMPOSITION_PORTEFEUILLE_HEADER_ID),CompositionPortefeuilleZ)
 addSubCatScreen(5,6,ASTxt(DET_COMPOSITION_PORTEFEUILLE_AR_ID),ASTxt(DET_COMPOSITION_PORTEFEUILLE_AR_HEADER_ID),CompositionPortefeuilleAversionRisque)
 addSubCatScreen(5,7,ASTxt(MATRICE_FUNC_UTIL_ID),ASTxt(MATRICE_FUNC_UTIL_HEADER_ID),MatriceFunctionDutilite)
+
+addSubCatScreen(5,8,ASTxt(SANS_ACTIF_SANS_RISQUE_MIN_ID),ASTxt(SANS_ACTIF_SANS_RISQUE_MIN_HEADER_ID),SansActifSansRisqueMinimisationDeRisque)
+addSubCatScreen(5,9,ASTxt(SANS_ACTIF_SANS_RISQUE_MIN_ID).."-2",ASTxt(SANS_ACTIF_SANS_RISQUE_MIN_HEADER_ID),MatriceFunctionDutilite)
+
+addSubCatScreen(5,10,ASTxt(SANS_ACTIF_SANS_RISQUE_MAX_ID),ASTxt(SANS_ACTIF_SANS_RISQUE_MAX_HEADER_ID),MatriceFunctionDutilite)
+addSubCatScreen(5,11,ASTxt(SANS_ACTIF_SANS_RISQUE_MAX_ID).."-2",ASTxt(SANS_ACTIF_SANS_RISQUE_MAX_HEADER_ID),MatriceFunctionDutilite)
 
 
 

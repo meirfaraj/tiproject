@@ -329,3 +329,21 @@ function Portefeuillef.courscompositionPortefeuilleZ2(self,rho)
    self:appendMathToResult("X2=1-X1")
    self:appendToResult("\n")
 end
+
+
+function Portefeuillef.sansActifSansRisqueMinimisationDeRisque(self)
+    Portefeuillef.coursSansActifSansRisqueMinimisationDeRisque(self)
+end
+
+function Portefeuillef.coursSansActifSansRisqueMinimisationDeRisque(self)
+  self:appendMathToResult(c_sigma.."x^2=V(Rx)->min")
+  self:appendToResult("\n")
+  self:appendMathToResult("E(Rx)=rp*")
+  self:appendToResult("\n")
+  self:appendMathToResult("{min "..sum_sym.."("..sum_sym.."(xi*xj*"..c_sigma.."i,j,1,N),i,1,N);"..sum_sym.."(xi*ri,i,1,N)=rp*;"..sum_sym.."(xi,i,1,N)=1}");
+  self:appendToResult("\n Ce probleme revient "..a_acute.." la minimisation du Lagrangien suivant:\n")
+  self:appendMathToResult("L(Xi,"..c_lambda.."1,"..c_lambda.."2)="..sum_sym.."("..sum_sym.."(xi*xj*"..c_sigma.."i,j,1,N),i,1,N)+"..c_lambda.."1*("..sum_sym.."(xi*ri,i,1,N)-rp*)+"..c_lambda.."2*("..sum_sym.."(xi,i,1,N)-1)")
+end
+
+
+

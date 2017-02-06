@@ -35,14 +35,14 @@ function MatriceVarianceCovariance:performCalc()
       varValue["matriceVarCovar"] = matriceResult
    end
    self:appendToResult("\nRisque specific/systemique=")
-   self:appendMathToResult( tostring(XTiVect).."*"..matriceResult.."*".. tostring(XTiVect)..c_transpose)
+   self:appendMathToResult( tostring(XTiVect).."*"..tostring(matriceResult).."*".. tostring(XTiVect)..c_transpose)
    self:appendToResult("=")
-   self:appendMathToResult( tostring(tiNspire.execute(tostring(XTiVect).."*"..matriceResult)).."*".. tostring(XTiVect)..c_transpose)
+   self:appendMathToResult( tostring(tiNspire.execute(tostring(XTiVect).."*"..tostring(matriceResult))).."*".. tostring(XTiVect)..c_transpose)
    self:appendToResult("=")
-   self:appendMathToResult( tostring(tiNspire.approx(tostring(XTiVect).."*"..matriceResult)).."*".. tostring(XTiVect)..c_transpose)
+   self:appendMathToResult( tostring(tiNspire.approx(tostring(XTiVect).."*"..tostring(matriceResult))).."*".. tostring(XTiVect)..c_transpose)
    self:appendToResult("=")
-   self:appendMathToResult( tostring(tiNspire.execute(tostring(XTiVect).."*"..matriceResult.."*".. tostring(XTiVect)..c_transpose)))
+   self:appendMathToResult( tostring(tiNspire.execute(tostring(XTiVect).."*"..tostring(matriceResult).."*".. tostring(XTiVect)..c_transpose)))
    self:appendToResult("=")
-   self:appendMathToResult( tostring(tiNspire.approx(tostring(XTiVect).."*"..matriceResult.."*".. tostring(XTiVect)..c_transpose)))
+   self:appendMathToResult( tostring(tiNspire.approx(tostring(XTiVect).."*"..tostring(matriceResult).."*".. tostring(XTiVect)..c_transpose)))
 end
 

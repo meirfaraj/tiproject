@@ -222,7 +222,7 @@ addTextLocale(MATRICE_VAR_COVAR_HEADER_ID,EN,"Determiner la Matrice variance-cov
 addTextLocale(DET_COMPOSITION_PORTEFEUILLE_ID,EN,"Compo. Port. Z & OA")
 addTextLocale(DET_COMPOSITION_PORTEFEUILLE_HEADER_ID,EN,"Composition du Portefeuille Z & OA")
 
-addTextLocale(DET_COMPOSITION_PORTEFEUILLE_AR_ID,EN,"Compo. Port. f(tol.Risk)")
+addTextLocale(DET_COMPOSITION_PORTEFEUILLE_AR_ID,EN,"Compo. Port. f(tol.Risk"..c_theta..")")
 addTextLocale(DET_COMPOSITION_PORTEFEUILLE_AR_HEADER_ID,EN,"Composition du Portefeuille en fonction de la tolerance au risque")
 
 addTextLocale(SWAP_ID,EN,"Swap")
@@ -253,4 +253,9 @@ addTextLocale(INSTRUMENTS_VANILLES_TAUX_FLOTTANT_TITLE_ID,EN,"instrument vanille
 addTextLocale(INSTRUMENTS_VANILLES_TAUX_FLOTTANT_TITLE_HEADER_ID,EN,"instrument vanilles taux flottant")
 
 
+addTextLocale(SANS_ACTIF_SANS_RISQUE_MIN_ID,EN,"Sans actif Sans risk - min risk")
+addTextLocale(SANS_ACTIF_SANS_RISQUE_MIN_HEADER_ID,EN,"Sans actif Sans risk - min risk")
+addTextLocale(SANS_ACTIF_SANS_RISQUE_MAX_ID,EN,"Sans actif Sans risk - max rendement")
+addTextLocale(SANS_ACTIF_SANS_RISQUE_MAX_HEADER_ID,EN,"Sans actif Sans risk - max rendement")
+ 
 
