@@ -127,7 +127,7 @@ function Portefeuillef.toVectLet(count)
 end
 
 
-function Portefeuillef.compositionPortefeuille(self,Rvect,sigmaVect,rhoVect,rf)
+function Portefeuillef.compositionPortefeuilleZ(self,Rvect,sigmaVect,rhoVect,rf)
   local rhoLuaVect,rhoTiVect,countRho=Portefeuillef.GetVect(self,rhoVect)
   local sigmaLuaVect,sigmaTiVect,countsigma=Portefeuillef.GetVect(self,sigmaVect)
   local RLuaVect,RTiVect,countR=Portefeuillef.GetVect(self,Rvect)
@@ -148,15 +148,15 @@ function Portefeuillef.compositionPortefeuille(self,Rvect,sigmaVect,rhoVect,rf)
   self:appendToResult("Le portefeuille Z={"..Portefeuillef.toVectLet(countsigma).."} \n")   
 
   if countsigma==2 then 
-    Portefeuillef.compositionPortefeuille2(self,Rvect,sigmaVect,rhoVect,rf,sigmaLuaVect,RLuaVect,rhoLuaVect[1]) 
+    Portefeuillef.compositionPortefeuilleZ2(self,Rvect,sigmaVect,rhoVect,rf,sigmaLuaVect,RLuaVect,rhoLuaVect[1]) 
   end
 
 end
 
 
 
-function Portefeuillef.compositionPortefeuille2(self,Rvect,sigmaVect,rhoVect,rf,sigmaLuaVect,RLuaVect,rho)
-  Portefeuillef.courscompositionPortefeuille2(self,rho)
+function Portefeuillef.compositionPortefeuilleZ2(self,Rvect,sigmaVect,rhoVect,rf,sigmaLuaVect,RLuaVect,rho)
+  Portefeuillef.courscompositionPortefeuilleZ2(self,rho)
   if sigmaLuaVect~=nil then
      local rhoN=tiNspire.toNumber(rho)
      local XLuaVect={}
@@ -209,7 +209,7 @@ function Portefeuillef.compositionPortefeuille2(self,Rvect,sigmaVect,rhoVect,rf,
      self:appendMathToResult("=Z={"..tostring(XLuaVect[1]).."*A;"..tostring(XLuaVect[2]).."*B}")
      self:appendToResult("\n")
      -- save result 
-     varValue["X"]=tostring(res)..","..tostring(resB)
+     varValue["X"]=tostring(XLuaVect[1])..","..tostring(XLuaVect[2])
      local rendement = Portefeuillef.rendementPortefeuille(self,XLuaVect,RLuaVect,2)
      self:appendToResult("\n")
      Portefeuillef.OAPortefeuille(self,rendement,rf,XLuaVect)
@@ -283,44 +283,7 @@ function Portefeuillef.rendementPortefeuille(self,XLuaVect,RLuaVect,count)
 end
 
 
---  local sigmaSumAll = ""
---  local sigmaSumAllTxt = ""
---
---  for i=1,countX,1 
---  do
---    if i>1 then 
---      sigmaSumAllTxt=sigmaSumAllTxt.."+"
---      sigmaSumAll=sigmaSumAll.."+"
---    end
---    sigmaSumAllTxt=sigmaSumAllTxt..c_sigma..tostring(i)
---    sigmaSumAll=sigmaSumAll..tostring(sigmaLuaVect[i])
---  end
---  self:appendToResult(sum_sym..c_sigma..tostring(sigmaSumAllTxt).."=")
---  self:appendMathToResult(tostring(sigmaSumAll).."=")
---  local sigmaSumAllRes = tiNspire.execute(sigmaSumAll)
---  self:appendMathToResult(tostring(sigmaSumAllRes).."="..tostring(tiNspire.approx(sigmaSumAll)))
---
---  for i=1,countX,1 
---  do
---    self:appendToResult("X"..string.char(65+i-1).."=")
---    local sigmaSumHightTxt=""
---    local sigmaSumHight=""
---    local countsum=0
---    for j=1,countX,1
---    do  
---      if j~=i then
---        if countsum>0 then 
---          sigmaSumHightTxt=sigmaSumHightTxt.."+"
---          sigmaSumAll=sigmaSumAll.."+"
---        end
---        sigmaSumHightTxt=sigmaSumHightTxt..c_sigma..tostring(i)
---        sigmaSumHight=sigmaSumHight..
---        countsum=countsum+1
---      end
---    end
---  end
-
-function Portefeuillef.courscompositionPortefeuille2(self,rho)
+function Portefeuillef.courscompositionPortefeuilleZ2(self,rho)
    self:appendMathToResult("Rp=X1*R1+X2+R2")
    self:appendToResult(" avec ");
    self:appendMathToResult("X2=1-X1")

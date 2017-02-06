@@ -22,7 +22,8 @@ require("finance/portfeuille/utilite")
 require("finance/portfeuille/equivCertain")
 require("finance/portfeuille/primeDeRisque")
 require("finance/portfeuille/matriceVarianceCovariance")
-require("finance/portfeuille/detCompositionPortefeuille")
+require("finance/portfeuille/detCompositionPortefeuilleZ")
+require("finance/portfeuille/detCompositionPortefeuilleAversionRisque")
 require("finance/swap/swapPreteur")
 
 
@@ -68,7 +69,8 @@ addSubCatScreen(5,1,ASTxt(FONCTION_UTILITE_ID),ASTxt(FONCTION_UTILITE_ID_HEADER_
 addSubCatScreen(5,2,ASTxt(EQUIVALENT_CERTAIN_ID),ASTxt(EQUIVALENT_CERTAIN_HEADER_ID),EquivCertain)
 addSubCatScreen(5,3,ASTxt(PRIME_DE_RISQUE_ID),ASTxt(PRIME_DE_RISQUE_HEADER_ID),PrimeDeRisque)
 addSubCatScreen(5,4,ASTxt(MATRICE_VAR_COVAR_ID),ASTxt(MATRICE_VAR_COVAR_HEADER_ID),MatriceVarianceCovariance)
-addSubCatScreen(5,5,ASTxt(DET_COMPOSITION_PORTEFEUILLE_ID),ASTxt(DET_COMPOSITION_PORTEFEUILLE_HEADER_ID),CompositionPortefeuille)
+addSubCatScreen(5,5,ASTxt(DET_COMPOSITION_PORTEFEUILLE_ID),ASTxt(DET_COMPOSITION_PORTEFEUILLE_HEADER_ID),CompositionPortefeuilleZ)
+addSubCatScreen(5,6,ASTxt(DET_COMPOSITION_PORTEFEUILLE_AR_ID),ASTxt(DET_COMPOSITION_PORTEFEUILLE_AR_HEADER_ID),CompositionPortefeuilleAversionRisque)
 
 
 ----------------------Exercice FIXED INCOME---------------------------------------

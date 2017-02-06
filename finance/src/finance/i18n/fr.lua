@@ -184,8 +184,11 @@ addTextLocale(EXERCICES_TITLE_ID,FR,"Exercices ")
 addTextLocale(MATRICE_VAR_COVAR_ID,FR,"Matrice variance-covariance")
 addTextLocale(MATRICE_VAR_COVAR_HEADER_ID,FR,"Determiner la Matrice variance-covariance du portefeuille")
 
-addTextLocale(DET_COMPOSITION_PORTEFEUILLE_ID,FR,"Composition Portefeuille&OA")
-addTextLocale(DET_COMPOSITION_PORTEFEUILLE_HEADER_ID,FR,"Composition Portefeuille&OA")
+addTextLocale(DET_COMPOSITION_PORTEFEUILLE_ID,FR,"Compo. Port. Z & OA")
+addTextLocale(DET_COMPOSITION_PORTEFEUILLE_HEADER_ID,FR,"Composition du Portefeuille Z & OA")
+
+addTextLocale(DET_COMPOSITION_PORTEFEUILLE_AR_ID,FR,"Compo. Port. f(tol.Risk)")
+addTextLocale(DET_COMPOSITION_PORTEFEUILLE_AR_HEADER_ID,FR,"Composition du Portefeuille en fonction de la tolerance au risque")
 
 addTextLocale(SWAP_ID,FR,"Swap")
 addTextLocale(SWAP_HEADER_ID,FR,"Swap")
