@@ -35,6 +35,18 @@ function Portefeuillef.toRhoIdx(i,j,n)
   return res
 end
 
+function Portefeuillef.toCovIdx(i,j,n)
+  local count = n
+  local res=j-n
+  for a=1,i,1
+  do
+    res = res+count
+    count = count-1
+  end 
+  return res
+end
+
+
 function Portefeuillef.matriceVarianceCovarianceUsingPondEcartTypeCorrelation(self,X,sigmaVect,rhoVect)
 
   local rhoLuaVect,rhoTiVect,countRho=Portefeuillef.GetVect(self,rhoVect)
@@ -331,8 +343,125 @@ function Portefeuillef.courscompositionPortefeuilleZ2(self,rho)
 end
 
 
-function Portefeuillef.sansActifSansRisqueMinimisationDeRisque(self)
-    Portefeuillef.coursSansActifSansRisqueMinimisationDeRisque(self)
+
+function Portefeuillef.sansActifSansRisqueMinimisationDeRisque(self,covVect,rp,Rvect)
+    if covVect ~= nil and Rvect ~= nil then
+      local covLuaVect,covTiVect,countCov=Portefeuillef.GetVect(self,covVect)
+      local RvectLuaVect,RvectTiVect,countRvect=Portefeuillef.GetVect(self,Rvect)
+      local expected=tiNspire.approx("(nPr("..tostring(countRvect)..",2)/2)+"..tostring(countRvect))
+      if countCov~=tiNspire.toNumber(expected) then
+        self:appendToResult("Attention : Il devrait y avoir "..tostring(expected).." cov(i,j) != "..tostring(countCov))
+      else
+        self:appendToResult("number of covariance found "..tostring(countCov).." as expected "..tostring(expected))
+      end
+      
+      self:appendToResult("\nIl y a "..tostring(countRvect).." actifs dans le portefeuille\n")
+      self:appendMathToResult("R="..tostring(RvectTiVect))
+      self:appendMathToResult("Covij="..tostring(covTiVect))
+      
+      local  matriceCours="["
+      local  matriceIntermediaire="["
+      local  matriceResult ="["
+      for i=1,countRvect,1 
+      do
+        if i~=1 then
+          matriceCours=matriceCours..";"
+          matriceResult = matriceResult ..";"
+          matriceIntermediaire=matriceIntermediaire..";"
+        end
+        for j=1,countRvect,1 
+        do 
+          if j~=1 then
+            matriceCours=matriceCours..","
+            matriceResult =matriceResult ..","
+            matriceIntermediaire =matriceIntermediaire..","
+          end
+          local calc = ""
+          local a,b
+          if i<j then
+            a=i
+            b=j
+          else
+            b=i
+            a=j
+          end
+          matriceCours=matriceCours.."2*"..c_sigma..tostring(i).."_"..tostring(j)
+
+          calc="2*"..tostring(covLuaVect[Portefeuillef.toCovIdx(a,b,countRvect)])
+          matriceIntermediaire=matriceIntermediaire..tostring(calc)
+          matriceResult =matriceResult ..tostring(tiNspire.execute(tostring(calc)))         
+
+            if i==countRvect then
+              if j==countRvect then
+                matriceCours=matriceCours..",r"..tostring(i)..",1;"
+                matriceResult =matriceResult ..","..tostring(RvectLuaVect[i])..",1;"
+                matriceIntermediaire =matriceIntermediaire..","..tostring(RvectLuaVect[i])..",1;"
+                for k=1,countRvect,1 
+                do   
+                  if k~=1 then
+                    matriceCours=matriceCours..","
+                    matriceResult =matriceResult ..","
+                    matriceIntermediaire =matriceIntermediaire..","
+                  end 
+                  matriceCours=matriceCours.."r"..tostring(k)
+                  matriceResult =matriceResult..tostring(RvectLuaVect[k])
+                  matriceIntermediaire =matriceIntermediaire..tostring(RvectLuaVect[k])
+                end
+                matriceCours=matriceCours..",0,0;"
+                matriceResult =matriceResult ..",0,0;"
+                matriceIntermediaire =matriceIntermediaire..",0,0;"            
+                for k=1,countRvect,1 
+                do   
+                  if k~=1 then
+                    matriceCours=matriceCours..","
+                    matriceResult =matriceResult ..","
+                    matriceIntermediaire =matriceIntermediaire..","
+                  end 
+                  matriceCours=matriceCours.."1"
+                  matriceResult =matriceResult.."1"
+                  matriceIntermediaire =matriceIntermediaire.."1"
+                end
+                matriceCours=matriceCours..",0,0"
+                matriceResult =matriceResult ..",0,0"
+                matriceIntermediaire =matriceIntermediaire..",0,0"            
+              end
+            elseif  j==countRvect then
+              matriceCours=matriceCours..",r"..tostring(i)..",1"
+              matriceResult =matriceResult..","..tostring(RvectLuaVect[i])..",1"
+              matriceIntermediaire =matriceIntermediaire..","..tostring(RvectLuaVect[i])..",1"
+            end            
+          print("loop : "..tostring(i)..","..tostring(j)) 
+        end
+      end   
+      matriceCours=matriceCours.."]"
+      matriceIntermediaire =matriceIntermediaire .."]"        
+      matriceResult =matriceResult .."]"
+     varValue["AMat"] = tostring(matriceResult)
+     self:appendToResult("\nA=")
+     self:appendMathToResult(matriceCours)
+     self:appendToResult("=")
+     self:appendMathToResult(matriceIntermediaire)
+     self:appendToResult("=")
+     self:appendMathToResult(matriceResult)
+     self:appendToResult("=")
+     self:appendMathToResult(tiNspire.approx(matriceResult)) 
+     if rp ~=nil then
+        Portefeuillef.constructTMat(rp,countRvect)
+     end
+    end   
+end
+
+function Portefeuillef.constructTMat(rp,count)
+  local  tMat="["
+  for i=1,count,1 
+  do
+    if i~=1 then
+      tMat=tMat..";"
+    end
+    tMat=tMat.."0"
+  end
+  tMat=tMat..";"..tostring(rp)..";1]"
+  varValue["tMat"]=tMat
 end
 
 function Portefeuillef.coursSansActifSansRisqueMinimisationDeRisque(self)

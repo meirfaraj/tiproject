@@ -8,24 +8,23 @@ require("finance/portfeuille/func/portefeuille")
 
 
 -- obligation in fine
-SansActifSansRisqueMinimisationDeRisque = Tmv(SANS_ACTIF_SANS_RISQUE_MIN_ID,SANS_ACTIF_SANS_RISQUE_MIN_HEADER_ID)
+SansActifSansRisqueMinimisationDeRisque2 = Tmv(SANS_ACTIF_SANS_RISQUE_MIN_ID,SANS_ACTIF_SANS_RISQUE_MIN_HEADER_ID)
  
 
-function SansActifSansRisqueMinimisationDeRisque:widgetsInit()
- self:add(0,"R : R1,R2","Rvect")
+function SansActifSansRisqueMinimisationDeRisque2:widgetsInit()
+ self:add(0,"A : form[1,2;3,4]","AMat")
  self:add(0,"Rp* Rendement ","Rp*")
- self:add(1,"Cov:c11,c12,c13,c22,c23","covVect")
 end
 
-function SansActifSansRisqueMinimisationDeRisque:performCalc()
--- cov
-   local covVect   =  varValue["covVect"]
+function SansActifSansRisqueMinimisationDeRisque2:performCalc()
 -- rendement portefeuille cible
    local rp =  varValue["Rp*"]
--- rendement actifs
-   local Rvect =  varValue["Rvect"]
-   Portefeuillef.sansActifSansRisqueMinimisationDeRisque(self,covVect,rp,Rvect)
    local AMat =  varValue["AMat"]
+    
+   local count = tiNspire.toNumber(tiNspire.execute("colDim("..tostring(AMat)..")-2"))
+   if rp~=nil and count~=nil then
+      Portefeuillef.constructTMat(rp,count)
+   end
    local tMat =  varValue["tMat"]
    if AMat~=nil then  
       self:appendToResult("\n");
