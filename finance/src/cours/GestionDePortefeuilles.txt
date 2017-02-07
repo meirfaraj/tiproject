@@ -1,8 +1,8 @@
 <h1>Gestion de portefeuilles</h1>
 <br>
-Markowitz : <math>Rp - theta/2 Sigma(P)^2</math>-> max <br>
+Markowitz : <math>Rp - theta/2 Sigma(P)^2</math> -> max <br>
 ici pour obtenir la composition du ptf on aura:<br>
-<math>Rp - theta/2</math> -> max donc <math>rf + Xm(R-rf)-theta/2 *(Xm*Sigma(M))^2</math> -->max et donc en dérivant on aura<br>
+<math>Rp - theta/2 * Sigma(P)^2</math> -> max donc <math>rf + Xm(R-rf)-theta/2 *(Xm*Sigma(M))^2</math> -->max et donc en dérivant on aura<br>
 <math>Xm=(R(M)-rf)/(theta * Sigma(M)^2)</math><br>
 <br>
 <math>Sigma(P)^2 = X(A)^2*Sigma(P)^2+ X(B)^2*Sigma(B)^2+2*rho*Sigma(A)*Sigma(B) </math><br>
@@ -10,7 +10,7 @@ et le ptf qui minimise le risque on mimnimise <br>
 <math>Sigma(P)= (X(A)^2*Sigma(A)^2+ X(B)^2*Sigma(B)^2+2*rho*Sigma(A)*Sigma(B))^(1/2) </math><br>
 on dérivant par X(A) on aura <br>
 pour rho entre {-1 et 1} <math> X(A)= (Sigma(B)^2 - rho*Sigma(A)*Sigma(B))/(Sigma(A)^2+Sigma(B)^2-2*rho*Sigma(A)*Sigma(B))</math> <br>
-pour rho = -1 la composition du ptf Z et tel que <math>X(A) = Sigma(B) / Sigma(A) + Sigma(B)<math> <br>
+pour rho = -1 la composition du ptf Z et tel que <math>X(A) = Sigma(B) / (Sigma(A) + Sigma(B))<math> <br>
 et donc par ex Z= {3/5 A ; 2/5 B} alors Rz=(3/5)*Ra+(2/5)*Rb <br>
  <br>
 le ptf parfait en fct de theta on <math>Rp - theta/2 Sigma(P)^2</math>-> max <br>
@@ -19,27 +19,34 @@ le ptf parfait en fct de theta on <math>Rp - theta/2 Sigma(P)^2</math>-> max <br
  <br>
 Quand on a une VAD le risque du ptf peut etre superieur au risques de tous les actifs qui le composent. <br>
 
-<math>Sharpe-ratio = (Rm-rf)/sigma(M)</math> doc sur CML on a <math>R(P)=rf+((Rm-rf)/sigma(M))*sigma(P)</math> <br>
+<math>Sharpe-ratio = (Rm-rf)/sigma(M)</math> donc sur CML on a <math>R(P)=rf+((Rm-rf)/sigma(M))*sigma(P)</math> <br>
 Si actif non efficient et on veut garder R:  <math>R(P)=rf+X(M)(Rm-rf)</math> et sigma(P)=X(M)sigma(M)  <br>
  <br>
 composition du ptf efficient en fct de theta <br>
 <math>X=1/theta * V^(-1) * (R-1*rf)</math> et <math>Xf = 1-1*X</math> <br>
  <br>
-Le seul ptf efficient qui ne contient que des actifs risqués et le ptf Tangent. <br>
-
+Le seul ptf efficient qui ne contient que des actifs risqués et le ptf Tangent. 
+<br>
 <math>T=(V^(-1)*(R-1*rf))/(1*V^(-1) * (R-1*rf))</math>
  <br>
-risque systematique <math>Beta = cov/var=Ri-rf/Rm-rf</math> et CAPM : <math>Ri=rf+Beta(i)(Rm-rf)</math> <br>
+risque systematique <math>Beta = cov/var=(Ri-rf)/(Rm-rf)</math> et CAPM : <math>Ri=rf+Beta(i)(Rm-rf)</math> <br>
+ <br>
+ <math>Beta(p)=X(M)*Beta(M)+Xf*Beta(f)<math> donc <math>Beta(p)=X(M)<math> car Beta(M)=1 et Beta(f)=0
+  <br>
+ Donc on peut deduire lq composition du ptf si pqr ex Beta(p)=0.3 donc X(M)=0.3 et X(f)=0.7
  <br>
 tous les actifs sur SML donc si Alpha=R(observe)-R(estime)>0 actif sous estimé et on achète sinon VAD.
  <br>
 <math>Ri=(P(i)+D-P(i-1))/P(i-1)</math> <br>
 risque systematique et specifique : <math>Sigma(i)^2 = (Beta(i)*sigma(M))^2+var(Epsilon(i))</math> <br>
+et on commence par calculer <math>Beta(i)=(Ri-rf)/(Rm-rf)</math> <br>
 Si Dr/Dsigma forme une fct concave monotone croissante avec vitesse décroissante donc frontire efficiente. <br>
 Le ptf de marché et celui qui a le plus grands Sahrpe ratio <br>
  <br>
 P appartient CML : <math>Rp=rf+Xm(Rm-rf)</math> et on en déduit Xm et sigma(M) qui vaudra <math>Xm*sigma(M)</math>
  <br>
-Si on a pour un actif sigma=0 donc c'est rf donc on charche Xf à l'aide de <math>Xf=1-1*X</math> avec <math>X=1/theta * V^(-1) * (R-1*rf)</math>
+Si on a pour un actif sigma=0 donc c'est rf donc on charche Xf à l'aide de <math>Xf=1-1*X</math> avec <math>X=(1/theta) * V^(-1) * (R-1*rf)</math>
  <br>
+Si ptf Y dans CML donc même Sharpe ratio que ptf de matché <math>Sharpe-ratio = (Rm-rf)/sigma(M) = (R(Y))-rf)/sigma(Y)</math> et rho(Y/M) = 1
 
+ <br>
