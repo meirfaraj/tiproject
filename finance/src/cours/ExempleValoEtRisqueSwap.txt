@@ -8,21 +8,21 @@ dates reset et les gammes de tx plates de la <b>Jv</b> ainsi que Nj(t-1,t):<br>
 valeur marché du swap V=0 car composantes fixes et variables au pair<br>
 <br>
 2)31/3/n:gamme plate et tous les tx égaux à 6%, donc juste avant versement de coupon V(S(k-r):<br>
-le coupon variable du 01/04/n = <math> Cn=100000*5.5%*182/360=2780.5K </math> donc V(Ar) = 100000+Cn=102780.5K <br>
-<math> V(Ak)=100000 * (1.06)^1/2 * ( Somme{t=1 ->4}(0.05/1.06^t)+100*1/1.06^4) = 99388.8 K </math> <br>
-Donc <math>V(S(k-r))=-3391.7K</math> <br> 
+le coupon variable du 01/04/n = <math> Cn=100000*5.5%*(182/360)=2780.5 </math> donc V(Ar) = 100000+Cn=102780.5<br>
+<math> V(Ak)=100000 * (1.06)^(0.5) * (( Somme{t=1 ->4}(0.05/1.06^t))+100*1/1.06^4) = 99388.8 </math> <br>
+Donc <math>V(S(k-r))=-3391.7</math> <br> 
 <br>
 3) 01/10/n : (après coupons) tous les ts sont 5.5% calcul de la valeur des swaps par 2 méthodes: <br>
 Méthode démantèlement: V(Ar)=100000K<br>
-<math> V(Ak)=100000 * ( Somme{t=1 ->3}(0.05/1.055^t)+100*1/1.055^3) = 98651.033 K </math> <br> 
-Donc V(S(k-r))=-1348.966K <br> 
-Méthode équivalence: <math> V(S(k-r))=100000 (5%-5.5%) * ( Somme{t=1 ->3}(1/1.055^t)) = -1348.966K </math> <br> 
+<math> V(Ak)=100000 * (( Somme{t=1 ->3}(0.05/1.055^t))+ 1/1.055^3) = 98651.033 </math> <br> 
+Donc V(S(k-r))=-1348.966 <br> 
+Méthode équivalence: <math> V(S(k-r))=100000 (5%-5.5%) * ( Somme{t=1 ->3}(1/1.055^t)) = -1348.966 </math> <br> 
 <br>
 4) le 30/12/n-1, E(3mois)=5% aainsi que tous les autres tx. Calculons incidence d'une hausse des tx de 0.2% le 30/12/n-1 <br>
 On la formule <math>dV(S(k-r))/dr=dV(A(k))/dr - dV(A(r))/dr </math> et <math>A(r)=F * D/(1+rD)^2</math> donc <math>dV(A(r))/dr= -FD/(1+rD)^2</math> <br>
 Le 30/12/n-1, les tx sont tous égaux à 5%, dès lors une variation DELTA(r)=0.2% implique au premier ordre :<br>
 <math> DELTA(V(Ar))=-DELTA(r) * F * D/(1+rD)^2 = -0.002 * 102780.5 * 0.25 / (1+0.25*0.05)^2 = -50.129K </math> <br>
-<math> V(Ak)=Somme{t=1 ->4}(Fi/(1+r)^t-0.25) </math> donc <math>dV(A(k))/dr= - Somme{t=1 ->4}((t-0.25)Fi/(1+r)^t+0.75) </math> au premier ordre :<br>
+<math> V(Ak)=Somme{t=1 ->4}(Fi/(1+r)^(t-0.25)) </math> donc <math>dV(A(k))/dr= - Somme{t=1 ->4}((t-0.25) * Fi/(1+r)^(t+0.75)) </math> au premier ordre :<br>
 <math> DELTA(V(Ak))= DELTA(r) * dV(A(k))/dr = -0.002 * 334845.004 = -669.69K </math> <br>
 Donc DELTA(r) = 0.2% implique DELTA(V(S))=-669.69+50.129=-619.56K 
 <br><br>

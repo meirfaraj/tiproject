@@ -1,23 +1,4 @@
-<h1>Gestion de portefeuilles</h1>
-<br>
-Markowitz : <math>Rp - theta/2 Sigma(P)^2</math> -> max <br>
-ici pour obtenir la composition du ptf on aura:<br>
-<math>Rp - theta/2 * Sigma(P)^2</math> -> max donc <math>rf + Xm(R-rf)-theta/2 *(Xm*Sigma(M))^2</math> -->max et donc en dérivant on aura<br>
-<math>Xm=(R(M)-rf)/(theta * Sigma(M)^2)</math><br>
-<br>
-<math>Sigma(P)^2 = X(A)^2*Sigma(P)^2+ X(B)^2*Sigma(B)^2+2*rho*Sigma(A)*Sigma(B) </math><br>
-et le ptf qui minimise le risque on mimnimise <br>
-<math>Sigma(P)= (X(A)^2*Sigma(A)^2+ X(B)^2*Sigma(B)^2+2*rho*Sigma(A)*Sigma(B))^(1/2) </math><br>
-on dérivant par X(A) on aura <br>
-pour rho entre {-1 et 1} <math> X(A)= (Sigma(B)^2 - rho*Sigma(A)*Sigma(B))/(Sigma(A)^2+Sigma(B)^2-2*rho*Sigma(A)*Sigma(B))</math> <br>
-pour rho = -1 la composition du ptf Z et tel que <math>X(A) = Sigma(B) / (Sigma(A) + Sigma(B))<math> <br>
-et donc par ex Z= {3/5 A ; 2/5 B} alors Rz=(3/5)*Ra+(2/5)*Rb <br>
- <br>
-le ptf parfait en fct de theta on <math>Rp - theta/2 Sigma(P)^2</math>-> max <br>
-<math>X(A)*R(A) + (1-X(A))*R(B) - (theta/2) (X(A)^2*Sigma(A)^2+ X(B)^2*Sigma(B)^2+2*rho*Sigma(A)*Sigma(B)) </math> <br>
-<math>X(A)=(R(A)-R(B)+theta*(Sigma(B)^2-rho*Sigma(A)*Sigma(B)))/(theta*(Sigma(A)^2 + Sigma(B)^2-2*rho*Sigma(A)*Sigma(B)))</math> <br>
- <br>
-Quand on a une VAD le risque du ptf peut etre superieur au risques de tous les actifs qui le composent. <br>
+<h1>Modeles Gestion de ptf CAPM CML</h1>
 
 <math>Sharpe-ratio = (Rm-rf)/sigma(M)</math> donc sur CML on a <math>R(P)=rf+((Rm-rf)/sigma(M))*sigma(P)</math> <br>
 Si actif non efficient et on veut garder R:  <math>R(P)=rf+X(M)(Rm-rf)</math> et sigma(P)=X(M)sigma(M)  <br>

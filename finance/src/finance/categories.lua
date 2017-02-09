@@ -14,7 +14,8 @@ require("finance/tmv/cours/mathfi/gen/CoursLesSwaps")
 require("finance/tmv/cours/mathfi/gen/ExempleGenaralSwap")
 require("finance/tmv/cours/mathfi/gen/ExempleValoEtRisqueSwap")
 require("finance/tmv/cours/mathfi/gen/ExempleSwapAvecTauxForward")
-require("finance/tmv/cours/mathfi/gen/GestionDePortefeuilles")
+require("finance/tmv/cours/mathfi/gen/GestionPtfEfficienceMarko")
+require("finance/tmv/cours/mathfi/gen/ModelesPtfCapmCml")
 require("finance/tmv/cours/mathfi/gen/TATIFEtGammesDesTauxZC")
 require("finance/tmv/cours/mathfi/gen/InstrumentsVanillesTauxFlottant")
 require("finance/oblig/ex1")
@@ -32,7 +33,6 @@ require("finance/swap/swapPreteur")
 
 
 References  = {
-  {title=ASTxt(CONVENTION_DE_BASE_TITLE_ID), screen=ConventionDeBaseCours  },
   {title=ASTxt(MARCHE_OBLIGATAIRE_TITLE_ID), screen=MarcheObligataire  },
   {title=ASTxt(T_A_T_I_F_ET_GAMMES_DES_TAUX_Z_C_TITLE_ID), screen=TATIFEtGammesDesTauxZC  },
   {title="Instruments Vanilles Taux Flottant", screen=InstrumentsVanillesTauxFlottant },
@@ -40,8 +40,9 @@ References  = {
   {title=ASTxt(SWAP_DE_TAUX_TITLE_ID).." - Expl Gen", screen=ExempleGenaralSwap },
   {title=ASTxt(SWAP_DE_TAUX_TITLE_ID).." - Expl Valo+Risk", screen=ExempleValoEtRisqueSwap },
   {title=ASTxt(SWAP_DE_TAUX_TITLE_ID).." - Expl Swap+Forward", screen=ExempleSwapAvecTauxForward },
-  {title=ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_ID), screen=GestionDePortefeuilles },
-
+  {title=ASTxt(GESTION_PTF_EFFICIENCE_MARKO_TITLE_ID), screen=GestionPtfEfficienceMarko },
+  {title=ASTxt(MODELES_PTF_CAPM_CML_TITLE_ID), screen=ModelesPtfCapmCml },
+  {title=ASTxt(CONVENTION_DE_BASE_TITLE_ID), screen=ConventionDeBaseCours  },
   {title=ASTxt(GREEK_TITLE_ID), screen=Greek   },
   {title=ASTxt(UTF8_TITLE_ID), screen=UTF8Ref  },
 }

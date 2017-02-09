@@ -220,3 +220,9 @@ addTextLocale(SANS_ACTIF_SANS_RISQUE_MIN_HEADER_ID,FR,"Sans actif Sans risk - mi
 addTextLocale(SANS_ACTIF_SANS_RISQUE_MAX_ID,FR,"Sans actif Sans risk - max rendement")
 addTextLocale(SANS_ACTIF_SANS_RISQUE_MAX_HEADER_ID,FR,"Sans actif Sans risk - max rendement")
  
+
+addTextLocale(GESTION_PTF_EFFICIENCE_MARKO_TITLE_ID,FR,"Gest.Ptf - Eff. Marko")
+addTextLocale(GESTION_PTF_EFFICIENCE_MARKO_TITLE_HEADER_ID,FR,"Gest.Ptf - Eff. Marko")
+addTextLocale(MODELES_PTF_CAPM_CML_TITLE_ID,FR,"Gest.Ptf - CAPM CML")
+addTextLocale(MODELES_PTF_CAPM_CML_TITLE_HEADER_ID,FR,"Gest.Ptf - CAPM CML")
+ 

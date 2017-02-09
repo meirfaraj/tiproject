@@ -33,6 +33,7 @@ Le taux discret est <math>r = exp(rc) - 1</math> <br>
 <u>Exemple: taux continus montrer que S=D </u> <br>
 <math>V = Somme{t=t1 -> tN}(Ft * exp(-rt))</math>
 <math>S=-dV/Vdr = Somme{t=t1 -> tN}(Ft/V * exp(-rt) * t) = D</math> <br>
+<math>V = integrale{t=0 -> T}(f(t) * exp(-rt) * dt)</math> et donc <math>S=-dV/Vdr = (1/V) * integrale{t=0 -> T}(t * f(t) * exp(-rt) * dt) = D</math>
 <br>
 
 La <b>convexité</b> pour une appréciation plus fine

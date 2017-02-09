@@ -13,7 +13,7 @@ soit <math>f(3,6)=5.6%</math> ; <br>
 <br>
 <b>Jambe fixe</b> =:  <math>V(a(k))=6*(1/1.05^0.25+1/1.056^1.25)=11.89</math> <br>
 <b>Jambe variable</b>: on actualise le premier coupon connu(0.5*4%*100=2) et les équivalents certains des suivants(tx forward*100) <br>
-<math>V(a(r))=2*1/1.05^0.25+(5.6/1.054^0.75+5.91/1.056^1.25)=</math> <br>
+<math>V(a(r))=2/1.05^0.25+(5.6/1.054^0.75+5.91/1.056^1.25)=</math> <br>
 donc valeur du <math>swap=V(a(k))-V(a(r))</math><br>
 Méthode démantèlement:<br>
 <math>V(A(k))=6*(1/1.05^0.25+1/1.056^1.25)+100/1.056^1.25=105.3</math> et <math>V(A(r))=102/1.05^0.25=100.76</math> <br>
