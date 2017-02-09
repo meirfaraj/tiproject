@@ -262,3 +262,7 @@ addTextLocale(GESTION_PTF_EFFICIENCE_MARKO_TITLE_ID,EN,"Gest.Ptf - Eff. Marko")
 addTextLocale(GESTION_PTF_EFFICIENCE_MARKO_TITLE_HEADER_ID,EN,"Gest.Ptf - Eff. Marko")
 addTextLocale(MODELES_PTF_CAPM_CML_TITLE_ID,EN,"Gest.Ptf - CAPM CML")
 addTextLocale(MODELES_PTF_CAPM_CML_TITLE_HEADER_ID,EN,"Gest.Ptf - CAPM CML")
+
+addTextLocale(PORTEFEUILLE_EFFICIENT_ID,EN,"Ptf efficient T")
+addTextLocale(PORTEFEUILLE_EFFICIENT_HEADER_ID,EN,"Portefeuille efficient T")
+

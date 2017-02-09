@@ -521,4 +521,9 @@ function Portefeuillef.coursSansActifSansRisqueMinimisationDeRisque(self)
 end
 
 
+function Portefeuillef.portefeuilleEff(self)
+   self:appendToResult("Ptf efficient : \n")
+   self:appendMathToResult("{X=(1/"..c_theta..")*V^(-1)*(RM-1rf);Xf=1-1X}")
+   self:appendToResult("\n")
+end
 

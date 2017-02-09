@@ -29,6 +29,8 @@ require("finance/portfeuille/sansActifSansRisqueMinimisationRisque2")
 require("finance/portfeuille/sansActifSansRisqueMinimisationRisque3")
 require("finance/portfeuille/detCompositionPortefeuilleZ")
 require("finance/portfeuille/detCompositionPortefeuilleAversionRisque")
+require("finance/portfeuille/portefeuilleEfficientCompoXf")
+
 require("finance/swap/swapPreteur")
 
 
@@ -98,6 +100,7 @@ addCat(9, ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_ID).." - Matr. Func Util", ASTx
 addSubCatScreen(9,1,ASTxt(MATRICE_FUNC_UTIL_ID),ASTxt(MATRICE_FUNC_UTIL_HEADER_ID),MatriceFunctionDutilite)
 
 addCat(10, ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_ID).." - Ptf T", ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_DESC_ID))
+addSubCatScreen(10,1,ASTxt(PORTEFEUILLE_EFFICIENT_ID),ASTxt(PORTEFEUILLE_EFFICIENT_HEADER_ID),PortefeuilleEfficientXf)
 
 addCat(11, ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_ID).." - CAPM/CML", ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_DESC_ID))
 

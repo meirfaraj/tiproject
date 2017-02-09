@@ -8,36 +8,58 @@ require("finance/portfeuille/func/portefeuille")
 
 
 -- obligation in fine
-SansActifSansRisqueMinimisationDeRisque3 = Tmv(SANS_ACTIF_SANS_RISQUE_MIN_ID,SANS_ACTIF_SANS_RISQUE_MIN_HEADER_ID)
+PortefeuilleEfficientXf = Tmv(PORTEFEUILLE_EFFICIENT_ID,PORTEFEUILLE_EFFICIENT_HEADER_ID)
  
 
-function SansActifSansRisqueMinimisationDeRisque3:widgetsInit()
- self:add(0,"A-1 : form[1,2;3,4]","AMatInv")
- self:add(0,"Rp* Rendement ","Rp*")
+function PortefeuilleEfficientXf:widgetsInit()
+ self:add(0,"V-1(RM-1rf) : form[1,2;3,4]","V-1(RM-1rf)")
+ self:add(1,c_theta ,c_theta)
 end
 
-function SansActifSansRisqueMinimisationDeRisque3:performCalc()
+function PortefeuilleEfficientXf:performCalc()
 -- rendement portefeuille cible
-   local rp =  varValue["Rp*"]
-   local AMatInv =  varValue["AMatInv"]
-    
-   local count = tiNspire.toNumber(tiNspire.execute("colDim("..tostring(AMatInv)..")-2"))
-   if rp~=nil and count~=nil then
-      Portefeuillef.constructTMat(rp,count)
+
+   local resultatInt =  varValue["V-1(RM-1rf)"]
+   local theta =  varValue[c_theta]
+   
+   
+   local count = tiNspire.toNumber(tiNspire.execute("rowDim("..tostring(resultatInt)..")"))
+   
+   if count==1 then
+      -- err between entering , and ; ?
+      resultatInt = string.gsub(tostring(resultatInt),",", ";")
+      varValue["V-1(RM-1rf)"] = resultatInt
+      count = tiNspire.toNumber(tiNspire.execute("rowDim("..tostring(resultatInt)..")"))
    end
    
-   local tMat =  varValue["tMat"]
-   if AMatInv ~=nil and tMat ~= nil then
+   Portefeuillef.portefeuilleEff(self)
+   if count~=nil and resultatInt~=nil and theta~=nil then      
+   
+      local calcStr = "(1/"..tostring(theta)..")*"..tostring(resultatInt)
+      self:appendMathToResult("X="..tostring(calcStr))
+      local res = tiNspire.execute(tostring(calcStr))
       self:appendToResult("\n");
-      self:appendMathToResult("X=A^(-1)*T")
-      self:appendToResult("\n=")
-      self:appendMathToResult(tostring(AMatInv).."*"..tostring(tMat))
-      varValue["XMat"] = tiNspire.execute(tostring(AMatInv).."*"..tostring(tMat))
-      self:appendToResult("\n=")
-      self:appendMathToResult(tostring(varValue["XMat"]))
-      self:appendToResult("\n=")
-      self:appendMathToResult(tostring(tiNspire.approx(tostring(varValue["XMat"]))))
+      self:appendMathToResult("="..tostring(res))
+      self:appendToResult("\n");
+      self:appendMathToResult("="..tostring(tiNspire.approx(tostring(res))))
+      self:appendToResult("\n");
+      self:appendMathToResult("Xf = 1-1*"..tostring(res))
+      local vectUnit = "["
+      for i=1,count,1      
+      do
+        if i~=1 then
+          vectUnit =vectUnit .. ","
+        end
+        vectUnit =vectUnit.."1"
+      end
+      vectUnit = vectUnit.."]"
+      local calcXfStr = "1- "..tostring(vectUnit).." * "..tostring(res)
+      self:appendMathToResult("Xf="..tostring(calcXfStr))
+      self:appendToResult("\n");
+      local resxf = tiNspire.execute(tostring(calcXfStr))
+      self:appendMathToResult("="..tostring(resxf))
+      self:appendMathToResult("="..tostring(tiNspire.approx(tostring(resxf))))
    end
-   Portefeuillef.coursSansActifSansRisqueMinimisationDeRisque(self)
+   
 end
 
