@@ -174,8 +174,31 @@ end
 
 
 
+function Portefeuillef.compositionPortefeuilleAversionRisque(self,Rvect,sigmaVect,rhoVect,thetha)
+  local rhoLuaVect,rhoTiVect,countRho=Portefeuillef.GetVect(self,rhoVect)
+  local sigmaLuaVect,sigmaTiVect,countsigma=Portefeuillef.GetVect(self,sigmaVect)
+  local RLuaVect,RTiVect,countR=Portefeuillef.GetVect(self,Rvect)
+  local expected=tiNspire.approx("nPr("..tostring(countsigma)..",2)/2")
+  -- check coherence
+  if countRho~=tiNspire.toNumber(expected) then
+    self:appendToResult("Attention : Il devrait y avoir "..tostring(expected).." correlation != "..tostring(countRho).."\n")
+  else
+    self:appendToResult("number of correlation found "..tostring(countRho).." as expected "..tostring(expected).."\n")
+  end
+  if countsigma~= countR then
+    self:appendToResult("Attention : countsigma="..tostring(countsigma).." != countR="..tostring(countR).."\n")
+  end
+  
+  self:appendToResult("Il y a "..tostring(countsigma).." actifs dans le portefeuille\n")
+  
+  self:appendToResult("Le portefeuille P={"..Portefeuillef.toVectLet(countsigma).."} \n")   
+
+  if countsigma==2 then 
+    Portefeuillef.compositionPortefeuilleAversion2(self,Rvect,sigmaVect,rhoVect,thetha,sigmaLuaVect,RLuaVect,rhoLuaVect[1]) 
+  end
+end
+
 function Portefeuillef.compositionPortefeuilleZ2(self,Rvect,sigmaVect,rhoVect,rf,sigmaLuaVect,RLuaVect,rho)
-  Portefeuillef.courscompositionPortefeuilleZ2(self,rho)
   if sigmaLuaVect~=nil then
      local rhoN=tiNspire.toNumber(rho)
      local XLuaVect={}
@@ -233,6 +256,29 @@ function Portefeuillef.compositionPortefeuilleZ2(self,Rvect,sigmaVect,rhoVect,rf
      self:appendToResult("\n")
      Portefeuillef.OAPortefeuille(self,rendement,rf,XLuaVect)
   end
+  Portefeuillef.courscompositionPortefeuilleZ2(self,rho)
+end
+
+function Portefeuillef.compositionPortefeuilleAversion2(self,Rvect,sigmaVect,rhoVect,thetha,sigmaLuaVect,RLuaVect,rho) 
+   local XLuaVect={}
+   self:appendMathToResult("XA=(RA-RB+"..c_theta.."*("..c_sigma.."B^2-"..c_rho.."*"..c_sigma.."A*"..c_sigma.."B))/("..c_theta.."*("..c_sigma.."A^2+"..c_sigma.."B^2-2"..c_rho.."*"..c_sigma.."A*"..c_sigma.."B))")
+   local calcStr = "("..tostring(RLuaVect[1]).."-"..tostring(RLuaVect[2]).."+"..tostring(thetha).."*("..tostring(sigmaLuaVect[2]).."^2-"..tostring(rho).."*"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."))/("..tostring(thetha).."*("..tostring(sigmaLuaVect[1]).."^2+"..tostring(sigmaLuaVect[2]).."^2-2*"..tostring(rho).."*"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."))"
+   self:appendToResult("\n")
+   self:appendMathToResult("XA="..tostring(calcStr))
+   self:appendToResult("\n")
+   local resultXa = tiNspire.execute(tostring(calcStr))
+   self:appendMathToResult("XA="..tostring(resultXa))
+   self:appendMathToResult("="..tostring(tiNspire.approx(tostring(resultXa))))
+   calcStr = "(1-"..tostring(resultXa)..")"
+   self:appendMathToResult("XB=1-XA="..calcStr)
+   local resultXb = tiNspire.execute(tostring(calcStr))
+   self:appendMathToResult("="..tostring(resultXb));
+   self:appendMathToResult("="..tostring(tiNspire.approx(tostring(resultXb))))
+   XLuaVect[1]=resultXa
+   XLuaVect[2]=resultXb                   
+   varValue["X"]=tostring(XLuaVect[1])..","..tostring(XLuaVect[2])
+   self:appendToResult("\n")
+   self:appendMathToResult("=P={"..tostring(XLuaVect[1]).."*A;"..tostring(XLuaVect[2]).."*B}")
 end
 
 function Portefeuillef.OAPortefeuille(self,rendement,rf,XLuaVect)

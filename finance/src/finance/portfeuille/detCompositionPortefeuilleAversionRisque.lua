@@ -21,11 +21,10 @@ function CompositionPortefeuilleAversionRisque:performCalc()
    local Rvect = varValue["Rvect"]
    local sigmavect = varValue[c_sigma.."vect"]
    local rhoVect = varValue[c_rho.."vect"]
-   local rf = varValue["rf"]
    local coefAversionRisque = varValue[c_theta]
    
    if Rvect~=nil and sigmavect~=nil and rhoVect~=nil and coefAversionRisque~=nil  then
-      Portefeuillef.CompositionPortefeuilleAversionRisque(self,Rvect,sigmavect,rhoVect,rf)
+      Portefeuillef.compositionPortefeuilleAversionRisque(self,Rvect,sigmavect,rhoVect,coefAversionRisque)
    end
 end
 
