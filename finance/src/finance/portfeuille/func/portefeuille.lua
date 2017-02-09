@@ -90,7 +90,7 @@ function Portefeuillef.matriceVarianceCovarianceUsingPondEcartTypeCorrelation(se
       local calc = ""
       if i==j then
         matriceCours=matriceCours..c_sigma..tostring(i).."^2"
-        calc=tostring(sigmaLuaVect[i]).."^2"
+        calc="("..tostring(sigmaLuaVect[i])..")^2"
       else
         local a,b
         if i<j then
@@ -219,9 +219,9 @@ function Portefeuillef.compositionPortefeuilleZ2(self,Rvect,sigmaVect,rhoVect,rf
         self:appendToResult("cas non trait"..e_acute.." pas de portefeuille Z\n")
         return
      elseif rhoN==0 then 
-        self:appendMathToResult("XA=(("..c_sigma.."B^2)/("..c_sigma.."A^2+"..c_sigma.."B^2))=("..tostring(sigmaLuaVect[2]).."^2/("..tostring(sigmaLuaVect[1]).."^2+"..tostring(sigmaLuaVect[2]).."^2)")
+        self:appendMathToResult("XA=(("..c_sigma.."B^2)/("..c_sigma.."A^2+"..c_sigma.."B^2))=(("..tostring(sigmaLuaVect[2])..")^2/(("..tostring(sigmaLuaVect[1])..")^2+("..tostring(sigmaLuaVect[2])..")^2)")
         self:appendToResult("\n")
-        local res = tiNspire.execute(tostring(sigmaLuaVect[2]).."^2/("..tostring(sigmaLuaVect[1]).."^2+"..tostring(sigmaLuaVect[2]).."^2)")
+        local res = tiNspire.execute("("..tostring(sigmaLuaVect[2])..")^2/(("..tostring(sigmaLuaVect[1])..")^2+("..tostring(sigmaLuaVect[2])..")^2)")
         self:appendMathToResult("="..tostring(res))
         self:appendMathToResult("="..tostring(tiNspire.approx(res)))
         self:appendToResult("\n")
@@ -235,7 +235,7 @@ function Portefeuillef.compositionPortefeuilleZ2(self,Rvect,sigmaVect,rhoVect,rf
         --cas general 
         self:appendMathToResult("XA=("..c_sigma.."B^2-"..c_sigma.."A*"..c_sigma.."B*"..c_rho.."AB)/("..c_sigma.."A^2+"..c_sigma.."B^2-2*"..c_sigma.."A*"..c_sigma.."B*"..c_rho.."AB))")
         self:appendToResult("\n")
-        local calcRes = "(("..tostring(sigmaLuaVect[2]).."^2-"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."*"..tostring(rho)..")/("..tostring(sigmaLuaVect[1]).."^2+"..tostring(sigmaLuaVect[2]).."^2-2*"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."*"..tostring(rho).."))"
+        local calcRes = "((("..tostring(sigmaLuaVect[2])..")^2-"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."*"..tostring(rho)..")/(("..tostring(sigmaLuaVect[1])..")^2+("..tostring(sigmaLuaVect[2])..")^2-2*"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."*"..tostring(rho).."))"
         self:appendMathToResult("="..tostring(calcRes))
         local res = tiNspire.execute(tostring(calcRes))
         self:appendMathToResult("="..tostring(res))
@@ -262,7 +262,7 @@ end
 function Portefeuillef.compositionPortefeuilleAversion2(self,Rvect,sigmaVect,rhoVect,thetha,sigmaLuaVect,RLuaVect,rho) 
    local XLuaVect={}
    self:appendMathToResult("XA=(RA-RB+"..c_theta.."*("..c_sigma.."B^2-"..c_rho.."*"..c_sigma.."A*"..c_sigma.."B))/("..c_theta.."*("..c_sigma.."A^2+"..c_sigma.."B^2-2"..c_rho.."*"..c_sigma.."A*"..c_sigma.."B))")
-   local calcStr = "("..tostring(RLuaVect[1]).."-"..tostring(RLuaVect[2]).."+"..tostring(thetha).."*("..tostring(sigmaLuaVect[2]).."^2-"..tostring(rho).."*"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."))/("..tostring(thetha).."*("..tostring(sigmaLuaVect[1]).."^2+"..tostring(sigmaLuaVect[2]).."^2-2*"..tostring(rho).."*"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."))"
+   local calcStr = "("..tostring(RLuaVect[1]).."-"..tostring(RLuaVect[2]).."+"..tostring(thetha).."*(("..tostring(sigmaLuaVect[2])..")^2-"..tostring(rho).."*"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."))/("..tostring(thetha).."*(("..tostring(sigmaLuaVect[1])..")^2+("..tostring(sigmaLuaVect[2])..")^2-2*"..tostring(rho).."*"..tostring(sigmaLuaVect[1]).."*"..tostring(sigmaLuaVect[2]).."))"
    self:appendToResult("\n")
    self:appendMathToResult("XA="..tostring(calcStr))
    self:appendToResult("\n")

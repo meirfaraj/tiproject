@@ -53,7 +53,8 @@ function PortefeuilleEfficientXfTheta:performCalc()
       self:appendToResult("\n");
       self:appendMathToResult("="..tostring(tiNspire.approx(tostring(res))))
       self:appendToResult("\n");
+      varValue[c_theta]=res
    end
-   
+   self:appendToResult("\n")
 end
 

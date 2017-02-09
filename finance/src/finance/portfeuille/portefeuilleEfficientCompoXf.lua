@@ -57,9 +57,10 @@ function PortefeuilleEfficientXf:performCalc()
       self:appendMathToResult("Xf="..tostring(calcXfStr))
       self:appendToResult("\n");
       local resxf = tiNspire.execute(tostring(calcXfStr))
+      varValue["Xf"]=resxf
       self:appendMathToResult("="..tostring(resxf))
       self:appendMathToResult("="..tostring(tiNspire.approx(tostring(resxf))))
    end
-   
+   self:appendToResult("\n")
 end
 

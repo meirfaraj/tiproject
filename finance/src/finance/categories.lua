@@ -31,6 +31,8 @@ require("finance/portfeuille/detCompositionPortefeuilleZ")
 require("finance/portfeuille/detCompositionPortefeuilleAversionRisque")
 require("finance/portfeuille/portefeuilleEfficientCompoXf")
 require("finance/portfeuille/portefeuilleEfficientCompoXf2")
+require("finance/portfeuille/portefeuilleEfficientCompoXf3")
+require("finance/portfeuille/portefeuilleEfficientCompoXf4")
 
 require("finance/swap/swapPreteur")
 
@@ -103,6 +105,8 @@ addSubCatScreen(9,1,ASTxt(MATRICE_FUNC_UTIL_ID),ASTxt(MATRICE_FUNC_UTIL_HEADER_I
 addCat(10, ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_ID).." - Ptf T", ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_DESC_ID))
 addSubCatScreen(10,1,ASTxt(PORTEFEUILLE_EFFICIENT_ID),ASTxt(PORTEFEUILLE_EFFICIENT_HEADER_ID),PortefeuilleEfficientXf)
 addSubCatScreen(10,2,ASTxt(PORTEFEUILLE_EFFICIENT_ID).." - det "..c_theta,ASTxt(PORTEFEUILLE_EFFICIENT_HEADER_ID),PortefeuilleEfficientXfTheta)
+addSubCatScreen(10,3,ASTxt(PORTEFEUILLE_EFFICIENT_ID).." - det comp avec "..c_beta,ASTxt(PORTEFEUILLE_EFFICIENT_HEADER_ID),PortefeuilleEfficientBeta)
+addSubCatScreen(10,4,ASTxt(PORTEFEUILLE_EFFICIENT_ID).." - det risk actif X", ASTxt(PORTEFEUILLE_EFFICIENT_HEADER_ID), PortefeuilleEfficientActifX)
 
 addCat(11, ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_ID).." - CAPM/CML", ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_DESC_ID))
 

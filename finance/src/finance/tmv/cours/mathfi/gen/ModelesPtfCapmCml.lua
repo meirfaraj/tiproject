@@ -68,7 +68,7 @@ function ModelesPtfCapmCml:performCalc()
   self:appendMathToResult("X=(1/"..c_theta..") * V^(-1) * (R-1*rf)")
   self:appendToResult(" \n")
   self:appendToResult("Si ptf Y dans CML donc même Sharpe ratio que ptf de matché ")
-  self:appendMathToResult("Sharpe-ratio = (Rm-rf)/"..c_sigma.."(M) = (R(Y))-rf)/"..c_sigma.."(Y)")
+  self:appendMathToResult("Sharpe-ratio = (Rm-rf)/"..c_sigma.."(M) = (R(Y)-rf)/"..c_sigma.."(Y)")
   self:appendToResult(" et "..c_rho.."(Y/M) = 1")
   self:appendToResult(" \n")
 
