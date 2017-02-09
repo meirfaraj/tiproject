@@ -58,12 +58,14 @@ end
 function FonctionUtilitef.checkAversionFromARA(self,ara)
    if ara~=nil then
       local nara = tiNspire.toNumber(tiNspire.sign(ara))
-      if nara>0 then
-         self:appendToResult("\naversion absolue au risque (ARA)>0 => averse vis a vis du risque\n")
-      elseif nara<0 then
-         self:appendToResult("\naversion absolue au risque (ARA)<0 => risquophile\n")
-      elseif  nara==0 then
-         self:appendToResult("\naversion absolue au risque (ARA)=0 => neutre au risque\n")
+      if nara~=nil then
+        if nara>0 then
+           self:appendToResult("\naversion absolue au risque (ARA)>0 => averse vis a vis du risque\n")
+        elseif nara<0 then
+           self:appendToResult("\naversion absolue au risque (ARA)<0 => risquophile\n")
+        elseif  nara==0 then
+           self:appendToResult("\naversion absolue au risque (ARA)=0 => neutre au risque\n")
+        end
       end
    end
 end

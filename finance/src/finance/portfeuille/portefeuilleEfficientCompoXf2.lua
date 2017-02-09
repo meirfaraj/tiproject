@@ -22,6 +22,16 @@ function PortefeuilleEfficientXfTheta:performCalc()
    local resultatInt =  varValue["V-1(RM-1rf)"]
    local Xf =  varValue["Xf"]
    
+   if Xf ~=nil then
+      Xf = string.gsub(Xf,"[%[%]]*","")
+   end
+   
+   if resultatInt ~=nil then
+     resultatInt = string.gsub(resultatInt,"[%[%]]*","")
+     resultatInt="["..resultatInt.."]"
+   end
+   
+   
    local count = tiNspire.toNumber(tiNspire.execute("rowDim("..tostring(resultatInt)..")"))
    
    if count==1 then
@@ -45,14 +55,15 @@ function PortefeuilleEfficientXfTheta:performCalc()
       end
       vectUnit = vectUnit.."]"
    
+      self:appendToResult("\n")
       local calcStr = "(("..tostring(vectUnit).."*"..tostring(resultatInt)..")/(1-"..tostring(Xf).."))"
-      self:appendMathToResult(c_theta.."X="..tostring(calcStr))
+      self:appendMathToResult(c_theta.."="..tostring(calcStr))
       local res = tiNspire.execute(tostring(calcStr))
-      self:appendToResult("\n");
+      self:appendToResult("\n")
       self:appendMathToResult("="..tostring(res))
-      self:appendToResult("\n");
+      self:appendToResult("\n")
       self:appendMathToResult("="..tostring(tiNspire.approx(tostring(res))))
-      self:appendToResult("\n");
+      self:appendToResult("\n")
       varValue[c_theta]=res
    end
    self:appendToResult("\n")

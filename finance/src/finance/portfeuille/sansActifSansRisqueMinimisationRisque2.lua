@@ -20,6 +20,12 @@ function SansActifSansRisqueMinimisationDeRisque2:performCalc()
 -- rendement portefeuille cible
    local rp =  varValue["Rp*"]
    local AMat =  varValue["AMat"]
+   
+   if AMat ~=nil then
+     AMat = string.gsub(AMat,"[%[%]]*","")
+     AMat="["..AMat.."]"
+   end
+   
     
    local count = tiNspire.toNumber(tiNspire.execute("colDim("..tostring(AMat)..")-2"))
    if rp~=nil and count~=nil then

@@ -33,6 +33,7 @@ require("finance/portfeuille/portefeuilleEfficientCompoXf")
 require("finance/portfeuille/portefeuilleEfficientCompoXf2")
 require("finance/portfeuille/portefeuilleEfficientCompoXf3")
 require("finance/portfeuille/portefeuilleEfficientCompoXf4")
+require("finance/portfeuille/portefeuilleEfficientCompoXf5")
 
 require("finance/swap/swapPreteur")
 
@@ -107,10 +108,10 @@ addSubCatScreen(10,1,ASTxt(PORTEFEUILLE_EFFICIENT_ID),ASTxt(PORTEFEUILLE_EFFICIE
 addSubCatScreen(10,2,ASTxt(PORTEFEUILLE_EFFICIENT_ID).." - det "..c_theta,ASTxt(PORTEFEUILLE_EFFICIENT_HEADER_ID),PortefeuilleEfficientXfTheta)
 addSubCatScreen(10,3,ASTxt(PORTEFEUILLE_EFFICIENT_ID).." - det comp avec "..c_beta,ASTxt(PORTEFEUILLE_EFFICIENT_HEADER_ID),PortefeuilleEfficientBeta)
 addSubCatScreen(10,4,ASTxt(PORTEFEUILLE_EFFICIENT_ID).." - det risk actif X", ASTxt(PORTEFEUILLE_EFFICIENT_HEADER_ID), PortefeuilleEfficientActifX)
+addSubCatScreen(10,5,ASTxt(PORTEFEUILLE_EFFICIENT_ID).." - CML", ASTxt(PORTEFEUILLE_EFFICIENT_HEADER_ID), PortefeuilleEfficientTitreY)
 
-addCat(11, ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_ID).." - CAPM/CML", ASTxt(CATEGORY_GESTION_DE_PORTEFEUILLE_DESC_ID))
 
 ----------------------Exercice FIXED INCOME---------------------------------------
-addCat(12, ASTxt(EXERCICES_TITLE_ID)..ASTxt(CATEGORY_FIXED_INCOME_ID), ASTxt(CATEGORY_FIXED_INCOME_DESC_ID))
-addSubCatScreen(12,1,ASTxt(EX_OBLIGATION_1_TITLE_ID),ASTxt(EX_OBLIGATION_1_TITLE_HEADER_ID),Oblig_Ex1)
+addCat(11, ASTxt(EXERCICES_TITLE_ID)..ASTxt(CATEGORY_FIXED_INCOME_ID), ASTxt(CATEGORY_FIXED_INCOME_DESC_ID))
+addSubCatScreen(11,1,ASTxt(EX_OBLIGATION_1_TITLE_ID),ASTxt(EX_OBLIGATION_1_TITLE_HEADER_ID),Oblig_Ex1)
 

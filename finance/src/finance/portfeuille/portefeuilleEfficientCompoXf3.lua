@@ -39,6 +39,13 @@ function PortefeuilleEfficientBeta:performCalc()
    local xm =  varValue["XM"]
    local rf =  varValue["rf"]
    
+   
+   if theta ~=nil then
+      theta = string.gsub(theta,"[%[%]]*","")
+   end
+   
+   
+   
    --variance du portefeuille du marche
    if theta~=nil and rm~=nil and xm~=nil then
      self:appendToResult("\nVar du ptf de marche:\n")

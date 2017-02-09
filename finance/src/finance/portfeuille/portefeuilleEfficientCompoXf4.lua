@@ -26,6 +26,16 @@ function PortefeuilleEfficientActifX:performCalc()
    local rm = varValue["RM"]
    local rf = varValue["rf"]
 
+ 
+   if rm ~=nil then
+     rm = string.gsub(rm,"[%[%]]*","")
+   end
+   
+    
+   if rf ~=nil then
+     rf = string.gsub(rf,"[%[%]]*","")
+   end
+   
 
    self:appendMathToResult(c_beta.."X=(Rx-rf)/(RM-rf)")
    self:appendToResult("\n")
@@ -41,6 +51,15 @@ function PortefeuilleEfficientActifX:performCalc()
    local betaX = varValue[c_beta.."X"]
    local sigmaM = varValue[c_sigma.."M"]
 
+
+   if betaX ~=nil then
+     betaX = string.gsub(betaX,"[%[%]]*","")
+   end
+   
+   if sigmaM ~=nil then
+     sigmaM = string.gsub(sigmaM,"[%[%]]*","")
+   end
+   
    if betaX~=nil and sigmaM~=nil then
       self:appendToResult("\nRisque systematique:\n")
       self:appendMathToResult("="..c_beta.."X^2*"..c_sigma.."M^2")

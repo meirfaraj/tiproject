@@ -22,7 +22,16 @@ function PortefeuilleEfficientXf:performCalc()
    local resultatInt =  varValue["V-1(RM-1rf)"]
    local theta =  varValue[c_theta]
    
+   if theta ~=nil then
+     theta = string.gsub(theta,"[%[%]]*","")
+   end
    
+   
+   if resultatInt ~=nil then
+     resultatInt = string.gsub(resultatInt,"[%[%]]*","")
+     resultatInt="["..resultatInt.."]"
+   end
+      
    local count = tiNspire.toNumber(tiNspire.execute("rowDim("..tostring(resultatInt)..")"))
    
    if count==1 then
