@@ -84,6 +84,7 @@ public class ExportDoc {
 		        .map(s->s.replaceAll("[Ss]igma", "\"..c_sigma..\""))
 		        .map(s->s.replaceAll("[Rr]ho", "\"..c_rho..\""))
 		        .map(s->s.replaceAll("[bB]eta", "\"..c_beta..\""))
+		        .map(s->s.replaceAll("[eE]psilon", "\"..c_epsilon..\""))
 		        .forEach(s->new BufferedReader(new StringReader(s)).lines().forEach(s2->subjects.getLast().lines.add(getLuaLine(s2))));
 		        
 		   if(subjects.size()>1){
